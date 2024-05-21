@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Layout from "./components/Layout";
+// import { Carousel, Card } from "./components./carousel";
+// import softSleepIcon from './img/app-icons/softSleep-icon.png';
+// import blunderBoatsIcon from './img/app-icons/blunderBoats-icon.png';
+// import tendencyTunerIcon from './img/app-icons/tendencyTuner-icon.png';
+// import { TbApiAppOff } from 'react-icons/tb';
+import Home from "./pages/Home";
+import {
+  BrowserRouter as Router,
+  useRoutes,
+} from "react-router-dom";
 
-function App() {
+const App = () => {
+  let routes = useRoutes([
+    { path: "/", element: <Home /> }
+  ]);
+  return routes;
+};
+
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <Layout> */}
+      <App />
+      {/* </Layout> */}
+    </Router>
   );
-}
+};
 
-export default App;
+export default AppWrapper;

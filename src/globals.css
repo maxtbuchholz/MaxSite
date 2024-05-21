@@ -1,0 +1,270 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sectionContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sectionContainer {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+.topUI{
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+}
+html{
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  }
+.sectionContainer{
+  /* -webkit-overflow-scrolling: touch; */
+  /* overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  background-color: aqua; */
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.offsetRect{
+  background-color: red;
+}
+.blue{
+  background-color: blue;
+}
+.headerAlignRect{
+  background-color: black;
+}
+.section{
+  /* scroll-behavior: smooth; */
+  height: calc(100vh - 100px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+  position: relative;
+  /* scroll-padding-top: 100px; */
+  /* padding-top: 120px; */
+}
+.pageIntersectionObserver{
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  height: 100px;
+  background-color: transparent;
+}
+.lastSection{
+  /* scroll-behavior: smooth; */
+  height: calc(100vh - 100px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+  position: relative;
+  /* scroll-padding-top: 100px; */
+  /* padding-top: 120px; */
+}
+@media (min-width: 800px){
+.appTitle{
+  /* position: absolute; */
+  /* top: 560px; */
+  padding-top: 10px;
+  width: 100%;
+  transition: 0.5s ease-out;
+  color: white;
+}
+.firstSection{
+  /* scroll-behavior: smooth; */
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+  position: relative;
+  /* scroll-padding-top: 100px; */
+  /* padding-top: 120px; */
+}
+.section{
+  /* scroll-behavior: smooth; */
+  height: calc(100vh - 100px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+  position: relative;
+  /* scroll-padding-top: 100px; */
+  /* padding-top: 120px; */
+}
+}
+@media (max-width: 800px){
+  .appTitle{
+    /* position: absolute; */
+    padding-top: 10px;
+    /* top: 370px; */
+    /* width: 100%; */
+    transition: 0.5s ease-out;
+    color: white;
+  }
+  .firstSection{
+    /* scroll-behavior: smooth; */
+    height: calc(100vh);
+    scroll-snap-align: start;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+    position: relative;
+    /* scroll-padding-top: 100px; */
+    /* padding-top: 120px; */
+}
+.section{
+  /* scroll-behavior: smooth; */
+  height: calc(100vh - 100px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+  position: relative;
+  /* scroll-padding-top: 100px; */
+  /* padding-top: 120px; */
+}
+  }
+.longSection{
+  scroll-snap-align: start;
+  scroll-margin-top: 100px;
+  min-height: calc(200vh - 100px);
+  position: relative;
+}
+.headerSection{
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+.sectionPadded{
+    padding-top: 100px;
+    /* transition: 0.3s; */
+}
+.appTitle{
+  text-align: center;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.dark-text{
+  color: rgb(30,30,30);
+}
+.light-text{
+  color: rgb(255,255,255);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}

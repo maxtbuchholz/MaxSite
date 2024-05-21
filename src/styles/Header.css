@@ -1,0 +1,260 @@
+.headerContainer{
+    height: 100%;
+    min-height: 100px;
+}
+.headerNormal{
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    /* transition: 0.3s;     */
+    height: 100px;
+    z-index: 100;
+}
+.headerFirst{
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    /* transition: 0.3s; */   
+    height: 100%;
+    z-index: 100; 
+}
+.onButtonsPage{
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 50vh;
+    pointer-events: auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    transition: 0s;
+}
+.onButtonsPage:hover{
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 50vh;
+    pointer-events: auto;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    box-shadow: none;
+    border: 1px solid white;
+    transition: 0s;
+}
+.onButtonsPage:active{
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 50vh;
+    pointer-events: auto;
+    background: linear-gradient(rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+    color: white;
+    cursor: pointer;
+    box-shadow: none;
+    border: 1px solid white;
+    transition: 0s;
+}
+.notButtonsPage{
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 50vh;
+    background-color: transparent;
+    color: white;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: none;    
+    border: none;
+    transition: 0s;
+}
+.notButtonsPage:active{
+    text-align: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 50vh;
+    pointer-events: auto;
+    background: linear-gradient(rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+    color: white;
+    cursor: pointer;
+    box-shadow: none;
+    transition: 0s;
+}
+/* desktop */
+@media (min-width: 800px){
+.header{
+    background: black;
+    width: 100%;
+    height: 100%;
+    padding: 0rem 1rem;
+    transition: 0.3s ease-out;
+  }
+  .headerContentNav{
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    transform: none;
+    transition: 0.3s ease-in-out;
+  }
+  .headerContentNav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-right: calc(80px + 0.5rem);
+    align-items: center;
+    margin-bottom: 0;
+}
+.headerContentNav ul li:not(:last-child){
+    margin-bottom: 0;
+    margin-right: 40px;
+}
+}
+/* mobile */
+@media (max-width: 800px){
+    .header{
+        background: black;
+        width: 100%;
+        height: 100%;
+        padding: 0 1.5rem;
+        transition: 0.3s ease-out;
+      }
+ }
+ /* .headerContentNav ul li a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0.75rem 1.25rem;
+    border-radius: 14px;
+    transition: 0.3s ease-out;
+    white-space: nowrap;
+    pointer-events: auto;
+}
+.headerContentNav ul li a:hover{
+    background: rgba(255,255,255, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease-out;
+}
+.headerContentNav ul li a:active{
+    border-radius: 20px;
+    background: linear-gradient(rgba(255,255,255, 0.2), rgba(255,255,255, 0.3));
+    text-decoration: none;
+    color: inherit;
+    padding: 0.75rem 1.25rem;
+    transition: 0.3s ease-out;
+} */
+  .headerContent{
+    overflow: hidden;
+    color: white;
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+  }
+  .headerContentLogo{
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+
+    background: #A1FFCE;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+    background: #f85032;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background: #F00000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DC281E, #F00000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DC281E, #F00000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background: #FF5F6D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+
+background-image: linear-gradient( 178.7deg,  rgba(126,184,253,1) 5.6%, rgba(2,71,157,1) 95.3% );
+
+background-image: radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% );
+
+background-image: radial-gradient( circle 860px at 11.8% 33.5%,  rgba(240,30,92,1) 0%, rgba(244,49,74,1) 30.5%, rgba(249,75,37,1) 56.1%, rgba(250,88,19,1) 75.6%, rgba(253,102,2,1) 100.2% );
+
+background-image: linear-gradient( 112.7deg,  rgba(253,185,83,1) 11.4%, rgba(255,138,0,1) 70.2% );
+
+/* ****** */
+background-image: linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% ); 
+/* ****** */
+
+/* background-image: linear-gradient( -30.0deg,  rgba(177,14,236,1) 15.5%, rgba(255,19,15,1) 92.8% ); */
+/* 78.1 */
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+.headerButton{
+    pointer-events: auto;
+    width: 120px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(76,221,242,1);
+    color: black;
+    border: 1px solid transparent;
+    transition: 0.3s ease-out;
+}
+.headerButton:hover{
+    border-color: rgba(76,221,242,1);
+    background: rgba(255,255,255, 0.1);
+    color: rgba(76,221,242,1);
+}
+.headerButton:active{
+    border-radius: 30px;
+    border-color: rgba(76,221,242,1);
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    color: rgba(76,221,242,1);
+    text-align: center;
+}
+.headerAlignRect{
+    width: 100%; 
+    height: 50px; 
+}
+/* .locationRect{
+    z-index: -1;
+    position: fixed;
+    background-color: aqua;
+    width: 100px; 
+    height: 50px; 
+    border: 2px black solid; 
+    border-radius: 50vh;  
+} */

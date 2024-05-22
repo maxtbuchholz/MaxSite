@@ -73,7 +73,7 @@ const Header = ({currentPage}) => {
                                 {/* <a className={((currentPage === 3) ? "onButtonsPage" : "notButtonsPage")}id="Header-Contact-Btn" onClick={() => {scrollTo("Contact"); headerPositionIconTo("Header-Contact-Btn"); }}>Contact</a> */}
                             </li>
                         </ul>
-                        <button className="headerButton">Button</button>
+                        <button className="headerButton poppins-regular">Button</button>
                     </nav>}
                     {(size.width < 800) &&  <Sidebar/>}
                     {/* <div className="headerContentToggle">

@@ -40,7 +40,7 @@ const Carousel = ({children, itemChangedCallBack, selectedAppName}) => {
       {active < (count - 1) && <button className='nav right carouselButton' onClick={() => {itemChangedCallBack(active + 1); setActive(i => i + 1)}}>u</button>}
       {/* <HiChevronRight/> */}
     </div>
-    <h1 className='appTitle'>{selectedAppName}</h1>
+    <h1 className='appTitle poppins-bold'>{selectedAppName}</h1>
     {/* <h1 className='appTitle'>{apps[selectedApIndex].title}</h1> */}
     </div>
   );

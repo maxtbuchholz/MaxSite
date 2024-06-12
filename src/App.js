@@ -14,7 +14,38 @@ import {
 
 const App = () => {
   let routes = useRoutes([
-    { path: "/", element: <Home /> }
+    { 
+      path: "/", 
+      element: <Home/>,
+    },
+    {
+      path: "/home",
+      element: <Home page={"home"}/>,
+    },
+    {
+      path: "/about",
+      element: <Home page={"about"}/>,
+    },
+    {
+      path: "/projects",
+      element: <Home page={"projects"}/>,
+    },
+    // {
+    //   path: "/projects/soft-sleep",
+    //   element: <Home page={"projects"} project={"soft-sleep"}/>,
+    // },
+    // {
+    //   path: "/projects/blunder-boats",
+    //   element: <Home page={"projects"} project={"blunder-boats"}/>,
+    // },
+    // {
+    //   path: "/projects/tendency-tuner",
+    //   element: <Home page={"projects"} project={"tendency-tuner"}/>,
+    // },
+    {
+      path: "/contact",
+      element: <Home page={"contact"}/>,
+    },
   ]);
   return routes;
 };

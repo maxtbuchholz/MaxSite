@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Sidebar.css";
 import { delay, motion } from 'framer-motion';
 import { scrollTo } from "../js/nav";
-const Sidebar = () => {
+const Sidebar = ({scrollButtonCallback}) => {
     const [open, setOpen] = useState(false)
     const variants = {
         open: {
@@ -58,7 +58,7 @@ const Sidebar = () => {
                 {/* Links */}
                 <motion.div className="links" variants={linkVariants}>
                 {items.map((item) => (
-                    <motion.a onClick={() => {scrollTo(item); setOpen(false)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
+                    <motion.a onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(false)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
                     whileTap={{scale: 0.95}}
                     >
                         {item}

@@ -1,0 +1,138 @@
+@media (min-width: 800px){
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 550px;
+    max-width: 40%;
+    top: 180px;
+    right: min(100px,4%);
+}
+.contactTitle{
+    font-size: 60px;
+    margin-bottom: 6px;
+    line-height: 60px;
+    min-width: 15px;
+}
+.contactSubTitle{
+    font-size: 20px;
+    margin-bottom: -4px;
+}
+.contactInfo{
+    font-size: 12px;
+}
+.verticalContainer{
+    Color: #ffffff;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding-left: min(100px,4%);
+    padding-top: 100px;
+}
+.mailGraphic{
+    background-image: url('../img/svg/mail.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 60%;
+    max-width: 40%;
+    height: 400px;
+    max-height: 100%;
+    left: 0;
+    margin-top: -20px;
+    /* top: 100px; */
+}
+}
+@media (max-width: 800px){
+    form{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        top: 180px;
+        right: 0;
+        left: 0;
+    }
+    .contactTitle{
+        font-size: 30px;
+        margin-bottom: -2px;
+        min-width: 4px;
+    }
+    .contactSubTitle{
+        font-size: 18px;
+        margin-bottom: -4px;
+    }
+    .contactInfo{
+        font-size: 12px;
+    }
+    .verticalContainer{
+        Color: #ffffff;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+        text-align: left;
+        padding-top: 60px;
+        text-decoration: none;
+    }
+    .mailGraphic{
+        background-image: url('../img/svg/mail.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        position: absolute;
+        width: calc(50% - 140px);
+        /* max-width: calc(50% - 100px); */
+        height: 100px;
+        max-height: 100%;
+        right: 10%;
+        margin-top: -60px;
+    }
+    }
+.textField{
+    height: 65px;
+}
+.textButton{
+    position: absolute;
+    height: 50px;
+    top: 310px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.textButton{
+    pointer-events: auto;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(109,185,249,1);
+    color: black;
+    border: 1px solid transparent;
+    transition: 0.3s ease-out;
+}
+.textButton:hover{
+    border-color: rgba(109,185,249,1);
+    background: rgba(255,255,255, 0.1);
+    color: rgba(109,185,249,1);
+}
+.textButton:active{
+    border-radius: 10px;
+    border-color: rgba(109,185,249,1);
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    color: rgba(109,185,249,1);
+    text-align: center;
+}
+.popUpTitleContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}

@@ -1,0 +1,15 @@
+.tanSpacer{
+    aspect-ratio: 1800/600;
+    height: 100%;
+    max-height: min(80vw, 1300px);
+    min-height: 1020px;
+    width: 100%;
+    /* min-width: 100%; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.tanTop{
+    background-image: url('../../img/svg/tan-top.svg');
+}

@@ -1,0 +1,24 @@
+.appleLogo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../img/svg/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg');
+}
+.androidLogo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../img/svg/GetItOnGooglePlay_Badge_Web_color_English.svg');
+}
+@media (min-width: 800px){
+    .LogoContainer{
+        width: 180px;
+        height: 70px;
+    }
+}
+@media (max-width: 800px){
+    .LogoContainer{
+        width: min(160px, 40vw);
+        height: 60px;
+    }
+}

@@ -22,7 +22,7 @@ const Carousel = ({children, itemChangedCallBack, selectedAppName}) => {
   return (
     <div className='carouselParent'>
     <div className='carousel'>
-      {active > 0 && <button className='nav left carouselButton' onClick={() => {itemChangedCallBack(active - 1); setActive(i => i - 1)}}>u</button>}
+      {active > 0 && <button className='nav left carouselButton' onClick={() => {itemChangedCallBack(active - 1); setActive(i => i - 1)}}><HiChevronLeft/></button>}
       {/* <HiChevronRight/> */}
       {React.Children.map(children, (child, i) => (
         <div className='card-container' style={{
@@ -37,7 +37,7 @@ const Carousel = ({children, itemChangedCallBack, selectedAppName}) => {
           {child}
         </div>
       ))}
-      {active < (count - 1) && <button className='nav right carouselButton' onClick={() => {itemChangedCallBack(active + 1); setActive(i => i + 1)}}>u</button>}
+      {active < (count - 1) && <button className='nav right carouselButton' onClick={() => {itemChangedCallBack(active + 1); setActive(i => i + 1)}}><HiChevronRight id="projButtonRight"/></button>}
       {/* <HiChevronRight/> */}
     </div>
     <h1 className='appTitle poppins-bold'>{selectedAppName}</h1>

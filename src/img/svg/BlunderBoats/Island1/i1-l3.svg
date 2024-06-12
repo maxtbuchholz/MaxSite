@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 210.00002 148.45868"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   sodipodi:docname="bb.svg"
+   inkscape:export-filename="../../Desktop/max-site/max-react/src/img/svg/BlunderBoats/Island1/i1-l2.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.55342308"
+     inkscape:cx="383.97387"
+     inkscape:cy="490.58308"
+     inkscape:window-width="1512"
+     inkscape:window-height="848"
+     inkscape:window-x="0"
+     inkscape:window-y="1478"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.75749652,-167.16743)">
+    <path
+       style="fill:#45714f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 194.20189,243.52283 2.7619,14.89083 -189.5801334,-0.55151 3.1733634,-14.33932 18.908832,-33.55666 24.925278,10.06387 23.779288,-10.06387 19.941062,6.52484 12.28859,-6.52484 8.25915,1.26461 11.8355,-11.8355 13.80808,18.73955 16.4382,-12.98618 15.12313,19.06831 8.75803,-6.08213 z"
+       id="path23"
+       sodipodi:nodetypes="cccccccccccccccc" />
+  </g>
+</svg>

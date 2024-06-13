@@ -13,6 +13,49 @@
 .cyanTop{
     background-image: url('../../img/svg/cyan-top.svg');
 }
+.bbScrollSenseDiv{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 250px;
+    margin: -20px;
+}
+.bbBoat1{
+    background-image: url('../../img/svg/BlunderBoats/ship1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+.bbBoat2{
+    background-image: url('../../img/svg/BlunderBoats/ship2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+.bbBoat3{
+    background-image: url('../../img/svg/BlunderBoats/ship3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+.dottedPath{
+    background-image: url('../../img/svg/BlunderBoats/dottedPath.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+.bbProjectile1{
+    background-image: url('../../img/svg/BlunderBoats/Projectile1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+.bbProjectileGraph{
+    background-image: url('../../img/svg/BlunderBoats/projectileGraph.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+}
 .blunderBoatsTextBox h3{
     color: black;
     padding-top: 22px;
@@ -63,50 +106,86 @@
     padding-bottom: 14px;
     padding-right: 12px;
 }
-/* .bbPage{
+.blunderBoatsTextBox form{
+    top: 0px;
+    /* width: 100%; */
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    flex-direction: row;
+    /* background-color: blue; */
+    position: relative;
+    pointer-events: all;
+}
+.blunderBoatsTextBox form *{
     width: 100%;
-    height: 200px;
-} */
-@media (min-width: 800px){
-    .bbPage{
-        height: 3000px;
+    padding-left: 6px;
+    padding-right: 6px;
+    max-width: 200px;
+}
+.blunderBoatsTextBox form button{
+    width: 220px;
+    text-align: left;
+    pointer-events: auto;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(109,185,249,1);
+    color: black;
+    border: 1px solid transparent;
+    transition: 0.3s ease-out;
+}
+.blunderBoatsTextBox form button:hover{
+    border-color: rgba(109,185,249,1);
+    background: rgba(255,255,255, 0.1);
+    color: rgba(109,185,249,1);
+}
+.blunderBoatsTextBox form button:active{
+    border-radius: 10px;
+    border-color: rgba(109,185,249,1);
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+    color: rgba(109,185,249,1);
+}
+.proceduralCanvas{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    margin: auto;
+}
+.proceduralGraphParent{
+    aspect-ratio: auto 5/4;
+}
+.proceduralGraphParent{
+    pointer-events: none;
+}
+@media (max-width: 800px){
+    .proceduralGraphParent{
+        position: absolute;
+        top: 2200px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .bbProjectileGraph{
+        width: min(200px, 60vw);
+        height: 400px;
+        top: 1250px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-position: top;
     }
     .rightBar{
         right: 0;
     }
     .leftBar{
         left: 0;
-    }
-    .blunderBoatsTextBox{
-        position: relative;
-        width: 100%;
-        max-width: 600px;
-        min-height: 20vh;
-        left: 20px;
-        padding-bottom: 16px;
-    }
-    .bbTextBox1{
-        position: absolute;
-        top: 1000px;
-    }
-.island1Container{
-    /* aspect-ratio: 794/581; */
-    width: 1000px;
-    max-width: 100%;
-    height: min(1000px, 80vh);
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto;
-    top: 10px;
-}
-}
-@media (max-width: 800px){
-    .rightBar{
-        right: 5%;
-    }
-    .leftBar{
-        left: 5%;
     }
     .blunderBoatsTextBox{
         width: 100%;
@@ -117,12 +196,56 @@
         margin: auto;
         padding-bottom: 16px;
     }
+    .bbBoat1{
+        width: 150px;
+        height: 100px;
+        top: 760px;
+        right: 34px;
+    }
+    .bbBoat2{
+        width: 200px;
+        height: 200px;
+        max-width: 40vw;
+        top: 3000px;
+        right: 20px;
+    }
+    .bbBoat3{
+        width: 200px;
+        max-width: 40vw;
+        height: 200px;
+        top: 3050px;
+        left: 20px;
+    }
+    .bbPage{
+        height: 3800px;
+    }
+    .bbProjectile1{
+        width: 400px;
+        height: 400px;
+        top: 615px;
+        right: 132px;
+        /* transform: rotate(-110deg); */
+    }
     .bbTextBox1{
         position: absolute;
         top: 800px;
     }
-    .bbPage{
-        height: 3000px;
+    .bbTextBox2{
+        position: absolute;
+        top: 1700px;
+    }
+    .bbTextBox3{
+        position: absolute;
+        top: 2800px;
+    }
+    .dottedPath{
+        width: 300px;
+        max-width: 50%;
+        height: 300px;
+        top: 3200px;
+        right: 0;
+        left: 0;
+        margin: auto;
     }
     .island1Container{
         /* aspect-ratio: 794/581; */
@@ -143,6 +266,21 @@
     position: absolute;
 }
 @media (max-width: 600px){
+    .proceduralGraphParent{
+        position: absolute;
+        top: 2300px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .bbProjectileGraph{
+        width: min(200px, 60vw);
+        height: 400px;
+        top: 1350px;
+        left: 22px;
+        background-position: top;
+    }
     .island1Container{
         /* aspect-ratio: 794/581; */
         width: 600px;
@@ -156,6 +294,206 @@
         top: 70px;
     }
     }
+@media (min-width: 800px){
+    .proceduralGraphParent{
+        position: absolute;
+        top: 2200px;
+        width: 50%;
+        left: 20px;
+    }
+    .bbProjectileGraph{
+        width: min(300px, 18vw);
+        height: 400px;
+        top: 1135px;
+        left: 650px;
+        background-position: bottom;
+    }
+    .bbBoat1{
+        width: 200px;
+        height: 166px;
+        top: 1060px;
+        right: 100px;
+    }
+    .bbBoat2{
+        width: 250px;
+        height: 200px;
+        top: 2750px;
+        right: 80px;
+    }
+    .bbBoat3{
+        width: 200px;
+        height: 200px;
+        top: 2850px;
+        left: 80px;
+    }
+    .bbProjectile1{
+        width: 528px;
+        height: 528px;
+        top: 895px;
+        right: 238px;
+        /* transform: rotate(-110deg); */
+    }
+    .bbPage{
+        height: 3600px;
+    }
+    .rightBar{
+        right: 0;
+    }
+    .leftBar{
+        left: 0;
+    }
+    .blunderBoatsTextBox{
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        min-height: 20vh;
+        /* left: 30px; */
+        left: 50px;
+        right: 48%;
+        margin: auto;
+        padding-bottom: 16px;
+    }
+    .bbTextBox1{
+        position: absolute;
+        top: 1200px;
+    }
+    .bbTextBox2{
+        position: absolute;
+        top: 1700px;
+    }
+    .bbTextBox3{
+        position: absolute;
+        top: 2600px;
+    }
+    .dottedPath{
+        width: 300px;
+        height: 300px;
+        top: 2800px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+.island1Container{
+    /* aspect-ratio: 794/581; */
+    width: 1000px;
+    max-width: 100%;
+    height: min(1000px, 80vh);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 10px;
+}
+}
+@media (min-width: 1000px){
+    .proceduralGraphParent{
+        position: absolute;
+        top: 1720px;
+        width: calc(100vw - 700px);
+        max-width: 500px;
+        right: 40px;
+        left: 50%;
+        margin: auto;
+        background-color: yellow;
+        /* height: 600px; */
+    }
+    .bbProjectileGraph{
+        width: min(250px, 20%);
+        height: 600px;
+        top: 1335px;
+        left: 40px;
+        background-position: top;
+    }
+    .bbBoat1{
+        width: 300px;
+        height: 200px;
+        top: 1100px;
+        right: calc(30px + 5vw);
+    }
+    .bbBoat2{
+        width: 250px;
+        height: 200px;
+        top: 2400px;
+        right: 150px;
+    }
+    .bbBoat3{
+        width: 200px;
+        height: 200px;
+        top: 2500px;
+        left: 200px;
+    }
+    .dottedPath{
+        width: 500px;
+        height: 500px;
+        top: 2600px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    .bbProjectile1{
+        width: 800px;
+        height: 800px;
+        top: 835px;
+        right: calc(228px + 5vw);
+        /* transform: rotate(-110deg); */
+    }
+    .bbTextBox1{
+        position: absolute;
+        top: 1000px;
+        left: 0;
+        right: 50%;
+        margin: auto;
+    }
+    .bbTextBox2{
+        position: absolute;
+        top: 1700px;
+        left: 0;
+        right: 50%;
+        margin: auto;
+    }
+    .bbTextBox3{
+        position: absolute;
+        top: 2300px;
+        left: 0;
+        right: 50%;
+        margin: auto;
+    }
+}
+@media (min-width: 1200px){
+    .dottedPath{
+        width: 500px;
+        height: 500px;
+        top: 2400px;
+        right: 0;
+        left: 300px;
+        margin: auto;
+    }
+    .proceduralGraphParent{
+        position: absolute;
+        top: 1620px;
+        width: calc(100vw - 650px);
+        max-width: 500px;
+        right: 0;
+        left: 50%;
+        margin: auto;
+        /* height: 600px; */
+    }
+    .bbProjectileGraph{
+        width: min(200px, 14vw);
+        height: 400px;
+        top: 935px;
+        left: calc(280px + 35%);
+        background-position: bottom;
+    }
+    .bbTextBox2{
+        position: absolute;
+        top: 1600px;
+    }
+    .bbTextBox3{
+        position: absolute;
+        top: 2300px;
+    }
+}
 .cloudTop{
     background-image: url('../../img/svg/BlunderBoats/cloudTop.svg');
     aspect-ratio: 807/298;

@@ -54,21 +54,21 @@ const Header = ({currentPage, scrollButtonCallback}) => {
                         {/* <div id="locationRect" className="locationRect"></div> */}
                         <ul>
                             <li>
-                                <motion.button className={((currentPage === "home") ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("home", scrollButtonCallback, 100); headerPositionIconTo("Header-Home-Btn"); }}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>Home</motion.button>
+                                <motion.button className={((currentPage === "home") ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("home", scrollButtonCallback, 300); headerPositionIconTo("Header-Home-Btn"); }}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>Home</motion.button>
                                 {/* <a className={((currentPage === 0) ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("Home"); headerPositionIconTo("Header-Home-Btn"); }}>Home</a> */}
                             </li>
                             <li>
-                                <motion.button className={((currentPage === "about") ? "onButtonsPage" : "notButtonsPage")} id="Header-About-Btn" onClick={() => { scrollTo("about", scrollButtonCallback, 100); headerPositionIconTo("Header-About-Btn"); }}   whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
+                                <motion.button className={((currentPage === "about") ? "onButtonsPage" : "notButtonsPage")} id="Header-About-Btn" onClick={() => { scrollTo("about", scrollButtonCallback, 300); headerPositionIconTo("Header-About-Btn"); }}   whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
                                 >About</motion.button>
                                 {/* <a className={((currentPage === 1) ? "onButtonsPage" : "notButtonsPage")}id="Header-About-Btn" onClick={() => {scrollTo("About"); headerPositionIconTo("Header-About-Btn"); }}>About</a> */}
                             </li>
                             <li>
-                                <motion.button className={((currentPage === "projects") ? "onButtonsPage" : "notButtonsPage")} id="Header-Projects-Btn" onClick={() => { scrollTo("Projects", scrollButtonCallback, 100); headerPositionIconTo("Header-Projects-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
+                                <motion.button className={((currentPage === "projects") ? "onButtonsPage" : "notButtonsPage")} id="Header-Projects-Btn" onClick={() => { scrollTo("Projects", scrollButtonCallback, 300); headerPositionIconTo("Header-Projects-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
                                 >Projects</motion.button>
                                 {/* <a className={((currentPage === 2) ? "onButtonsPage" : "notButtonsPage")}id="Header-Projects-Btn" onClick={() => {scrollTo("Projects"); headerPositionIconTo("Header-Projects-Btn"); }}>Projects</a> */}
                             </li>
                             <li>
-                                <motion.button className={((currentPage === "contact") ? "onButtonsPage" : "notButtonsPage")} id="Header-Contact-Btn" onClick={() => { scrollTo("contact", scrollButtonCallback, 100); headerPositionIconTo("Header-Contact-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
+                                <motion.button className={((currentPage === "contact") ? "onButtonsPage" : "notButtonsPage")} id="Header-Contact-Btn" onClick={() => { scrollTo("contact", scrollButtonCallback, 300); headerPositionIconTo("Header-Contact-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
                                 >Contact</motion.button>
                                 {/* <a className={((currentPage === 3) ? "onButtonsPage" : "notButtonsPage")}id="Header-Contact-Btn" onClick={() => {scrollTo("Contact"); headerPositionIconTo("Header-Contact-Btn"); }}>Contact</a> */}
                             </li>

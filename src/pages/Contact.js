@@ -126,7 +126,7 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
                 <motion.h6 initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactInfoVariants} className="poppins-light contactInfo" style={{paddingBottom: 0, paddingTop: 0}}>maxtbuchholz@gmail.com</motion.h6>
                 <div className={`mailGraphic`}/>
             </div>
-            <motion.form ref={form} onSubmit={sendEmail} animate={onPage ? 'open' : 'closed'}
+            <motion.form className="contactForm" ref={form} onSubmit={sendEmail} animate={onPage ? 'open' : 'closed'}
             variants={{open: {y: 0}, closed: {y: 150}}} transition={{ type: "spring", stiffness: 150 }}>
             <CssTextField sx={{ input: { color: 'white' } }} id="from" className="textField" label="Name" name="from_name" required/>
             {/* <TextField className="textField" id="from" label="Name" name="from_name" variant="outlined" required/> */}

@@ -2,13 +2,13 @@ html{
   background-color: #0f1121;
 }
 .section{
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 .sectionHeader{
   text-align: center;
   position: absolute;
   width: 100%;
-  font-size: min(18vw, 100px);
+  font-size: min(16vw, 100px);
   letter-spacing: -0.025em;
   color: white;
   padding: 30px;
@@ -61,11 +61,12 @@ html{
   position: relative;
   width: 100%;
   height: 200px;
-  background-color: white;
+  /* background-color: white; */
 }
 .bottomSpacer{
   aspect-ratio: 1800/600;
   height: 600px;
+  max-height: 30vw;
   width: 200px;
   min-width: 100%;
   background-repeat: no-repeat;
@@ -94,6 +95,7 @@ html{
   aspect-ratio: 1800/600;
   height: 600px;
   width: 200px;
+  max-height: 30vw;
   min-width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -101,6 +103,33 @@ html{
   position: absolute;
   bottom: 0px;
   pointer-events: none;
+}
+.topSpacer{
+  aspect-ratio: 1800/600;
+  height: 350px;
+  max-height: 50vw;
+  width: 200px;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: -5px;
+  transform: rotate(180deg);
+}
+.darkTopSpacer{
+  aspect-ratio: 1800/600;
+  height: 350px;
+  width: 200px;
+  max-height: 50vw;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: -5px;
+  pointer-events: none;
+  transform: rotate(180deg);
 }
 .purpleBottom{
   background-image: url('./img/svg/purple-bottom.svg');
@@ -295,7 +324,7 @@ body {
   } 
   .section{
     /* scroll-behavior: smooth; */
-    height: calc(100vh - 100px);
+    height: calc(100vh - 180px);
     scroll-snap-align: start;
     overflow: hidden;
     scroll-margin-top: 100px;

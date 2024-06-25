@@ -44,7 +44,7 @@
      transform="translate(-170.85379,-274.96641)">
     <path
        id="rect3-5"
-       style="fill:#3b93b6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.751717;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="fill:#4bc3e6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.751717;stroke-linejoin:round;paint-order:stroke fill markers"
        d="m 170.85379,284.38815 c 0,0 36.50493,8.90045 55.12697,8.90045 18.62203,0 36.50494,-8.90045 55.12697,-8.90045 18.62203,0 36.50494,8.90045 55.12697,8.90045 18.62203,0 55.12697,-8.90045 55.12697,-8.90045 v -9.42174 H 170.85379 Z"
        sodipodi:nodetypes="cssscccc"
        inkscape:export-filename="../../Desktop/max-site/max-react/src/img/svg/BlunderBoats/cloud-field-end.svg"

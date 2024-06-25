@@ -8,12 +8,16 @@ import { RiMenu5Line } from "react-icons/ri";
 import React from 'react';
 import '../styles/Header.css'
 import Sidebar from "./Sidebar.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare, faCoffee, faEnvelope, faEnvelopeSquare, faEnvelopeOpen } from '@fortawesome/fontawesome-free-solid'
 import "../globals.css"
 import { scrollTo } from '../js/nav.js'
 import { headerPositionIconTo } from "../js/headerScripts.js"
-import { color } from "framer-motion";
+import { color, transform } from "framer-motion";
 import { delay, motion } from 'framer-motion';
-const Header = ({currentPage, scrollButtonCallback}) => {
+import zIndex from "@mui/material/styles/zIndex.js";
+import ProfileImage from "./ProfileImage.js";
+const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler =() =>{
         setMenuOpen((p) => !p)
@@ -41,16 +45,31 @@ const Header = ({currentPage, scrollButtonCallback}) => {
             setMenuOpen(false);
         }
     }, [size.width, menuOpen]);
+    const waveVariants = {
+        open: {
+          y: -20,
+          transition: {
+            ease: "linear",
+            repeat: Infinity,
+            duration: 4,
+          }
+        },
+        closed: {
+          y: 0
+        }
+      }
     return(
-        <div id="uiHeader" className="headerContainer headerFirst">
+        <div id="uiHeader" className="headerContainer headerFirst headerFull" style={{height: headerHeight}}>
             {/* topUI */}
         {/* <div className={"mobileMenu" + " " + (menuOpen ? "menuActive" : "menuInactive")}>
                 
         //     </div> */}
         <header className="header">
                     <div className="headerContent">
-                        <h2 className="poppins-bold headerContentLogo">max</h2>
-                    {(size.width >= 800) && <nav className={"headerContentNav"} >
+                        <div style={{position: 'absolute', height: '100px', width: '114px', background: 'transparent', top: '0', left: '0', alignItems: 'center', alignContent: 'center'}}>
+                            <h2 className="poppins-bold headerContentLogo">max</h2>
+                        </div>
+                    {((size.width >= 800) || (currentPage === "home")) && <nav className={"headerContentNav"} >
                         {/* <div id="locationRect" className="locationRect"></div> */}
                         <ul>
                             <li>
@@ -73,14 +92,36 @@ const Header = ({currentPage, scrollButtonCallback}) => {
                                 {/* <a className={((currentPage === 3) ? "onButtonsPage" : "notButtonsPage")}id="Header-Contact-Btn" onClick={() => {scrollTo("Contact"); headerPositionIconTo("Header-Contact-Btn"); }}>Contact</a> */}
                             </li>
                         </ul>
-                        <button className="headerButton poppins-regular">Button</button>
+                        {(size.width >= 800) &&<button className="headerButton poppins-regular" onClick={() => {startEmail();}}>
+                            <FontAwesomeIcon style={{paddingRight: '10px'}} icon={faEnvelope} />Email</button>}
                     </nav>}
-                    {(size.width < 800) &&  <Sidebar  scrollButtonCallback={scrollButtonCallback}/>}
+                    {((size.width < 800) && (currentPage !== "home")) &&  <Sidebar  scrollButtonCallback={scrollButtonCallback}/>}
                     {/* <div className="headerContentToggle">
                             {menuOpen ? <AiOutlineClose onClick={menuToggleHandler} /> : <RiMenu5Line onClick={menuToggleHandler} />}
                         </div> */}
                     </div>
         </header>
+        <div style={{top: '0px', width: '100%', height: '400px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden', opacity: 0.6}}>
+            <div className="header-cloud-2 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
+            <div className="header-cloud-1 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
+        </div>
+        <div className="islandBack" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/>
+        <div style={{bottom: '0px', width: '100%', height: '350px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden'}}>
+            <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
+                <div className="header-wave-l3 header-wave" />
+                <div className="header-wave-r3 header-wave"/>
+                <div className="rock2"/>
+                <div className="header-wave-l2 header-wave"/>
+            </div>
+            <div className="rock1 transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/>
+            <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[1]}%, ${waveTransforms[3]}%)`}}>
+                <div className="header-wave-r2 header-wave"/>
+                <div className="rock3"/>
+                <div className="header-wave-l1 header-wave"/>
+                <div className="header-wave-r1 header-wave"/>
+            </div>
+        </div>
+            {/* <div style={{position: 'absolute', top: 0, left: 0, right: 0, margin: 'auto'}} className="about1ProfilePic"><ProfileImage onPage={true}/></div> */}
         </div>
     );
 }

@@ -330,16 +330,19 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
     }
     return (
         <div className="parentDiv softPage" style={{"width" : "100%"}}>
+                               <div className={`bottomSpacer purpleEnder`}/>
+                               <div className={`darkBottomSpacer darkEnder`}/>
+                               <div className={`topSpacer purpleEnder`}/>
+                               <div className={`darkTopSpacer darkEnder`}/>
           {/* <div className="projectLinksContainer"> */}
             <div className="appStoreLogo1">
               <AppleButton onPage={onPage} buttonLink={'https://apps.apple.com/us/app/soft-sleep/id6499560370'}/>
             </div>
           {/* </div> */}
           <div className="purpleBlob1"/>
-          <motion.div className="purpleSpacer purpleTop" initial={"closed"} animate={onPage ? "open" : "closed"}
-          variants={{open: {y: -100}, closed: {y: -100}}}/>
-                      <div className={`bottomSpacer purpleEnder`}/>
-                      <div className={`darkBottomSpacer darkEnder`}/>
+          {/* <motion.div className="purpleSpacer purpleTop" initial={"closed"} animate={onPage ? "open" : "closed"}
+          variants={{open: {y: -100}, closed: {y: -100}}}/> */}
+
             <Animated.View style={{opacity: 1, transform: [{ translateY: pillowHeight }]}}>
                             <div className="topPillowContainer">
                 <motion.img 
@@ -402,21 +405,21 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
                 ><LineWaveSVG onScreen={textBox1Visible}/></motion.div>
               <motion.div className="textBox textBox1Pos" animate={textBox1Visible ? "open" : "closed"} variants={textBoxVariants} initial={"closed"}>
                 <h3 className="poppins-medium textBoxHeader">Sleep Application</h3>
-                <hr style={{"width": "90%", "margin-left": "auto", "margin-right": "auto", "margin-bottom": "6px"}}/>
+                <hr style={{"width": "90%", "marginLeft": "auto", "marginRight": "auto", "marginBottom": "6px"}}/>
                 <h3 className="poppins-regular textBoxText">At first I developed Soft Sleep as a simple white noise application to try and help my own sleep.</h3>
                 <h3 className="poppins-regular textBoxText"> Once I decided to make it into a full application, I decided to allow users more specific control of the strength of each frequency range as a way to differentiate Soft Sleep from other similar sleep aid applications.</h3>
                 <div className="scrollSenseDiv" ref={TextBox1}/>
               </motion.div>
               <motion.div className="textBox textBox2Pos" animate={textBox2Visible ? "open" : "closed"} variants={textBoxVariants} initial={"closed"}>
                 <h3 className="poppins-medium textBoxHeader">Swift Charts</h3>
-                <hr style={{"width": "90%", "margin-left": "auto", "margin-right": "auto", "margin-bottom": "6px"}}/>
+                <hr style={{"width": "90%", "marginLeft": "auto", "marginRight": "auto", "marginBottom": "6px"}}/>
                 <h3 className="poppins-regular textBoxText">I utilized Swift Charts to display live data about the audio being played. </h3>
                 <h3 className="poppins-regular textBoxText"> A line graph at the top of the application displays the current waveform while a bar graph at the bottom displays a low resolution fourier transform of the audio</h3>
                 <div className="scrollSenseDiv" ref={TextBox2}/>
               </motion.div>
               <motion.div className="textBox textBox3Pos" animate={textBox3Visible ? "open" : "closed"} variants={textBoxVariants} initial={"closed"}>
                 <h3 className="poppins-medium textBoxHeader">Recording Audio</h3>
-                <hr style={{"width": "90%", "margin-left": "auto", "margin-right": "auto", "margin-bottom": "6px"}}/>
+                <hr style={{"width": "90%", "marginLeft": "auto", "marginRight": "auto", "marginBottom": "6px"}}/>
                 <h3 className="poppins-regular textBoxText">Other than the randomly generated white noise, I utilized a field recorder to capture the rest of the audio.</h3>
                 <h3 className="poppins-regular textBoxText"> I try to think of cool sounds to add to the application and bring my field recorder along with me when I can</h3>
                 <div className="scrollSenseDiv" ref={TextBox3}/>

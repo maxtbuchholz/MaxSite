@@ -44,7 +44,7 @@
      transform="translate(-120.78829,-324.07958)">
     <path
        id="rect3"
-       style="fill:#3b93b6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.751717;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="fill:#439ACE;fill-opacity:1;fill-rule:evenodd;stroke-width:0.751717;stroke-linejoin:round;paint-order:stroke fill markers"
        d="m 120.78829,332.98003 c 0,0 36.50493,-8.90045 55.12697,-8.90045 18.62203,0 36.50494,8.90045 55.12697,8.90045 18.62203,0 36.50494,-8.90045 55.12697,-8.90045 18.62203,0 55.12697,8.90045 55.12697,8.90045 v 9.42174 H 120.78829 Z"
        sodipodi:nodetypes="cssscccc"
        inkscape:export-filename="../../Desktop/max-site/max-react/src/img/svg/cyan-bottom.svg"

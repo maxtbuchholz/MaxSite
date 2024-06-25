@@ -3,6 +3,8 @@ export function navToGitHub() {
 }
 export function startEmail() {
     window.open("mailto:maxtbuchholz@gmail.com?&subject=test&body=mail", "email");
+    // window.open("mailto:maxtbuchholz@gmail.com", "email");
+    // window.location.href = "mailto:user@example.com?subject=Subject&body=message%20goes%20here";
 }
 export function scrollToInstant(name){
     if(name != null){
@@ -47,7 +49,7 @@ export function scrollTo(target, callback, duration) {
     let scrollWindow = document.getElementById("sectionContainer");
     if (callback && typeof(callback) === 'function') {
         callback(true);
-        setTimeout( function() { callback(false); }, duration * 8);
+        setTimeout( function() { callback(false); }, duration * 4);
       }
       target = target.toLowerCase();
     if(target === "home"){

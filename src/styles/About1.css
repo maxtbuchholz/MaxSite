@@ -1,0 +1,110 @@
+.about1Page{
+    /* background-color: blue; */
+    height: 100%;
+    width: 100%;
+}
+/* .about1Page div{
+    width: 100%;
+} */
+.about1HalfPage1{
+    padding-top: 30px;
+    /* background-color: blue; */
+    /* text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center; */
+    /* align-items: end;
+    background-color: blue; */
+}
+/* .about1HalfPage1 div{
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+} */
+.about1HalfPage2{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.about1HalfPage2 > div{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.about1ProfilePic{
+    width: 260px;
+    /* padding-top: 50px; */
+}
+/* .about1Page div *{
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+} */
+@media (min-width: 800px){
+    .about1ProfilePic{
+        /* width: 350px; */
+        /* height: 100%;
+        width: 100%;
+        max-height: 40vh; */
+        /* background-color: blue; */
+        width: 300px;
+        padding-top: 5px;
+    }
+    .about1Text1{
+        font-size: 40px;
+        letter-spacing: -0.01em;
+        margin-top: 8px;
+    }
+    .about1Text2{
+        font-size: 24px;
+        letter-spacing: -0.01em;
+        margin-top: -12px;
+    }
+    .about1Page{
+        display: flex;
+        flex-direction: row;
+    }
+    .about1HalfPage1{
+        width: 50%;
+        height: 100dvh;
+    }
+    .about1HalfPage2{
+        width: 50%;
+        height: 90dvh;
+        align-content: start;
+    }
+}
+@media (max-width: 800px){
+    .about1Text1{
+        margin-top: 6px;
+        font-size:30px;
+        letter-spacing: -0.01em;
+    }
+    .about1Text2{
+        font-size: 20px;
+        letter-spacing: -0.01em;
+        margin-top: -6px;
+    }
+    .about1ProfilePic{
+        width: auto;
+        width: calc(50dvh - 140px);
+        /* padding-top: 40px; */
+        /* background-color: red; */
+    }
+    .about1Page{
+        display: flex;
+        flex-direction: column;
+    }
+    .about1HalfPage1{
+        width: 100%;
+        height: 50dvh;
+    }
+    .about1HalfPage2{
+        width: 64%;
+        height: 50dvh;
+        margin-left: 0;
+        margin-right: 0;
+        margin: auto;
+    }
+}

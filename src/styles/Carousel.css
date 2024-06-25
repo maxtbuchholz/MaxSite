@@ -12,7 +12,7 @@
   /* display: inline-block; */
   align-items: center;
   justify-content: center;
-  top: 200px;
+  top: 352px;
   /* height: 10%; */
   width: 100%;
   /* overflow: hidden; */
@@ -21,8 +21,13 @@
   /* linear-gradient(45deg, blue, green); */
   /* font-family: 'Montserrat', sans-serif; */
 }
+@media (max-width: 800px){
+  .carouselContainer {
+    top: 310px;
+  }
+}
 .carouselButton{
-  border-radius: 30px;
+  border-radius: 20px;
   border: none;
   background-color: transparent;
 }
@@ -69,7 +74,7 @@
   scroll-behavior: smooth;
   margin-top: 0px;
   padding-top: 0px;
-  font-size: 48px;
+  font-size: 38px;
 }
 }
 @media (max-width: 800px){
@@ -118,8 +123,8 @@
   /* user-select: none;
   background: unset;
   border: unset; */
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   
   &.left {
     transform: translateX(-100%) translatey(-60%);

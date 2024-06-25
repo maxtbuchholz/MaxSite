@@ -73,7 +73,7 @@ const BlunderBoats = ({onPage, pageVisibilityChanged}) => {
         }
       },
       closed:{
-          y: 45,
+          y: 35,
           opacity: 1,
       }
   }
@@ -108,9 +108,7 @@ const BlunderBoats = ({onPage, pageVisibilityChanged}) => {
   const island1SeaComponentvariants = {
     open:{
         y: 0,
-        opacity: 1,
         transition: {
-          // delay: 0,
           type: "spring",
           stiffness: 300,
           dampening: 100,
@@ -118,7 +116,6 @@ const BlunderBoats = ({onPage, pageVisibilityChanged}) => {
     },
     closed:{
         y: -50,
-        opacity: 1,
     }
 }
 const projecttile1Variants = {
@@ -149,9 +146,14 @@ const projecttile2Variants = {
   }
 }
     return (
-        <div  style={{"width" : "100%", "background" : "white"}} className="bbPage">
-          <div className="cloudFieldMiddle"/>
-          <div className="cloudFieldEnd"/>
+        <div  style={{"width" : "100%", "background" : "#FFFFFF"}} className="bbPage">
+                                <div className={`bottomSpacer cyanEnder`}/>
+                                <div className={`darkBottomSpacer darkEnder`}/>
+
+                                <div className={`topSpacer cyanEnder`}/>
+                                <div className={`darkTopSpacer darkEnder`}/>
+          {/* <div className="cloudFieldMiddle"/>
+          <div className="cloudFieldEnd"/> */}
           <div className="cloudTop"/>
           <div className="cloudSide1"/>
           <div className="cloudSide2"/>
@@ -164,17 +166,17 @@ const projecttile2Variants = {
           </motion.div>
           <motion.div initial="closed" animate={onPage ? "open" : "closed"} className="island1Container">
             <motion.div variants={island1Variants}>
-              <motion.div variants={island1Componentvariants} className="fill i1-l6" />
-              <motion.div variants={island1Componentvariants} className="fill i1-l5" />
-              <motion.div variants={island1Componentvariants} className="fill i1-l4" />
-              <motion.div variants={island1Componentvariants} className="fill i1-l3" />
-              <motion.div variants={island1Componentvariants} className="fill i1-l2" />
-              <motion.div variants={island1Componentvariants} className="fill i1-l1" />
+              <motion.div variants={island1Componentvariants} className="fill i1-l6" style={{zIndex: '1'}}/>
+              <motion.div variants={island1Componentvariants} className="fill i1-l5" style={{zIndex: '1'}}/>
+              <motion.div variants={island1Componentvariants} className="fill i1-l4" style={{zIndex: '1'}}/>
+              <motion.div variants={island1Componentvariants} className="fill i1-l3" style={{zIndex: '1'}}/>
+              <motion.div variants={island1Componentvariants} className="fill i1-l2" style={{zIndex: '1'}}/>
+              <motion.div variants={island1Componentvariants} className="fill i1-l1" style={{zIndex: '1'}}/>
             </motion.div>
             <motion.div variants={island1Variants}>
-              <motion.div variants={island1SeaComponentvariants} className="fill i1-s3" />
-              <motion.div variants={island1SeaComponentvariants} className="fill i1-s2" />
-              <div className="fill i1-s1" />
+              <motion.div variants={island1SeaComponentvariants} className="fill i1-s3" style={{zIndex: '0'}} />
+              <motion.div variants={island1SeaComponentvariants} className="fill i1-s2" style={{zIndex: '1'}}/>
+              <div className="fill i1-s1" style={{zIndex: '2'}}/>
             </motion.div>
           </motion.div>
                         <div className="appStoreLogo2">
@@ -259,8 +261,6 @@ const projecttile2Variants = {
 
                       {/* <motion.div className="cyanSpacer cyanTop" initial={"closed"} animate={onPage ? "open" : "closed"}
           variants={{open: {y: -100}, closed: {y: -100}}}/> */}
-                                <div className={`bottomSpacer cyanEnder`}/>
-                                <div className={`darkBottomSpacer darkEnder`}/>
             <div id="ProjectsBottom-Observer" ref={ProjectsBottomRef} className="pageBottomIntersectionObserver"/>
         </div>
     );

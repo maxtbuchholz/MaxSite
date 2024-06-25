@@ -14,6 +14,10 @@ const TendencyTuner = ({onPage, pageVisibilityChanged}) => {
     })
     return (
         <div  style={{"height" : "1800px", "width" : "100%", "background" : "blue"}}>
+                      <div className={`bottomSpacer tanEnder`}/>
+                      <div className={`darkBottomSpacer darkEnder`}/>
+                      <div className={`topSpacer tanEnder`}/>
+                      <div className={`darkTopSpacer darkEnder`}/>
                         <div className="appStoreLogo2">
               <AndroidButton onPage={onPage} buttonLink={'https://play.google.com/store/apps/details?id=com.companyname.tendency_tuner'}/>
             </div>
@@ -21,10 +25,8 @@ const TendencyTuner = ({onPage, pageVisibilityChanged}) => {
               <AppleButton onPage={onPage} buttonLink={'https://apps.apple.com/us/app/tendency-tuner/id1638040915'}/>
             </div>
             <hr className="appStoreLogoHR"></hr>
-            <motion.div className="tanSpacer tanTop" initial={"closed"} animate={onPage ? "open" : "closed"}
-          variants={{open: {y: -100}, closed: {y: -100}}}/>
-            <div className={`bottomSpacer tanEnder`}/>
-            <div className={`darkBottomSpacer darkEnder`}/>
+            {/* <motion.div className="tanSpacer tanTop" initial={"closed"} animate={onPage ? "open" : "closed"}
+          variants={{open: {y: -100}, closed: {y: -100}}}/> */}
             <div id="ProjectsBottom-Observer" ref={ProjectsBottomRef} className="pageBottomIntersectionObserver"/>
         </div>
     );

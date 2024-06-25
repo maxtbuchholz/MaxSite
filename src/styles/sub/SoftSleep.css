@@ -76,8 +76,8 @@ hr{
     .mic{
         /* aspect-ratio: 2601.3704/2536.1855; */
         top: 1900px;
-        width: calc(100vw - 560px);
-        height: 20%;
+        width: calc(100vw - 660px);
+        height: 18%;
         padding: 50px;
         background-repeat: no-repeat;
         background-position: center;
@@ -301,7 +301,7 @@ hr{
         position: absolute;
         width: 100vw;
         height: 360px;
-        margin-top: 100px;
+        margin-top: 150px;
         /* margin-top: calc((min(40vw, 350px))); */
         display: flex;
         justify-content: center;  

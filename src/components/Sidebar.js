@@ -17,7 +17,7 @@ const Sidebar = ({scrollButtonCallback}) => {
             transition: {
                 delay: 0.1,
                 type: "spring",
-                stiffness: 42,
+                stiffness: 39,
                 //dampening: 100,
             }
         }
@@ -53,12 +53,12 @@ const Sidebar = ({scrollButtonCallback}) => {
         "Contact",
     ]
     return(
-        <motion.div className="sidebar" animate={open ? "open" : "closed"}>
+        <motion.div className="sidebar" initial="closed" animate={open ? "open" : "closed"}>
             <motion.div className="bg" style={{clipPath:"circle(30px at 349px 50px)"}}  variants={variants}>
                 {/* Links */}
-                <motion.div className="links" variants={linkVariants}>
+                <motion.div className={`links ${open ? "interactable" : "nonInteractable"}`} variants={linkVariants}>
                 {items.map((item) => (
-                    <motion.a onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(false)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
+                    <motion.a onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(prev => !prev)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
                     whileTap={{scale: 0.95}}
                     >
                         {item}

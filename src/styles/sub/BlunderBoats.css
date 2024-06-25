@@ -250,14 +250,15 @@
     .island1Container{
         /* aspect-ratio: 794/581; */
         width: 600px;
-        max-width: 98%;
-        height: min(1000px, 50vh);
+        /* max-width: 98%; */
+        height: 600px;
+        /* min(1000px, 50vh); */
         /* min-width: 500px; */
         position: absolute;
         right: 0;
         left: 0;
         margin: auto;
-        top: 70px;
+        top: 0px;
     }
     }
 .fill{
@@ -282,16 +283,14 @@
         background-position: top;
     }
     .island1Container{
-        /* aspect-ratio: 794/581; */
-        width: 600px;
+        /* width: 600px;
         max-width: 98%;
         height: min(1000px, 46vh);
-        /* min-width: 500px; */
         position: absolute;
         right: 0;
         left: 0;
-        margin: auto;
-        top: 70px;
+        margin: auto; */
+        /* top: 70px; */
     }
     }
 @media (min-width: 800px){
@@ -299,7 +298,9 @@
         position: absolute;
         top: 2200px;
         width: 50%;
-        left: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
     .bbProjectileGraph{
         width: min(300px, 18vw);
@@ -345,10 +346,10 @@
     .blunderBoatsTextBox{
         position: relative;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         min-height: 20vh;
         /* left: 30px; */
-        left: 50px;
+        left: 30px;
         right: 48%;
         margin: auto;
         padding-bottom: 16px;
@@ -375,26 +376,26 @@
     }
 .island1Container{
     /* aspect-ratio: 794/581; */
-    width: 1000px;
+    width: 800px;
     max-width: 100%;
-    height: min(1000px, 80vh);
+    height: 
+    min(1000px, 80vh);
     position: absolute;
     right: 0;
     left: 0;
     margin: auto;
-    top: 10px;
+    top: 20px;
 }
 }
 @media (min-width: 1000px){
     .proceduralGraphParent{
         position: absolute;
-        top: 1720px;
-        width: calc(100vw - 700px);
-        max-width: 500px;
-        right: 40px;
+        top: 1740px;
+        width: calc(100vw - 800px);
+        max-width: 600px;
+        right: 0;
         left: 50%;
         margin: auto;
-        background-color: yellow;
         /* height: 600px; */
     }
     .bbProjectileGraph{
@@ -413,7 +414,7 @@
     .bbBoat2{
         width: 250px;
         height: 200px;
-        top: 2400px;
+        top: 2250px;
         right: 150px;
     }
     .bbBoat3{
@@ -425,9 +426,9 @@
     .dottedPath{
         width: 500px;
         height: 500px;
-        top: 2600px;
+        top: 2500px;
         right: 0;
-        left: 0;
+        left: 300px;
         margin: auto;
     }
     .bbProjectile1{
@@ -463,7 +464,7 @@
     .dottedPath{
         width: 500px;
         height: 500px;
-        top: 2400px;
+        top: 2250px;
         right: 0;
         left: 300px;
         margin: auto;
@@ -597,9 +598,18 @@
     top: 249px;
   }
   .cloudFieldMiddle{
-    background-color: #3b93b6;
+    background-color: #4bc3e6;
     width: 100%;
     height: 250px;
     position: absolute;
     top: 0;
   }
+  @media (max-width: 600px){
+    .island1Container{
+        /* margin-left: 0;
+        margin-right: 0;
+        margin: 'auto'; */
+        left: calc((100vw - 600px) / 2);
+        right: auto;
+    }
+} 

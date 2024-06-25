@@ -42,7 +42,7 @@ export function generateTerrain(octaves, persistance) {
             }else if(value < 130){
                 ctx.fillStyle = `rgb(${166},${160},${158})`;//mountains1
             }else{
-                ctx.fillStyle = `rgb(${213},${208},${190})`;//hills2
+                ctx.fillStyle = `rgb(${213},${208},${190})`;//mountains2
             }
             ctx.fillRect(x * pixleSize, y * pixleSize, pixleSize, pixleSize);
         }

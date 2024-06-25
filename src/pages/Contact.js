@@ -31,7 +31,7 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
             },
         },
         closed:{
-            y: 15,
+            y: 10,
             opacity: 0,
         }
     }
@@ -120,14 +120,14 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
             <div className="verticalContainer">
             {/* <h2 className="contactTitle poppins-semibold" style={{paddingBottom: 0, paddingTop: 0}}>Send me a message</h2> */}
 
-            <motion.div initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTitleVariants} style={{paddingBottom: 0, paddingTop: 0}} className="popUpTitleContainer">{[..."Send me a message"].map((char) => {return <motion.h7 variants={contactLetterVariants} className="contactTitle poppins-semibold">{char}</motion.h7>})}</motion.div>
+            <motion.div initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTitleVariants} style={{paddingBottom: 0, paddingTop: 0}} className="popUpTitleContainer">{[..."Send me a message"].map((char, i) => {return <motion.h6 key={i} variants={contactLetterVariants} className="contactTitle poppins-semibold">{char}</motion.h6>})}</motion.div>
 
                 <motion.h4 initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTypeVariants} className="poppins-medium contactSubTitle" style={{paddingBottom: '0px', paddingTop: 0}}>Mail</motion.h4>
                 <motion.h6 initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactInfoVariants} className="poppins-light contactInfo" style={{paddingBottom: 0, paddingTop: 0}}>maxtbuchholz@gmail.com</motion.h6>
                 <div className={`mailGraphic`}/>
             </div>
             <motion.form className="contactForm" ref={form} onSubmit={sendEmail} animate={onPage ? 'open' : 'closed'}
-            variants={{open: {y: 0}, closed: {y: 150}}} transition={{ type: "spring", stiffness: 150 }}>
+            variants={{open: {y: 0}, closed: {y: 80}}} transition={{ type: "spring", stiffness: 150 }}>
             <CssTextField sx={{ input: { color: 'white' } }} id="from" className="textField" label="Name" name="from_name" required/>
             {/* <TextField className="textField" id="from" label="Name" name="from_name" variant="outlined" required/> */}
       {/* <label>Name</label>

@@ -21,7 +21,6 @@
         background: linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% ); 
         /* rgb(250,250,250); */
         .links{
-            pointer-events: auto;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -49,4 +48,10 @@
         border: none;
         cursor: pointer;
     }
+}
+.interactable{
+    pointer-events: all;
+}
+.nonInteractable{
+    pointer-events: none;
 }

@@ -25,12 +25,12 @@ const Carousel = ({children, itemChangedCallBack, selectedAppName}) => {
       {active > 0 && <button className='nav left carouselButton' onClick={() => {itemChangedCallBack(active - 1); setActive(i => i - 1)}}><HiChevronLeft/></button>}
       {/* <HiChevronRight/> */}
       {React.Children.map(children, (child, i) => (
-        <div className='card-container' style={{
+        <div key={i} className='card-container' style={{
             '--active': i === active ? 1 : 0,
             '--offset': (active - i) / 3,
             '--direction': Math.sign(active - i),
             '--abs-offset': Math.abs(active - i) / 3,
-            'pointer-events': active === i ? 'auto' : 'none',
+            // 'pointer-events': active === i ? 'auto' : 'none',
             'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
             'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
           }}>

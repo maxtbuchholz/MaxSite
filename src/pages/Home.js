@@ -10,8 +10,13 @@ import TendencyTunerPage from "./sub/TendencyTuner";
 import ContactPage from "./Contact";
 import Header from "../components/Header";
 import { motion } from 'framer-motion';
-const apps = [{title: 'Soft sleep', content: softSleepIcon },
-              {title: 'Blunder Boats', content: blunderBoatsIcon },
+import About1Page from "./About1";
+import zIndex from "@mui/material/styles/zIndex";
+import ProjectName from "../components/ProjectName";
+import { MdAlignHorizontalRight } from "react-icons/md";
+const apps = [
+    {title: 'Blunder Boats', content: blunderBoatsIcon },
+    {title: 'Soft Sleep', content: softSleepIcon },
               {title: 'Tendency Tuner', content: tendencyTunerIcon },
 ]
 const Home = ({page, project}) => {
@@ -53,14 +58,12 @@ const Home = ({page, project}) => {
       const firstApp = 0;
     var height = window.innerHeight
     var scrollPosition = 0;
-    var headerFull = true;
     var [disableScroll, setDisableScroll] = useState(false);
     const handleScroll = (e) => {
         updatePageVisabilities();
         const { scrollTop, scrollHeight, clientHeight } = e.target;
         if(!isIOS){
         let target = document.getElementById("projects");
-        // console.log(target.offsetTop);
         if( ((target.offsetTop) < (scrollTop + 50)) &&
             (((target.offsetTop + target.offsetHeight) - (window.innerHeight)) > (scrollTop + 100))){
                 setDisableScroll(true);
@@ -70,10 +73,17 @@ const Home = ({page, project}) => {
             }
         }
             scrollPosition = scrollTop;
+            // return;
             if((scrollTop < (height * 2.5)) || (headerFull === true)){
-            handleHeaderHeight();
+                if((Date.now() - tempTimeText) > 2){
+                    handleHeaderHeight();
+                    tempTimeText = Date.now()
+                }
             }
     }
+    const [topOfPage, setTopOfPage] = useState(true)
+    var [headerFull, setheaderFull] = useState(true);
+    var tempTimeText = Date.now()
       function handleHeaderHeight(){
           var scroll = Math.min(scrollPosition, height);
           var headerSize = Math.max(height - scroll, 0);
@@ -81,20 +91,52 @@ const Home = ({page, project}) => {
           headerSize = Math.min(height, headerSize);
         var headrRect = document.getElementById('uiHeader');
         if(headerSize > 100){       //still on first header page
-                headrRect.setAttribute("style",`display:block;height:${headerSize + 1}px`);
-                headrRect.style.height=`${headerSize}px`;
             if(!headerFull){
-                headerFull = true;
+                setheaderFull(true);
+                headrRect.classList.remove("headerOnTop");
+                headrRect.classList.add("headerFull");
             }
+            if(!topOfPage){
+                if(scroll <= 10){
+                    setTopOfPage(true);
+                }
+            }else{
+                if(scroll > 10){
+                    setTopOfPage(false);
+                }
+            }
+            handleHeaderWaves((headerSize - 100) / (height - 100))
+                setHeaderHeight(`${headerSize}px`)
         }else{                      //past first header page
+            if(topOfPage){
+                if(scroll > 10){
+                    setTopOfPage(false);
+                }
+            }
             if(headerFull){
-                headerFull = false;
-                    headrRect.setAttribute("style",`display:block;height:${100}px`);
-                    headrRect.style.height=`${100}px`;
+                setheaderFull(false);
+                handleHeaderWaves(0)
+                    setHeaderHeight(`${100}px`)
+                    headrRect.classList.add("headerOnTop");
+                    headrRect.classList.remove("headerFull");
             }
         }
       };
-
+      function handleHeaderWaves(percFul){
+        let rock1Y = (((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
+        percFul = 1 - percFul;
+        setheaderWaveArray([
+                            -percFul * 100, 
+                            percFul * 100,
+                            percFul * 120, 
+                            percFul * 100, 
+                            rock1Y,
+                            -percFul * 150,
+                            percFul * 600,
+                        ])
+      }
+      const [headerWaveArray, setheaderWaveArray] = useState([0,0,0]);      
+      const [headerHeight, setHeaderHeight] = useState('100%');
       const HomeRef = useRef();
       const AboutRef = useRef();
       const ProjectsRef = useRef();
@@ -171,51 +213,52 @@ const Home = ({page, project}) => {
         if(contactVisible){
             setCurrPage(3);
             setCurrPageName("contact")
-            window.history.replaceState(null, currPageName, "/contact");
+            //window.history.replaceState(null, currPageName, "/contact");
         }else if(projectsVisible){
             setCurrPage(2);
             setCurrPageName("projects")
-            window.history.replaceState(null, currPageName, "/projects");
+            //window.history.replaceState(null, currPageName, "/projects");
         }else if(aboutVisible){
             setCurrPage(1);
             setCurrPageName("about")
-            window.history.replaceState(null, currPageName, "/about");
+            //window.history.replaceState(null, currPageName, "/about");
         }else if(homeVisible){
             setCurrPage(0);
             setCurrPageName("home")
-            window.history.replaceState(null, currPageName, "/home");
+            //window.history.replaceState(null, currPageName, "/home");
         }
       }
     return (
-        <div>              
+        <div>   
+         <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage}/>           
         <div id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")} onScroll={handleScroll}>
-        <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling}/>
             <div className="firstSection" id="top">
                 <div id="Home-Observer" ref={HomeRef} className="pageIntersectionObserver"/>
             </div>
-            <div className="section" id="about">About
+            <div className="section" id="about">
                 <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
+                <About1Page onPage = {currPage === 1}/>
             </div>
-            <div className="section" id="about2">About2</div>
-            <div className="section" id="about3">About3
+            <div className="section" id="about2">About3
                 <div id="AboutBottom-Observer" ref={AboutBottomRef} className="pageIntersectionObserver"/>
             </div>
-            <div className="belowAboutDiv">
-            <motion.div className={`aboutBottomSpacer ${(selectedApIndex === 0) && "purpleBottom"}
-                                                ${(selectedApIndex === 1) && "cyanBottom"}
+            {/* <div className="belowAboutDiv">
+            <motion.div className={`aboutBottomSpacer ${(selectedApIndex === 0) && "cyanBottom"}
+                                                ${(selectedApIndex === 1) && "purpleBottom"}
                                                 ${(selectedApIndex === 2) && "tanBottom"}`}/>
-            </div>
+            </div> */}
             <div className="longSection" id="projects">
                 <h3 className="sectionHeader poppins-semibold">Projects</h3>
-                {(selectedApIndex === 0) && <SoftSleepPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
-                {(selectedApIndex === 1) && <BlunderBoatsPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
+                {(selectedApIndex === 0) && <BlunderBoatsPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
+                {(selectedApIndex === 1) && <SoftSleepPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
                 {(selectedApIndex === 2) && <TendencyTunerPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
-                <div className='carouselContainer'>
-                    <Carousel itemChangedCallBack = { selectedAppChanged } selectedAppName={apps[selectedApIndex].title}>
+                <div className='carouselContainer' style={{zIndex: '10'}}>
+                    {/* <Carousel itemChangedCallBack = { selectedAppChanged } selectedAppName={apps[selectedApIndex].title}>
                         {apps.map((item) => (
                             <Card key={item.title} title={ item.title } content={ item.content }/>
                         ))}
-                    </Carousel>
+                    </Carousel> */}
+                    <ProjectName className='' appCount={apps.length} itemChangedCallBack={ selectedAppChanged } selectedAppName={apps[selectedApIndex].title} selectedAppIndex={selectedApIndex}/>
                     <div id="Projects-Observer" ref={ProjectsRef} className="pageIntersectionObserver"/>
                 </div>
             </div>

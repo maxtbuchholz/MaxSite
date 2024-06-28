@@ -14,6 +14,8 @@ import About1Page from "./About1";
 import zIndex from "@mui/material/styles/zIndex";
 import ProjectName from "../components/ProjectName";
 import { MdAlignHorizontalRight } from "react-icons/md";
+import IntroTerminal from "../components/IntroTerminal";
+import { FcPositiveDynamic } from "react-icons/fc";
 const apps = [
     {title: 'Blunder Boats', content: blunderBoatsIcon },
     {title: 'Soft Sleep', content: softSleepIcon },
@@ -240,6 +242,9 @@ const Home = ({page, project}) => {
                 <About1Page onPage = {currPage === 1}/>
             </div>
             <div className="section" id="about2">About3
+                <div style={{position: 'absolute', top: '100px', left: '200px'}}>
+                    <IntroTerminal/>
+                </div>
                 <div id="AboutBottom-Observer" ref={AboutBottomRef} className="pageIntersectionObserver"/>
             </div>
             {/* <div className="belowAboutDiv">

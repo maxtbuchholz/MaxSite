@@ -1,0 +1,7 @@
+.introTerminal_codeText:last-child .introTerminal_codeText_insertBox{
+    background-color: rgb(157,156,157);
+    margin-left: 1px;
+}
+.introTerminal_codeText:last-child{
+    background-color: rgb(100,100,100,0.05);
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { delay, motion } from 'framer-motion';
 import '../styles/ProfileImage.css';
 import '../styles/IntroTerminal.css';
@@ -22,7 +22,7 @@ const IntroTerminal = ({ onPage }) => {
     const [loadedOutputLines, setLoadedOutputLines] = useState([]);
     function startCodeLine(lineNo){
         if(lineNo < codeLines.length){
-            setLoadedCodeLines(loadedCodeLines => [...loadedCodeLines, { text: codeLines[lineNo], index:  lineNo }] );
+            setLoadedCodeLines(loadedCodeLines => [...loadedCodeLines, { text: codeLines[lineNo], index:  lineNo, length: codeLines[lineNo][0].fullLength }] );
         }
         scrollCodeToBottom(); 
         scrollOutputToBottom();
@@ -69,7 +69,7 @@ const IntroTerminal = ({ onPage }) => {
                     <div id="introTerminal_code" className="poppins-thin" style={{position: 'relative', width: '100%', maxHeight: '100%', background: '', display: 'flex', flexDirection: 'column', verticalAlign: 'bottom', paddingLeft: '0px', paddingRight: '0px', overflow: 'hidden'}}>
                     {loadedCodeLines.map((text) => {
                         return(
-                            <CodeLine text={text.text} index={text.index} finishFunction={startCodeLine} scrollFunction={scrollDown}/>
+                            <CodeLine texts={text.text} index={text.index} length={text.length} finishFunction={startCodeLine} scrollFunction={scrollDown}/>
                         );
                     })}               
                     </div>
@@ -80,11 +80,87 @@ const IntroTerminal = ({ onPage }) => {
     );
 }
 function color_the_code(text){
-    const substring = new RegExp("Console");
+    let textLength = text.length + 1;
+    var texts = [{ text: text, color: 'white'}];
+    function split_and_color(spText, spColor){
+        let newTexts = [];
+        texts.forEach(element => {
+            if(element.color === 'white'){
+                let splitText = element.text.split(spText);
+                if(splitText.length === 1){
+                        newTexts.push({text: splitText[0], color: element.color})
+                }else if(splitText.length !== 0){                                   //Word found
+                    for(let i = 0; i < splitText.length; i++){
+                        newTexts.push({text: splitText[i], color: element.color})
+                        if(i < splitText.length - 1){
+                            newTexts.push({text: spText, color: spColor})
+                        }
+                    }
+                }
+            }else{
+                newTexts.push(element);
+            }
+        });
+        texts = structuredClone(newTexts);
+        texts = texts.filter(a => a !== "")
+    }
+    // console.log(texts)
+    let green = 'rgb(105,183,163)';
+    let blue = 'rgb(147,187,214)';
+    let darkBlue = 'rgb(96,141,190)';
+    let orange = 'rgb(197,148,124)';
+    let purple = 'rgb(171,126,172)';
+    let yellow = 'rgb(209,209,167)';
+    split_and_color("Console", green);
+    split_and_color("Math", green);
+
+    split_and_color("return", purple);
+    split_and_color("(", purple);
+    split_and_color(")", purple);
+    split_and_color("[", purple);
+    split_and_color("]", purple);
+
+    split_and_color("$", orange);
+    split_and_color("{", orange);
+    split_and_color("}", orange);
+    split_and_color("\"", orange);
+
+    split_and_color("WriteLine", yellow);
+    split_and_color("Round", yellow);
+    split_and_color("Floor", yellow);
+    split_and_color("Log", yellow);
+    split_and_color("note_name", yellow);
+    split_and_color("notes_up", yellow);
+    split_and_color("octave_num", yellow);
+    split_and_color("cents_sharp", yellow);
+    split_and_color("cents_flat", yellow);
+    split_and_color("harmonic_of", yellow);
+
+    split_and_color("int", darkBlue);
+    split_and_color("double", darkBlue);
+    split_and_color("string", darkBlue);
+    split_and_color("float", darkBlue);
+    split_and_color("char", darkBlue);
+    split_and_color("bool", darkBlue);
+
+    split_and_color("name", blue);
+    split_and_color("hello", blue);
+    split_and_color("noteUp", blue);
+    split_and_color("harmonic_number", blue);
+    split_and_color("num", blue);
+    split_and_color("musicNotes", blue);
+    split_and_color("Length", blue);
+    split_and_color("upper", blue);
+    split_and_color("lower", blue);
+
+    // console.log(texts)
+    // const substring = new RegExp("Console");
     // text = text.replace(substring, (highlight) => `<div style="color: yellow">${highlight}</div>`);
-    return text;
+    texts[0].fullLength = textLength;
+    texts[0].isConsoleLog = texts.includes("Console");
+    return texts;
 }
-const CodeLine = ({text, index, finishFunction, scrollFunction}) => {
+const CodeLine = ({texts, index, length, finishFunction, scrollFunction}) => {
     const [charNumber, setCharNumber] = useState(0);
     useEffect(() => {
         let localCharNumber = 0;
@@ -92,14 +168,32 @@ const CodeLine = ({text, index, finishFunction, scrollFunction}) => {
             scrollFunction();
             setCharNumber((i) => i + 1);
             localCharNumber++;
-            if(localCharNumber >= text.length){
+            if(localCharNumber >= length){
                 clearInterval(intervalId);
                 finishFunction(index + 1);
             }
         }, 50)
     }, []);
     return(
-        <h5 className="introTerminal_codeText" style={{maxWidth: '100%', fontWeight: '500'}} ><span style={{whiteSpace: 'pre', textWrap: 'wrap'}}>{text.substring(0, charNumber)}</span><span className="introTerminal_codeText_insertBox" style={{color: 'transparent'}}>-</span></h5>
+        <h5 className="introTerminal_codeText" style={{maxWidth: '100%', fontWeight: '500'}} ><span style={{whiteSpace: 'pre', textWrap: 'wrap'}}><RichSubableText texts={texts} length={charNumber}/></span><span className="introTerminal_codeText_insertBox" style={{color: 'transparent'}}>-</span></h5>
+    );
+}
+const RichSubableText = ({texts, length}) => {
+    useLayoutEffect(() => {
+        let locLength = length;
+        texts.forEach(element => {
+            element.textSub = element.text.substring(0, locLength)
+            locLength -= element.text.length;
+        });
+    });
+    return(
+        <span>
+            {texts.map((elem) => {
+                return(
+                    <span style={{color: elem.color}}>{elem.textSub}</span>
+                );
+        })}
+        </span>
     );
 }
 var codeLines = [];
@@ -108,15 +202,15 @@ string name = "Max Buchholz";
 Console.WriteLine($"{hello} {name}");
 Console.WriteLine("Computer Science is pretty cool!");
 Console.WriteLine("Music is also pretty cool!");
-double notes_up(double a, double b){
-    return 12 * Math.Log(b / a) / Math.Log(2);
+double notes_up(double lower, double upper){
+    return 12 * Math.Log(upper / lower) / Math.Log(2);
 }
-string[] notes = {"A", "Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab"};
+string[] musicNotes = {"A", "Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab"};
 string note_name(double num){
-    return notes[(int)Math.Round(notes_up(13.75, num)) % 12];
+    return musicNotes[(int)Math.Round(notes_up(13.75, num)) % 12];
 }
 Console.WriteLine($"{note_name(880)}-880hz is {notes_up(440, 880)} notes above {note_name(440)}-440hz");
-Console.WriteLine($"There are {notes.Length} notes per octave");
+Console.WriteLine($"There are {musicNotes.Length} notes per octave");
 double octave_num(double num){
     return Math.Floor(notes_up(16.35160, num) / 12);
 }
@@ -129,8 +223,8 @@ double cents_flat(double num){
     return 100 - cents_sharp(num);
 }
 Console.WriteLine($"{note_name(258.62096909)}-258.62hz is {cents_flat(258.62096909)} cents flatter than {note_name(261.626)}-261.626hz");
-double harmonic_of(double num, int harmonic){
-    return num * harmonic;
+double harmonic_of(double num, int harmonic_number){
+    return num * harmonic_number;
 }
 double noteUp = harmonic_of(440, 5);
 Console.WriteLine($"The 5th harmonic of {note_name(440)}-440hz is {note_name(noteUp)}{noteUp} in octave {octave_num(noteUp)}");

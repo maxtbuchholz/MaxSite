@@ -206,7 +206,7 @@
     background-color: rgba(109,185,249,1);
     color: black;
     border: 1px solid transparent;
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
 }
 .headerButton:hover{
     border-color: rgba(109,185,249,1);
@@ -302,9 +302,10 @@ ul{
     /* margin-right: 100px; */
     /* right: 200px; */
     left: 0;
-    right: 0;
+    right: 0px;
     margin: auto;
     width: 430px;
+    max-width: 42%;
     /* bottom:0px; */
     /* left: 0;
     margin: auto; */
@@ -325,10 +326,11 @@ ul{
     /* top: 500px; */
     /* right: max(100px, 8vw); */
     /* right: min(100px, 10vw); */
-    width: 570px;
+    width: 550px;
+    max-width: 44%;
     /* right: 4vw; */
     /* height: max(calc(200% - min(530px, 70%)), 100px); */
-    height: max(126%, 100px);
+    height: max(148%, 100px);
     /* bottom:0px; */
     top: 0px;
     align-items: center;

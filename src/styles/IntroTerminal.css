@@ -1,7 +1,29 @@
 .introTerminal_codeText:last-child .introTerminal_codeText_insertBox{
     background-color: rgb(157,156,157);
-    margin-left: 1px;
+    /* margin-left: 1px; */
 }
 .introTerminal_codeText:last-child{
     background-color: rgb(100,100,100,0.05);
+}
+.newLogBackground{
+    background-color: #FFFFFF55;
+    transition: 0s;
+}
+.oldLogBackground{
+    background-color: transparent;
+    transition: 0.8s; 
+}
+.introTerminal{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: max(250px, 32%);
+    max-width: 48%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.introTerminalIn *{
+    text-wrap: wrap;
 }

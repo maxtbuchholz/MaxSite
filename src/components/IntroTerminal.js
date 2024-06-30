@@ -13,6 +13,7 @@ const IntroTerminal = ({ onPage }) => {
     }
     useEffect(() => {
         codeLines = origCodeLines.split('\n');
+        outputLines = origOutputLines.split('\n');
         for(let i = 0; i < codeLines.length; i++){
             codeLines[i] = color_the_code(codeLines[i]);
         }
@@ -22,7 +23,7 @@ const IntroTerminal = ({ onPage }) => {
     const [loadedOutputLines, setLoadedOutputLines] = useState([]);
     function startCodeLine(lineNo){
         if(lineNo < codeLines.length){
-            setLoadedCodeLines(loadedCodeLines => [...loadedCodeLines, { text: codeLines[lineNo], index:  lineNo, length: codeLines[lineNo][0].fullLength }] );
+            setLoadedCodeLines(loadedCodeLines => [...loadedCodeLines, { text: codeLines[lineNo], index: lineNo, length: codeLines[lineNo][0].fullLength }] );
         }
         scrollCodeToBottom(); 
         scrollOutputToBottom();
@@ -31,45 +32,41 @@ const IntroTerminal = ({ onPage }) => {
         scrollCodeToBottom(); 
         scrollOutputToBottom();
     }
+    const [outputLineNumber, setOutputLineNumber] = useState(0);
+    function addOutputLine(){
+        if(outputLineNumber < outputLines.length){
+            setLoadedOutputLines(loadedOutputLines => [...loadedOutputLines, { text: outputLines[outputLineNumber] }] );
+            setOutputLineNumber(i => i+1);
+        }
+    }
     return(
-        <div style={{background: 'rgba(30,30,30,0.8)', width: '500px', height: '295px', borderStyle: 'solid', borderWidth: '0.5px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
+        <div className="introTerminalIn" style={{background: 'rgba(30,30,30,0.8)', width: '550px', height: '363px', borderStyle: 'solid', borderWidth: '0.5px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
         'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 0px 0px, rgb(10, 10, 10) 0px 0px 0px 0.5px', color: 'white'}}>
-            <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)', display: 'flex', flexDirection: 'row'}}>
-                <h3 className="poppins-regular" style={{color: 'rgba(144,145,146,1)', fontSize: '14px', position: 'absolute', width: '100%', textAlign: 'center', marginTop: '1px'}}>intro.cs</h3>
+            <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
+                <h3 className="poppins-regular" style={{color: 'rgba(144,145,146,1)', fontSize: '14px', position: 'absolute', right: 0, left: 0, margin: 'auto',  width: '100%', textAlign: 'center', marginTop: '1px'}}>intro.cs</h3>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
             </div>
             <div style={{height: '100%', width: '100%',  display: 'flex', flexDirection: 'column-reverse', overflow: 'hidden', fontSize: '14px', lineHeight: '14px'}}>
-                <div style={{height: '72px', width: '100%', background: 'rgba(35,35,37,0)'}}>
-                <div id="introTerminal_output" className="poppins-thin" style={{position: 'relative', width: '100%', maxHeight: 'calc(100%)', background: '', display: 'flex', flexDirection: 'column', verticalAlign: 'bottom', paddingLeft: '0px', paddingRight: '0px', overflow: 'hidden'}}>
-                        <h5>b</h5>
-                        <h5>c</h5>
-                        <h5>d</h5>
-                        <h5>e</h5>
-                        <h5>f</h5>
-                        <h5>aa</h5>
-                        <h5>bb</h5>
-                        <h5>cc</h5>
-                        <h5>dd</h5>
-                        <h5>ee</h5>
-                        <h5>ff</h5>
-                        <h5>aa</h5>
-                        <h5>bb</h5>
-                        <h5>cc</h5>
-                        <h5>dd</h5>
-                        <h5>ee</h5>
-                        <h5>fff</h5>
+                <div style={{height: '93px', width: '100%', background: 'rgba(35,35,37,0)', overflow: 'hidden'}}>
+                <div id="introTerminal_output" className="poppins-thin" style={{position: 'relative', width: 'calc(100% - 4px)', maxHeight: 'calc(100%)', background: '', display: 'flex', flexDirection: 'column', verticalAlign: 'bottom', paddingLeft: '2px', paddingRight: '0px', overflow: 'hidden'}}>
+                    {loadedOutputLines.map((text, index) => {
+                        return(
+                            <OutputLine key={index} text={text.text}/>
+                            // <h3>{text.text}</h3>
+                        );
+                    })}    
                     </div>
                 </div>
-                <div style={{height: '22px', width: '100%', background: 'rgba(41,42,44,1)',  borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)',  borderTopStyle: 'solid', borderTopWidth: '0.5px', borderTopColor: 'rgba(71,71,71,1)', display: 'flex', flexDirection: 'row'}}>
+                <div style={{height: '22px', width: '100%', background: 'rgba(41,42,44,1)',  borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)',  borderTopStyle: 'solid', borderTopWidth: '0.5px', borderTopColor: 'rgba(71,71,71,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
                     <h3 style={{color: 'rgba(144,145,146,0.8)', fontSize: '10px', right: 0, left: 0, margin: 'auto', marginTop: '-0.5px', fontWeight: '500'}}>output</h3>
                 </div>
                 <div className="poppins-regular" style={{height: '100%', width: '100%', overflow: 'hidden'}}>
-                    <div id="introTerminal_code" className="poppins-thin" style={{position: 'relative', width: '100%', maxHeight: '100%', background: '', display: 'flex', flexDirection: 'column', verticalAlign: 'bottom', paddingLeft: '0px', paddingRight: '0px', overflow: 'hidden'}}>
-                    {loadedCodeLines.map((text) => {
+                    <div id="introTerminal_code" className="poppins-thin" style={{position: 'relative', width: 'calc(100% - 4px)', maxHeight: '100%', background: '', display: 'flex', flexDirection: 'column', verticalAlign: 'bottom', paddingLeft: '2px', paddingRight: '0px', overflow: 'hidden'}}>
+                    {loadedCodeLines.map((text, index) => {
                         return(
-                            <CodeLine texts={text.text} index={text.index} length={text.length} finishFunction={startCodeLine} scrollFunction={scrollDown}/>
+                            <CodeLine key={index} texts={text.text} index={text.index} length={text.length} finishFunction={startCodeLine} scrollFunction={scrollDown} outputFunction={addOutputLine}/>
                         );
                     })}               
                     </div>
@@ -80,7 +77,9 @@ const IntroTerminal = ({ onPage }) => {
     );
 }
 function color_the_code(text){
+    let isLog = text.includes("Console");
     let textLength = text.length + 1;
+    let debug = text.includes('cents_sharp') && text.includes('int')
     var texts = [{ text: text, color: 'white'}];
     function split_and_color(spText, spColor){
         let newTexts = [];
@@ -102,7 +101,6 @@ function color_the_code(text){
             }
         });
         texts = structuredClone(newTexts);
-        texts = texts.filter(a => a !== "")
     }
     // console.log(texts)
     let green = 'rgb(105,183,163)';
@@ -157,10 +155,15 @@ function color_the_code(text){
     // const substring = new RegExp("Console");
     // text = text.replace(substring, (highlight) => `<div style="color: yellow">${highlight}</div>`);
     texts[0].fullLength = textLength;
-    texts[0].isConsoleLog = texts.includes("Console");
+    texts[0].isConsoleLog = isLog;
+    // texts = texts.filter(a => a.text !== "")
+    // if(debug){
+    //     //console.log(texts);
+    // }
+    // console.log(texts);
     return texts;
 }
-const CodeLine = ({texts, index, length, finishFunction, scrollFunction}) => {
+const CodeLine = ({texts, index, length, finishFunction, scrollFunction, outputFunction}) => {
     const [charNumber, setCharNumber] = useState(0);
     useEffect(() => {
         let localCharNumber = 0;
@@ -171,11 +174,30 @@ const CodeLine = ({texts, index, length, finishFunction, scrollFunction}) => {
             if(localCharNumber >= length){
                 clearInterval(intervalId);
                 finishFunction(index + 1);
+                if(texts[0].isConsoleLog){
+                    outputFunction();
+                    setIsNewConsole(true);
+                    setTimeout(() => {
+                        setIsNewConsole(false);
+                      }, 50);
+                }
             }
-        }, 50)
+        }, 30)
     }, []);
+    const [isNewConsole, setIsNewConsole] = useState(false);
     return(
-        <h5 className="introTerminal_codeText" style={{maxWidth: '100%', fontWeight: '500'}} ><span style={{whiteSpace: 'pre', textWrap: 'wrap'}}><RichSubableText texts={texts} length={charNumber}/></span><span className="introTerminal_codeText_insertBox" style={{color: 'transparent'}}>-</span></h5>
+        <h5 className={`introTerminal_codeText ${isNewConsole ? 'newLogBackground' : 'oldLogBackground'}`} style={{fontWeight: '500'}} ><span style={{whiteSpace: 'pre'}}><RichSubableText texts={texts} length={charNumber}/></span><span className="introTerminal_codeText_insertBox" style={{color: 'transparent'}}>-</span></h5>
+    );
+}
+const OutputLine = ({text}) => {
+    useEffect(() => {
+        setTimeout(() => {
+            setIsNew(false);
+          }, 50);
+    }, []);
+    const [isNew, setIsNew] = useState(true);
+    return(
+        <h5 className={`introTerminal_codeText`} style={{fontWeight: '500'}} ><span className={`${isNew ? 'newLogBackground' : 'oldLogBackground'}`} style={{whiteSpace: 'pre-line'}}>{text}</span></h5>
     );
 }
 const RichSubableText = ({texts, length}) => {
@@ -188,16 +210,29 @@ const RichSubableText = ({texts, length}) => {
     });
     return(
         <span>
-            {texts.map((elem) => {
+            {texts.map((elem, index) => {
                 return(
-                    <span style={{color: elem.color}}>{elem.textSub}</span>
+                    <span key={index} style={{color: elem.color}}>{elem.textSub}</span>
                 );
         })}
         </span>
     );
 }
+var outputLines = [];
+const origOutputLines = `Hello I am Max Buchholz
+Computer Science is pretty cool!
+Music is also pretty cool!
+There are 12 notes per octave
+A-880hz is 12 notes above A-440hz
+Middle C is the start of octave 4
+A-452.89hz is 49 cents sharper than A-440hz
+C-258.62hz is 20 cents flatter than C-261.626hz
+The 5th harmonic of A-440hz is C#-2200hz in octave 7
+Humans can hear around 120 notes in the 12 note western scale from 20hz to 20_000hz
+Dogs can hear around 127 notes from 40hz to 60_000hz`
 var codeLines = [];
-const origCodeLines = `string hello = "Hello I am";
+const origCodeLines = 
+`string hello = "Hello I am";
 string name = "Max Buchholz";
 Console.WriteLine($"{hello} {name}");
 Console.WriteLine("Computer Science is pretty cool!");
@@ -206,11 +241,11 @@ double notes_up(double lower, double upper){
     return 12 * Math.Log(upper / lower) / Math.Log(2);
 }
 string[] musicNotes = {"A", "Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab"};
+Console.WriteLine($"There are {musicNotes.Length} notes per octave");
 string note_name(double num){
     return musicNotes[(int)Math.Round(notes_up(13.75, num)) % 12];
 }
 Console.WriteLine($"{note_name(880)}-880hz is {notes_up(440, 880)} notes above {note_name(440)}-440hz");
-Console.WriteLine($"There are {musicNotes.Length} notes per octave");
 double octave_num(double num){
     return Math.Floor(notes_up(16.35160, num) / 12);
 }
@@ -227,7 +262,7 @@ double harmonic_of(double num, int harmonic_number){
     return num * harmonic_number;
 }
 double noteUp = harmonic_of(440, 5);
-Console.WriteLine($"The 5th harmonic of {note_name(440)}-440hz is {note_name(noteUp)}{noteUp} in octave {octave_num(noteUp)}");
+Console.WriteLine($"The 5th harmonic of {note_name(440)}-440hz is {note_name(noteUp)}-{noteUp}hz in octave {octave_num(noteUp)}");
 Console.WriteLine($"Humans can hear around {Math.Round(notes_up(20,20_000))} notes in the 12 note western scale from 20hz to 20_000hz");
 Console.WriteLine($"Dogs can hear around {Math.Round(notes_up(40,60_000))} notes from 40hz to 60_000hz");
 `

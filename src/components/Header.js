@@ -18,7 +18,7 @@ import { delay, motion } from 'framer-motion';
 import zIndex from "@mui/material/styles/zIndex.js";
 import ProfileImage from "./ProfileImage.js";
 import IntroTerminal from "./IntroTerminal.js";
-const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage}) => {
+const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler =() =>{
         setMenuOpen((p) => !p)
@@ -60,19 +60,20 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
         }
       }
     return(
-        <div id="uiHeader" className="headerContainer headerFirst headerFull" style={{height: headerHeight}}>
+        <div id="uiHeader" className="headerContainer headerFirst headerFull" style={{height: '100px', width: '100%'}}>
+                                <div style={{width: '100%', background: '', height: '100px', position: 'fixed', display: 'flex', flexDirection: 'column-reverse', alignItems: 'center', top: progresBarTop}}><div style={{width: `calc(min(480px, 94vw) * ${progresBarWidth})`, marginBottom: '12px', height: '3px', background: '#202235', borderRadius: '1.5px'}}/></div>
             {/* topUI */}
         {/* <div className={"mobileMenu" + " " + (menuOpen ? "menuActive" : "menuInactive")}>
                 
         //     </div> */}
         <header className="header">
-                    <div className="headerContent">
+                    <div className="headerContent" style={{marginRight: 0, marginLeft: 0, margin: 'auto'}}>
                         <div style={{position: 'absolute', height: '100px', width: '114px', background: 'transparent', top: '0', left: '0', alignItems: 'center', alignContent: 'center'}}>
                             <h2 className="poppins-bold headerContentLogo">max</h2>
                         </div>
                     {((size.width >= 800) || (currentPage === "home")) && <nav className={"headerContentNav"} >
                         {/* <div id="locationRect" className="locationRect"></div> */}
-                        <ul>
+                        <ul style={{position: 'fixed', top: ulTop,}}>
                             <li>
                                 <motion.button className={((currentPage === "home") ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("home", scrollButtonCallback, 300); headerPositionIconTo("Header-Home-Btn"); }}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>Home</motion.button>
                                 {/* <a className={((currentPage === 0) ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("Home"); headerPositionIconTo("Header-Home-Btn"); }}>Home</a> */}
@@ -106,25 +107,25 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
             <div className="header-cloud-2 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
             <div className="header-cloud-1 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
         </div>
-        {/* <div className="islandBack" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/> */}
+        <div className="islandBack" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/>
         <div style={{bottom: '0px', width: '100%', height: '350px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden'}}>
             <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
                 <div className="header-wave-l3 header-wave" />
                 <div className="header-wave-r3 header-wave"/>
-                {/* <div className="rock2"/> */}
+                <div className="rock2"/>
                 <div className="header-wave-l2 header-wave"/>
             </div>
-            {/* <div className="rock1 transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/> */}
+            <div className="introTerminal" style={{position: 'fixed', top: terminalTop}}>
+                    <IntroTerminal/>
+                </div>
+            <div className="rock1 transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/>
             <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[1]}%, ${waveTransforms[3]}%)`}}>
                 <div className="header-wave-r2 header-wave"/>
-                {/* <div className="rock3"/> */}
+                <div className="rock3"/>
                 <div className="header-wave-l1 header-wave"/>
                 <div className="header-wave-r1 header-wave"/>
             </div>
         </div>
-        <div className="introTerminal">
-                    <IntroTerminal/>
-                </div>
             {/* <div style={{position: 'absolute', top: 0, left: 0, right: 0, margin: 'auto'}} className="about1ProfilePic"><ProfileImage onPage={true}/></div> */}
         </div>
     );

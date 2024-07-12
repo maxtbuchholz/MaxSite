@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { delay, easeIn, motion, transform } from 'framer-motion';
 import '../../styles/sub/BlunderBoats.css'
 import AppleButton from "../../components/AppleButton";
@@ -6,15 +6,9 @@ import AndroidButton from "../../components/AndroidButton";
 import { duration } from "@mui/material";
 import { TextField } from "@mui/material";
 import { generateTerrain } from "../../js/bb-proceduralGen";
-const BlunderBoats = ({onPage, pageVisibilityChanged}) => {
-    const ProjectsBottomRef = useRef();
-    useEffect(() => {
-        const projectsBottomObserver = new IntersectionObserver((entries) => {
-          const entry = entries[0];
-            pageVisibilityChanged(entry.isIntersecting)
-        });
-        projectsBottomObserver.observe(ProjectsBottomRef.current);
-    })
+import Header from "../../components/Header";
+const BlunderBoats = () => {
+  const onPage = true;
     const [textBox1V, setTextBox1V] = useState(false);
     const TB1Ref = useRef();
     const [textBox2V, setTextBox2V] = useState(false);
@@ -145,7 +139,16 @@ const projecttile2Variants = {
     rotate: 11
   }
 }
+useEffect(() => {
+  var headrRect = document.getElementById('uiHeader');
+  headrRect.classList.remove("headerFull");
+  headrRect.classList.add("headerOnTop");
+})
     return (
+      <div>
+      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={`-100%`}/> 
+      <div className="sectionContainer" style={{marginTop: '100px'}}>
+        <div className="longSection">
         <div  style={{"width" : "100%", "background" : "#FFFFFF"}} className="bbPage">
                                 <div className={`bottomSpacer cyanEnder`}/>
                                 <div className={`darkBottomSpacer darkEnder`}/>
@@ -258,10 +261,9 @@ const projecttile2Variants = {
             <motion.div className="dottedPath" animate={textBox3V ? "open" : "closed"} initial='closed' variants={{open: {y: 0, transition: {duration: 1}}, closed: {y: 300}}}/>
             </motion.div>
 
-
-                      {/* <motion.div className="cyanSpacer cyanTop" initial={"closed"} animate={onPage ? "open" : "closed"}
-          variants={{open: {y: -100}, closed: {y: -100}}}/> */}
-            <div id="ProjectsBottom-Observer" ref={ProjectsBottomRef} className="pageBottomIntersectionObserver"/>
+        </div>
+        </div>
+        </div>
         </div>
     );
 };

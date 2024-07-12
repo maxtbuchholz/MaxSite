@@ -7,6 +7,10 @@ import Layout from "./components/Layout";
 // import tendencyTunerIcon from './img/app-icons/tendencyTuner-icon.png';
 // import { TbApiAppOff } from 'react-icons/tb';
 import Home from "./pages/Home";
+import BlunderBoats from './pages/sub/BlunderBoats';
+import SoftSleep from './pages/sub/SoftSleep';
+import TendencyTuner from './pages/sub/TendencyTuner';
+import About2Page from './pages/About2';
 import {
   BrowserRouter as Router,
   useRoutes,
@@ -30,18 +34,19 @@ const App = () => {
       path: "/projects",
       element: <Home page={"projects"}/>,
     },
-    // {
-    //   path: "/projects/soft-sleep",
-    //   element: <Home page={"projects"} project={"soft-sleep"}/>,
-    // },
-    // {
-    //   path: "/projects/blunder-boats",
-    //   element: <Home page={"projects"} project={"blunder-boats"}/>,
-    // },
-    // {
-    //   path: "/projects/tendency-tuner",
-    //   element: <Home page={"projects"} project={"tendency-tuner"}/>,
-    // },
+    {
+      path: "/projects/soft-sleep",
+      element: <SoftSleep />,
+      // element: <Home page={"projects"} project={"soft-sleep"}/>,
+    },
+    {
+      path: "/projects/blunder-boats",
+      element: <BlunderBoats />,
+    },
+    {
+      path: "/projects/tendency-tuner",
+      element: <TendencyTuner />,
+    },
     {
       path: "/contact",
       element: <Home page={"contact"}/>,

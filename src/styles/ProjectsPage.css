@@ -1,0 +1,17 @@
+.projectVideo{
+    filter: none;
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    -ms-filter: saturate(50%);
+    -o-filter: saturate(50%);
+    transition: all 300ms ease;
+}
+.projectVideo:hover{
+    filter: none;
+    cursor: pointer;
+    -webkit-filter: saturate(100%);
+    -moz-filter: saturate(100%);
+    -ms-filter: saturate(100%);
+    -o-filter: saturate(100%);
+    transition: all 600ms ease;
+}

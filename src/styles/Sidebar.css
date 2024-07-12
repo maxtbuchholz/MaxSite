@@ -9,13 +9,36 @@
     height: 100%; */
     /* left: 00px; */
     /* position: fixed; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* right: 0; */
+    /* margin-left: min(0, 100vw - 400px); */
+    /* background-color: purple; */
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    /* max-width: 400vw; */
+    /* transform: scale(1); */
     .bg{
+        overflow: hidden;
         position: fixed;
-        align-items: center;
-        justify-content: center;
-        top: 0px;
-        right: 0px;
+        /* left: 400px; */
+        /* align-items: end;
+        justify-content: end; */
+        top: 0;
+        right: 0;
+        /* right: 0; */
+        /* left: calc((100vw - 400px)); */
+        /* right: min(calc((400px - 100vw)), 0); */
+        /* left: min(0, 100vw - 400px); */
+        /* right: 0%(calc(400px - 100vw), 0); */
+         /* min(0, calc(100vw - 400px)); */
+         
         bottom: 0;
+        margin: auto;
         width: 400px;
         /* max-width: 75%; */
         background: linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% ); 

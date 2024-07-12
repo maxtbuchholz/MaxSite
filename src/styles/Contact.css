@@ -1,3 +1,6 @@
+.contactContainer > *{
+    /* background-color: blue; */
+}
 @media (min-width: 800px){
 .contactForm{
     position: absolute;
@@ -51,7 +54,7 @@
         flex-direction: column;
         margin: auto;
         width: 80%;
-        top: 180px;
+        top: 150px;
         right: 0;
         left: 0;
     }
@@ -71,10 +74,11 @@
         Color: #ffffff;
         left: 0;
         right: 0;
+        top: 40px;
+        position: absolute;
         margin: auto;
         width: 80%;
         text-align: left;
-        padding-top: 60px;
         text-decoration: none;
     }
     .mailGraphic{
@@ -83,11 +87,12 @@
         background-position: right;
         background-size: contain;
         position: absolute;
-        width: calc(50% - 140px);
+        width: calc(50% - 120px);
+        min-width: 60px;
         /* max-width: calc(50% - 100px); */
         height: 100px;
         max-height: 100%;
-        right: 10%;
+        right: 0;
         margin-top: -60px;
     }
     }

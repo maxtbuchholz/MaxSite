@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Carousel, Card } from "../components/Carousel";
 import softSleepIcon from '../img/app-icons/softSleep-icon.png';
 import blunderBoatsIcon from '../img/app-icons/blunderBoats-icon.png';
@@ -16,6 +16,8 @@ import ProjectName from "../components/ProjectName";
 import { MdAlignHorizontalRight } from "react-icons/md";
 import IntroTerminal from "../components/IntroTerminal";
 import { FcPositiveDynamic } from "react-icons/fc";
+import About2Page from "./About2";
+import ProjectsPage from "./projects";
 const apps = [
     {title: 'Blunder Boats', content: blunderBoatsIcon },
     {title: 'Soft Sleep', content: softSleepIcon },
@@ -28,7 +30,7 @@ const Home = ({page, project}) => {
         //window.history.replaceState(null, newPage, newPage);
       }
       var [isIOS, setIsIOS] = useState(false);
-    useEffect(() => {
+      useLayoutEffect(() => {
         setIsIOS(navigator.userAgent.platform === 'iPad' || navigator.userAgent.platform === 'iPhone' || navigator.userAgent.platform === 'iPod');
         if(isIOS) setDisableScroll(false);
         const pages = ["home", "about", "projects", "contact"];
@@ -37,6 +39,16 @@ const Home = ({page, project}) => {
             page = page.toLowerCase();
             if(pages.includes(page)){
                 scrollToInstant(page);
+                if(page !== 'home'){
+                    // setUlTop(`0%`);
+                    // setTerminalTop('-1000px');
+                    // setHeaderHeight('100px');
+                    // setheaderWaveArray([[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]);
+                    height = window.innerHeight;
+                    scrollPosition = document.getElementById("sectionContainer").scrollTop;
+                    handleHeaderHeight();
+                }
+                // document.getElementById("sectionContainer").scrollBy(100,100);
             }
         }
         if(project != null){
@@ -76,15 +88,23 @@ const Home = ({page, project}) => {
         }
             scrollPosition = scrollTop;
             // return;
-            if((scrollTop < (height * 2.5)) || (headerFull === true)){
-                if((Date.now() - tempTimeText) > 2){
+            if(true){
+                if((Date.now() - tempTimeText) > 10){
+                    //changeProgBarWidth((scrollPosition / (height - 100)) % 1);
                     handleHeaderHeight();
                     tempTimeText = Date.now()
                 }
             }
     }
-    const [topOfPage, setTopOfPage] = useState(true)
+    function changeProgBarWidth(perc){
+        setProgBarWidth(1 - perc)
+    }
+    const [ulTop, setUlTop] = useState('calc(50% + 140px)');
+    const [terminalTop, setTerminalTop] = useState('calc(50% - 220px)');
+    const [topOfPage, setTopOfPage] = useState(true);
     var [headerFull, setheaderFull] = useState(true);
+    const[progBarHeight, setProgBarHeight] = useState(`0px`);
+    const[progBarWidth, setProgBarWidth] = useState(1);
     var tempTimeText = Date.now()
       function handleHeaderHeight(){
           var scroll = Math.min(scrollPosition, height);
@@ -125,6 +145,7 @@ const Home = ({page, project}) => {
         }
       };
       function handleHeaderWaves(percFul){
+        handleHeaderElements(percFul);
         let rock1Y = (((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
         percFul = 1 - percFul;
         setheaderWaveArray([
@@ -136,6 +157,33 @@ const Home = ({page, project}) => {
                             -percFul * 150,
                             percFul * 600,
                         ])
+      }
+      useLayoutEffect(() => {
+        if(scrollPosition === 0){
+        let percFul = 1;
+        let oneMin = 0;
+        if(window.innerWidth > 800){
+            setUlTop(`calc(${(percFul * 50)}% + ${(percFul * 140)}px)`);
+            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -100)}% + ${(percFul * -220)}px)`);
+            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+        }else{
+            setUlTop(`calc(${(percFul * 50) + (oneMin * -50)}% + ${(percFul * 90)}px)`);
+            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -150)}% + ${(percFul * -223)}px)`);
+            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+        }
+    }
+      }, [])
+      function handleHeaderElements(percFul){
+        let oneMin = 1 - percFul;
+        if(window.innerWidth > 800){
+            setUlTop(`calc(${(percFul * 50)}% + ${(percFul * 140)}px)`);
+            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -100)}% + ${(percFul * -220)}px)`);
+            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+        }else{
+            setUlTop(`calc(${(percFul * 50) + (oneMin * -40)}% + ${(percFul * 90)}px)`);
+            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -150)}% + ${(percFul * -223)}px)`);
+            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+        }
       }
       const [headerWaveArray, setheaderWaveArray] = useState([0,0,0]);      
       const [headerHeight, setHeaderHeight] = useState('100%');
@@ -170,7 +218,7 @@ const Home = ({page, project}) => {
             aboutVisibleChange(entry.isIntersecting)
         });
         aboutBottomObserver.observe(AboutBottomRef.current);
-      }, [])
+      }, []);
       const [currPage, setCurrPage] = useState(0);
       const [currPageName, setCurrPageName] = useState("home");
       var autoScrollAmount = 0;
@@ -232,38 +280,32 @@ const Home = ({page, project}) => {
       }
     return (
         <div>   
-         <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage}/>           
+         <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
         <div id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")} onScroll={handleScroll}>
-            <div className="firstSection" id="top">
+            <div className="firstSection" id="top" style={{background: '#121424'}}>
                 <div id="Home-Observer" ref={HomeRef} className="pageIntersectionObserver"/>
             </div>
             <div className="section" id="about">
                 <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
                 <About1Page onPage = {currPage === 1}/>
             </div>
-            <div className="section" id="about2">About3
+            <div className="section" id="about2">
+                <About2Page />
                 <div id="AboutBottom-Observer" ref={AboutBottomRef} className="pageIntersectionObserver"/>
             </div>
-            {/* <div className="belowAboutDiv">
-            <motion.div className={`aboutBottomSpacer ${(selectedApIndex === 0) && "cyanBottom"}
-                                                ${(selectedApIndex === 1) && "purpleBottom"}
-                                                ${(selectedApIndex === 2) && "tanBottom"}`}/>
-            </div> */}
-            <div className="longSection" id="projects">
+            <div className="section" id="projects">
+                <ProjectsPage />
+                <div id="Projects-Observer" ref={ProjectsRef} className="pageIntersectionObserver"/>
+            </div>
+            {/* <div className="longSection" id="projectsna">
                 <h3 className="sectionHeader poppins-semibold">Projects</h3>
                 {(selectedApIndex === 0) && <BlunderBoatsPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
                 {(selectedApIndex === 1) && <SoftSleepPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
                 {(selectedApIndex === 2) && <TendencyTunerPage onPage={currPage === 2} pageVisibilityChanged={projectsVisibleChange}/>}
                 <div className='carouselContainer' style={{zIndex: '10'}}>
-                    {/* <Carousel itemChangedCallBack = { selectedAppChanged } selectedAppName={apps[selectedApIndex].title}>
-                        {apps.map((item) => (
-                            <Card key={item.title} title={ item.title } content={ item.content }/>
-                        ))}
-                    </Carousel> */}
                     <ProjectName className='' appCount={apps.length} itemChangedCallBack={ selectedAppChanged } selectedAppName={apps[selectedApIndex].title} selectedAppIndex={selectedApIndex}/>
-                    <div id="Projects-Observer" ref={ProjectsRef} className="pageIntersectionObserver"/>
                 </div>
-            </div>
+            </div> */}
             <div className="lastSection" id="contact">
                 <div id="Contact-Observer" ref={ContactRef} className="pageIntersectionObserver"/>
                 <ContactPage onPage = {currPage === 3}/>

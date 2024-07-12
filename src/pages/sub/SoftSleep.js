@@ -12,7 +12,13 @@ import { GiDuration } from "react-icons/gi";
 import { Button } from "react-native-web";
 import AppleButton from "../../components/AppleButton";
 import AndroidButton from "../../components/AndroidButton";
-const SoftSleep = ({onPage, pageVisibilityChanged}) => {
+import Header from "../../components/Header";
+const SoftSleep = ({}) => {
+  useEffect(() => {
+    var headrRect = document.getElementById('uiHeader');
+    headrRect.classList.remove("headerFull");
+    headrRect.classList.add("headerOnTop");
+  })
     const [fiveSVMovingalue] = useState(new Animated.Value(0));
     const [starAMovingValue] = useState(new Animated.Value(0.8));
     const [starBMovingValue] = useState(new Animated.Value(0.8));
@@ -22,6 +28,7 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
     const [starFMovingValue] = useState(new Animated.Value(0.8));
     const [whiteNoiseWaveMovingValue, setWhiteNoiseWaveMovingValue] = useState(0);
     var waveTime = 0;
+    const onPage = true;
     const ProjectsBottomRef = useRef();
     const TextBox1 = useRef();
     const TextBox2 = useRef();
@@ -57,125 +64,6 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
     const [textBox1Visible, setTextBox1Visible] = useState(false);
     const [textBox2Visible, setTextBox2Visible] = useState(false);
     const [textBox3Visible, setTextBox3Visible] = useState(false);
-    useEffect(() => {
-        const projectsBottomObserver = new IntersectionObserver((entries) => {
-          const entry = entries[0];
-            pageVisibilityChanged(entry.isIntersecting)
-        });
-        projectsBottomObserver.observe(ProjectsBottomRef.current);
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(fiveSVMovingalue, {
-        //       toValue: 1,
-        //       duration: 5000,
-        //       useNativeDriver: true,
-        //       easing: Easing.inOut(Easing.ease),
-        //     }),
-        //     Animated.timing(fiveSVMovingalue, {
-        //       toValue: 0,
-        //       duration: 5000,
-        //       useNativeDriver: true,
-        //       easing: Easing.inOut(Easing.ease),
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starAMovingValue, {
-        //       toValue: 0,
-        //       duration: 1800,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starAMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starBMovingValue, {
-        //       toValue: 0,
-        //       duration: 2000,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starBMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starCMovingValue, {
-        //       toValue: 0,
-        //       duration: 2200,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starCMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starDMovingValue, {
-        //       toValue: 0,
-        //       duration: 2300,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starDMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starEMovingValue, {
-        //       toValue: 0,
-        //       duration: 2500,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starEMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-        // Animated.loop(
-        //   Animated.sequence([
-        //     Animated.timing(starFMovingValue, {
-        //       toValue: 0,
-        //       duration: 2600,
-        //       useNativeDriver: true,
-        //       easing: Easing.linear
-        //     }),
-        //     Animated.timing(starFMovingValue, {
-        //       toValue: 1,
-        //       duration: 200,
-        //       useNativeDriver: true,
-        //       easing: Easing.cubic
-        //     })
-        //   ])
-        // ).start();
-      }, []);
       const pillowHeight = fiveSVMovingalue.interpolate({
         inputRange: [0, 1],
         outputRange: [0, -10]
@@ -329,6 +217,10 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
       }
     }
     return (
+      <div>
+      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={`-100%`}/> 
+      <div className="sectionContainer" style={{marginTop: '100px'}}>
+        <div className="longSection">
         <div className="parentDiv softPage" style={{"width" : "100%"}}>
                                <div className={`bottomSpacer purpleEnder`}/>
                                <div className={`darkBottomSpacer darkEnder`}/>
@@ -425,7 +317,9 @@ const SoftSleep = ({onPage, pageVisibilityChanged}) => {
                 <div className="scrollSenseDiv" ref={TextBox3}/>
               </motion.div>
               <motion.div className="mic" animate={textBox3Visible ? "open" : "closed"} variants={swiftLogoVariants} initial={"closed"}/>
-              <div id="ProjectsBottom-Observer" ref={ProjectsBottomRef} className="pageBottomIntersectionObserver"/>
+        </div>
+        </div>
+        </div>
         </div>
     );
 };

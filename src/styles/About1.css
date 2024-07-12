@@ -7,7 +7,11 @@
     width: 100%;
 } */
 .about1HalfPage1{
-    padding-top: 30px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     /* background-color: blue; */
     /* text-align: center;
     align-items: center;
@@ -28,8 +32,8 @@
     justify-content: center;
 }
 .about1HalfPage2 > div{
-    margin-top: 20px;
-    margin-bottom: 50px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 50px; */
 }
 .about1ProfilePic{
     width: 260px;
@@ -48,13 +52,15 @@
         width: 100%;
         max-height: 40vh; */
         /* background-color: blue; */
-        width: 300px;
-        padding-top: 5px;
+        /* height: 80%; */
+        width: auto;
+        width: calc(50dvh - 140px);
+        padding-top: 15px;
     }
     .about1Text1{
         font-size: 40px;
         letter-spacing: -0.01em;
-        margin-top: 8px;
+        margin-top: 2px;
     }
     .about1Text2{
         font-size: 24px;
@@ -63,32 +69,34 @@
     }
     .about1Page{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
     .about1HalfPage1{
-        width: 50%;
-        height: 100dvh;
+        width: 100%;
+        height: calc(55dvh - 50px);
     }
     .about1HalfPage2{
-        width: 50%;
-        height: 90dvh;
+        width: 100%;
+        height: calc(45dvh - 160px);
+        /* calc(40dvh - 100px); */
         align-content: start;
     }
 }
 @media (max-width: 800px){
     .about1Text1{
-        margin-top: 6px;
+        margin-top: 10px;
         font-size:30px;
         letter-spacing: -0.01em;
     }
     .about1Text2{
-        font-size: 20px;
+        font-size: 15px;
         letter-spacing: -0.01em;
         margin-top: -6px;
     }
     .about1ProfilePic{
         width: auto;
         width: calc(50dvh - 140px);
+        padding-top: 15px;
         /* padding-top: 40px; */
         /* background-color: red; */
     }
@@ -106,5 +114,6 @@
         margin-left: 0;
         margin-right: 0;
         margin: auto;
+        align-content: start;
     }
 }

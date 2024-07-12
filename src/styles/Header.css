@@ -31,6 +31,9 @@
 .headerFull{
 
 }
+.header{
+    background-color: #121424;
+}
 .onButtonsPage{
     text-align: center;
     height: 35px;
@@ -104,7 +107,7 @@
 /* desktop */
 @media (min-width: 800px){
 .header{
-    background: #0f1121;
+    /* 0f1121 */
     width: 100%;
     height: 100%;
     padding: 0rem 1rem;
@@ -144,7 +147,6 @@
 /* mobile */
 @media (max-width: 800px){
     .header{
-        background: #0f1121;
         width: 100%;
         height: 100%;
         padding: 0 1.5rem;
@@ -178,6 +180,8 @@
     overflow: hidden;
     color: white;
     margin: 0 auto;
+    margin-left: 6px;
+    margin-right: 6px;
     max-width: 1920px;
     height: 100%;
     display: flex;
@@ -291,61 +295,57 @@
 }
 ul{
     justify-content: space-around;
-    position: absolute;
     align-items: center;
-    transition: 0.3s ease-out;
+    /* transition: 0.3s ease-out; */
 }
 @media (min-width: 800px){
 .headerOnTop ul{
     justify-content: space-around;
-    position: absolute;
     /* margin-right: 100px; */
     /* right: 200px; */
     left: 0;
     right: 0px;
     margin: auto;
-    width: 430px;
-    max-width: 42%;
     /* bottom:0px; */
     /* left: 0;
     margin: auto; */
     /* max(80px, 5vw); */
     height: 100px;
     /* width: 50px; */
-    top: 0;
     align-items: center;
-    transition: 0.3s ease-out;
+}   
+.headerOnTop ul{
+    width: 440px;
+    max-width: 38%;
+    transition: width 0.3s;
+    /* transition: 0.3s ease-out; */
 }   
 .headerFull ul{
     justify-content: space-around;
-    position: absolute;
     /* right: 0px; */
     left: 0;
     right: 0;
     margin: auto;
-    /* top: 500px; */
-    /* right: max(100px, 8vw); */
-    /* right: min(100px, 10vw); */
+    height: 100px;
+    /* bottom:0px; */
+    align-items: center;
+}
+.headerFull ul{
     width: 550px;
     max-width: 44%;
-    /* right: 4vw; */
-    /* height: max(calc(200% - min(530px, 70%)), 100px); */
-    height: max(148%, 100px);
-    /* bottom:0px; */
-    top: 0px;
-    align-items: center;
-    transition: 0.3s ease-out;
-}
+    transition: width 0.3s;
+    /* transition: 0.3s ease-out; */
+}  
 .headerOnTop li:not(:last-child){
     /* li:not(:last-child){ */
     /* margin-right: 40px; */
-    transition: 0.3s ease-out;
+    /* transition: 0.3s ease-out; */
 }
 .headerFull li:not(:last-child){
      /* li:not(:last-child){ */
     /* margin-right: min(100px, 5vw); */
     /* max(min(80px, 5vw),40px); */
-    transition: 0.3s ease-out;
+    /* transition: 0.3s ease-out; */
 }
 }
 .headerContentLogo{
@@ -373,17 +373,23 @@ ul{
         align-content: center;
         align-items: center;
         justify-content: space-evenly;
-        height: 500px;
-        width: 120px;
-        position: absolute;
-        right: 0vw;
-        bottom: 30%;
-        top: 16%;
+        height: 100px;
+        width: 80vw;
+        max-width: 500px;
+        /* right: 10px; */
+        /* bottom: 30%; */
+        left: 0;
+        right: 0;
         margin: auto;
+        /* top: 16%; */
         list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
       }
-      li:not(:last-child){
-        padding-bottom: max(20px, 2vh);
+      li{
+        /* :not(:last-child */
+        /* padding-bottom: max(20px, 2vh); */
         /* li:not(:last-child){ */
        /* margin-right: min(100px, 5vw); */
        /* max(min(80px, 5vw),40px); */
@@ -431,11 +437,11 @@ ul{
         background-repeat: no-repeat;
     }
     .rock1{
-        width: 600px;
+        width: 500px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: 95px;
-        left: -120px;
+        bottom: 55px;
+        left: -100px;
         background-image: url('../img/svg/Header/Lighthouse.svg');
         background-position: left bottom;
         background-repeat: no-repeat;
@@ -475,10 +481,10 @@ ul{
         background-repeat: no-repeat;
     }
     .rock1{
-        width: 650px;
+        width: 550px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: 85px;
+        bottom: 65px;
         left: -80px;
         background-image: url('../img/svg/Header/Lighthouse.svg');
         background-position: left bottom;
@@ -555,11 +561,11 @@ ul{
         background-repeat: no-repeat;
     }
     .rock1{
-        width: 666px;
+        width: 566px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: 80px;
-        left: -60px;
+        bottom: 70px;
+        left: -40px;
         background-image: url('../img/svg/Header/Lighthouse.svg');
         background-position: left bottom;
         background-repeat: no-repeat;

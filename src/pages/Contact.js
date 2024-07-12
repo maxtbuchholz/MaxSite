@@ -31,7 +31,7 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
             },
         },
         closed:{
-            y: 10,
+            y: 8,
             opacity: 0,
         }
     }
@@ -46,7 +46,7 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
             },
         },
         closed:{
-            y: 10,
+            y: 8,
             opacity: 0,
         }
     }
@@ -116,32 +116,20 @@ const ContactPage = ({onPage, pageVisibilityChanged}) => {
         },
       });
     return (
-        <div  style={{"height" : "100%", "width" : "100%", "background" : "#0f1121"}}>
+        <div className="contactContainer" style={{"height" : "100%", "width" : "100%", "maxWidth": '1000px', marginRight: 0, marginLeft: 0, margin: 'auto', display: 'flex', flexDirection: 'row', position: 'relative'}}>
             <div className="verticalContainer">
-            {/* <h2 className="contactTitle poppins-semibold" style={{paddingBottom: 0, paddingTop: 0}}>Send me a message</h2> */}
-
-            <motion.div initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTitleVariants} style={{paddingBottom: 0, paddingTop: 0}} className="popUpTitleContainer">{[..."Send me a message"].map((char, i) => {return <motion.h6 key={i} variants={contactLetterVariants} className="contactTitle poppins-semibold">{char}</motion.h6>})}</motion.div>
-
+              <motion.div initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTitleVariants} style={{paddingBottom: 0, paddingTop: 0}} className="popUpTitleContainer">{[..."Send me a message"].map((char, i) => {return <motion.h6 key={i} variants={contactLetterVariants} className="contactTitle poppins-semibold">{char}</motion.h6>})}</motion.div>
                 <motion.h4 initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactTypeVariants} className="poppins-medium contactSubTitle" style={{paddingBottom: '0px', paddingTop: 0}}>Mail</motion.h4>
                 <motion.h6 initial={"closed"} animate={onPage ? "open" : "closed"} variants={contactInfoVariants} className="poppins-light contactInfo" style={{paddingBottom: 0, paddingTop: 0}}>maxtbuchholz@gmail.com</motion.h6>
                 <div className={`mailGraphic`}/>
             </div>
             <motion.form className="contactForm" ref={form} onSubmit={sendEmail} animate={onPage ? 'open' : 'closed'}
-            variants={{open: {y: 0}, closed: {y: 80}}} transition={{ type: "spring", stiffness: 150 }}>
-            <CssTextField sx={{ input: { color: 'white' } }} id="from" className="textField" label="Name" name="from_name" required/>
-            {/* <TextField className="textField" id="from" label="Name" name="from_name" variant="outlined" required/> */}
-      {/* <label>Name</label>
-      <input type="text" id="from" name="from_name" /> */}
-            <CssTextField sx={{ input: { color: 'white' } }} id="email" className="textField" type="email" label="email" name="message" required/>
-            {/* <TextField className="textField" id="email" label="Email" name="message" variant="outlined" required/> */}
-      {/* <label>Email</label>
-      <input type="email" id="email" name="message" /> */}
-            <CssTextField sx={{ textArea: { color: 'white' } }} id="message" className="textField" label="Message" name="message" multiline rows={6} required/>
-            {/* <TextField className="textField" id="message" label="Message" name="message" variant="outlined" multiline rows={5} required/> */}
-      {/* <label>Message</label>
-      <textarea name="message" id="message" /> */}
-      <input className="textButton" type="submit" value="Send" />
-    </motion.form>
+              variants={{open: {y: 0}, closed: {y: 20}}} transition={{ type: "spring", stiffness: 150 }}>
+              <CssTextField sx={{ input: { color: 'white' } }} id="from" className="textField" label="Name" name="from_name" required/>
+              <CssTextField sx={{ input: { color: 'white' } }} id="email" className="textField" type="email" label="email" name="message" required/>
+              <CssTextField sx={{ textArea: { color: 'white' } }} id="message" className="textField" label="Message" name="message" multiline rows={6} required/>
+            <input className="textButton" type="submit" value="Send" />
+        </motion.form>
         </div>
     );
 };

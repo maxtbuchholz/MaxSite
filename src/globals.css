@@ -1,5 +1,25 @@
+.titleText{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  font-size: 60px;
+  line-height: 60px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 0px;
+  margin-top: 15px;
+
+}
+@media (max-width: 800px){
+  .titleText{
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
 html{
-  background-color: #0f1121;
+  background-color: #0a0c1c;
 }
 .section{
   /* background-color: #ffffff; */
@@ -213,6 +233,7 @@ body {
   position: absolute;
   height: 100px;
   background-color: transparent;
+  z-index: -1;
 }
 .pageBottomIntersectionObserver{
   bottom: 80vh;

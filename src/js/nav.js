@@ -1,3 +1,6 @@
+import { useLocation } from "react-router-dom";
+import { useLayoutEffect } from "react";
+
 export function navToGitHub() {
     window.open("https://github.com/maxtbuchholz", "gitHub");
 }
@@ -46,6 +49,14 @@ var requestAnimFrame = (function(){
     return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
   })();
 export function scrollTo(target, callback, duration) {
+  if( (window.location.pathname !== '/') &&
+      (window.location.pathname !== '/home') &&
+      (window.location.pathname !== '/about')&&
+      (window.location.pathname !== '/projects') &&
+      (window.location.pathname !== '/contact')){
+    window.navigation.navigate(`/${target}`)
+    return;
+  }
     let scrollWindow = document.getElementById("sectionContainer");
     if (callback && typeof(callback) === 'function') {
         callback(true);

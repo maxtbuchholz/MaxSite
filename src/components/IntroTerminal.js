@@ -40,7 +40,7 @@ const IntroTerminal = ({ onPage }) => {
         }
     }
     return(
-        <div className="introTerminalIn" style={{background: 'rgba(30,30,30,0.8)', width: '550px', height: '363px', borderStyle: 'solid', borderWidth: '0.5px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
+        <div className="introTerminalIn" style={{background: 'rgba(30,30,30,0.7)', width: '550px', height: '363px', borderStyle: 'solid', borderWidth: '1.0px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
         'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 0px 0px, rgb(10, 10, 10) 0px 0px 0px 0.5px', color: 'white'}}>
             <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
                 <h3 className="poppins-regular" style={{color: 'rgba(144,145,146,1)', fontSize: '14px', position: 'absolute', right: 0, left: 0, margin: 'auto',  width: '100%', textAlign: 'center', marginTop: '1px'}}>intro.cs</h3>
@@ -197,7 +197,7 @@ const OutputLine = ({text}) => {
     }, []);
     const [isNew, setIsNew] = useState(true);
     return(
-        <h5 className={`introTerminal_codeText`} style={{fontWeight: '500'}} ><span className={`${isNew ? 'newLogBackground' : 'oldLogBackground'}`} style={{whiteSpace: 'pre-line'}}>{text}</span></h5>
+        <h5 className={`introTerminal_outputText`} style={{fontWeight: '500'}} ><span className={`${isNew ? 'newLogBackground' : 'oldLogBackground'}`} style={{whiteSpace: 'pre-line'}}>{text}</span></h5>
     );
 }
 const RichSubableText = ({texts, length}) => {
@@ -220,10 +220,9 @@ const RichSubableText = ({texts, length}) => {
 }
 var outputLines = [];
 const origOutputLines = `Hello I am Max Buchholz
-Computer Science is pretty cool!
-Music is also pretty cool!
+Heres some quick music math!
 There are 12 notes per octave
-A-880hz is 12 notes above A-440hz
+E-1320hz is 19 notes above A-440hz
 Middle C is the start of octave 4
 A-452.89hz is 49 cents sharper than A-440hz
 C-258.62hz is 20 cents flatter than C-261.626hz
@@ -235,8 +234,7 @@ const origCodeLines =
 `string hello = "Hello I am";
 string name = "Max Buchholz";
 Console.WriteLine($"{hello} {name}");
-Console.WriteLine("Computer Science is pretty cool!");
-Console.WriteLine("Music is also pretty cool!");
+Console.WriteLine("Heres some quick music math!");
 double notes_up(double lower, double upper){
     return 12 * Math.Log(upper / lower) / Math.Log(2);
 }
@@ -245,7 +243,7 @@ Console.WriteLine($"There are {musicNotes.Length} notes per octave");
 string note_name(double num){
     return musicNotes[(int)Math.Round(notes_up(13.75, num)) % 12];
 }
-Console.WriteLine($"{note_name(880)}-880hz is {notes_up(440, 880)} notes above {note_name(440)}-440hz");
+Console.WriteLine($"{note_name(1320)}-1320hz is {Math.Round(notes_up(440, 1320))} notes above {note_name(440)}-440hz");
 double octave_num(double num){
     return Math.Floor(notes_up(16.35160, num) / 12);
 }

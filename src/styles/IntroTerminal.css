@@ -5,6 +5,13 @@
 .introTerminal_codeText:last-child{
     background-color: rgb(100,100,100,0.05);
 }
+.introTerminal_outputText{
+    color: #FFFFFFbb;
+}
+.introTerminal_outputText:last-child{
+    color: #FFFFFFFF;
+}
+
 .newLogBackground{
     background-color: #FFFFFF55;
     transition: 0s;
@@ -13,17 +20,54 @@
     background-color: transparent;
     transition: 0.8s; 
 }
-.introTerminal{
+/* .headerOnTop .introTerminal{
     position: absolute;
     right: 0;
     left: 0;
-    bottom: max(250px, 32%);
-    max-width: 48%;
+    top: -2000px;
+    max-width: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.headerFull .introTerminal{
+    position: absolute;
+    right: 0;
+    left: 0;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+@media (min-width: 800px){
+.introTerminal{
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* bottom: max(250px, 32%); */
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
+@media (max-width: 800px){
+    .introTerminal{
+        position: absolute;
+        /* right: 0; */
+        margin-left: -6%;
+        /* bottom: max(250px, 32%); */
+        width: 112%;
+        /* margin: auto; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0.8);
+    }
+    }
 .introTerminalIn *{
     text-wrap: wrap;
 }

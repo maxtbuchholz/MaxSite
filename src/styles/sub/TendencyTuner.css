@@ -13,3 +13,73 @@
 .tanTop{
     background-image: url('../../img/svg/tan-top.svg');
 }
+.tenTenWave{
+    background-image: url('../../img/svg/TendencyTuner/wave.svg');
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+.tenTenWave1{
+    background-image: url('../../img/svg/TendencyTuner/wave1.svg');
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+.tenTenWave2{
+    background-image: url('../../img/svg/TendencyTuner/wave2.svg');
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+.tenTenWave3{
+    background-image: url('../../img/svg/TendencyTuner/wave3.svg');
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+.tenTenWave4{
+    background-image: url('../../img/svg/TendencyTuner/wave4.svg');
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+.wholeNoteSymbol{
+    background-image: url('../../img/svg/TendencyTuner/wholeNote.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: start;
+}
+@media (min-width: 800px){
+    .wholeNoteSymbol{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 80px;
+        margin: auto;
+        width: 400px;
+        height: 20000px;
+    }
+}
+@media (max-width: 800px){
+    .wholeNoteSymbol{
+        position: absolute;
+        left: calc((100vw - 300px) / 2);
+        top: 95px;
+        width: 300px;
+        height: 1000px;
+    }
+}
+.tenTunTextBack{
+    background-image: url('../../img/svg/TendencyTuner/textBack.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.tenTunTextBackSide{
+    background-image: url('../../img/svg/TendencyTuner//TextBackSide.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    transform: rotate(180deg);
+}
+.tenTunTextBackSideOp{
+    background-image: url('../../img/svg/TendencyTuner//TextBackSide.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    transform: rotate(180deg);
+}

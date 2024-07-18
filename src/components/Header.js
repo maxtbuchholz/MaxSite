@@ -61,7 +61,11 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
       }
     return(
         <div id="uiHeader" className="headerContainer headerFirst headerFull" style={{height: '100px', width: '100%'}}>
-                                <div style={{width: '100%', background: '', height: '100px', position: 'fixed', display: 'flex', flexDirection: 'column-reverse', alignItems: 'center', top: progresBarTop}}><div style={{width: `calc(min(480px, 94vw) * ${progresBarWidth})`, marginBottom: '12px', height: '3px', background: '#202235', borderRadius: '1.5px'}}/></div>
+                                <div style={{width: '100%', background: '', height: '100px', position: 'fixed', display: 'flex', flexDirection: 'column-reverse', alignItems: 'center', top: progresBarTop}}><div style={{width: `calc(min(1600px, 96vw) * ${progresBarWidth})`, marginBottom: '6px', height: '2px', 
+                                // background: '#6db9f9',
+                                backgroundImage: 'linear-gradient(109.5deg,  #6db9f9 30.2%, #5da9e9 48.1% )',
+                                 borderRadius: '1px'}}/></div>
+                                {/* 404255 */}
             {/* topUI */}
         {/* <div className={"mobileMenu" + " " + (menuOpen ? "menuActive" : "menuInactive")}>
                 
@@ -115,9 +119,6 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                 <div className="rock2"/>
                 <div className="header-wave-l2 header-wave"/>
             </div>
-            <div className="introTerminal" style={{position: 'fixed', top: terminalTop}}>
-                    <IntroTerminal/>
-                </div>
             <div className="rock1 transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/>
             <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[1]}%, ${waveTransforms[3]}%)`}}>
                 <div className="header-wave-r2 header-wave"/>
@@ -125,6 +126,9 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                 <div className="header-wave-l1 header-wave"/>
                 <div className="header-wave-r1 header-wave"/>
             </div>
+            <div className="introTerminal" style={{position: 'fixed', top: terminalTop}}>
+                    <IntroTerminal/>
+                </div>
         </div>
             {/* <div style={{position: 'absolute', top: 0, left: 0, right: 0, margin: 'auto'}} className="about1ProfilePic"><ProfileImage onPage={true}/></div> */}
         </div>

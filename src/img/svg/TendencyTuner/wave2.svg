@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 100 50"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="wave1.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.47643882"
+     inkscape:cx="450.2152"
+     inkscape:cy="452.31411"
+     inkscape:window-width="1512"
+     inkscape:window-height="852"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#0753ac;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m -18.039439,25 c 0,0 14.3281297,-20.00001 24.9999997,-20.00001 C 17.632431,4.99999 31.960561,25 31.960561,25 c 0,0 14.32812,20 25,20 10.67187,0 25,-20 25,-20"
+       id="path2-7-52"
+       sodipodi:nodetypes="cacac" />
+    <path
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#0753ac;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m 81.960561,25 c 0,0 14.32813,-20.00001 24.999999,-20.00001 10.67188,0 25,20.00001 25,20.00001 0,0 14.32813,20 25,20 10.67188,0 25.00001,-20 25.00001,-20"
+       id="path2-3-8-2"
+       sodipodi:nodetypes="cacac" />
+  </g>
+</svg>

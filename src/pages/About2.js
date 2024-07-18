@@ -131,12 +131,12 @@ const About2Page = () => {
             }}, closed: {width: '100px'}}}
             />
             <motion.div variants={skillsDivVariants} id="itemDiv" style={{width: '90vw', maxWidth: '1000px', height: '70%', maxHeight: '500px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
-                {itemRows.map((row) => {
+                {itemRows.map((row, r_index) => {
                     return(
-                        <motion.div variants={skillsRowsVariants} style={{height: itemWidth, display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
-                            {row.map((item) => {
+                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: itemWidth, display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
+                            {row.map((item, c_index) => {
                                 return(
-                                    <motion.div variants={skillsItemVariants} style={{width: itemWidth, height: itemWidth}}>
+                                    <motion.div key={c_index} variants={skillsItemVariants} style={{width: itemWidth, height: itemWidth}}>
                                         <SkillsContainer image={item.image} title={item.title} link={item.site}/>
                                     </motion.div>
                                 );

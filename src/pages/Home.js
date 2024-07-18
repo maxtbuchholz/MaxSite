@@ -90,21 +90,21 @@ const Home = ({page, project}) => {
             // return;
             if(true){
                 if((Date.now() - tempTimeText) > 10){
-                    //changeProgBarWidth((scrollPosition / (height - 100)) % 1);
+                    changeProgBarWidth((scrollPosition / (height - 100)) % 1);
                     handleHeaderHeight();
                     tempTimeText = Date.now()
                 }
             }
     }
     function changeProgBarWidth(perc){
-        setProgBarWidth(1 - perc)
+        setProgBarWidth(1 - Math.abs((perc) - 0.5))
     }
     const [ulTop, setUlTop] = useState('calc(50% + 140px)');
     const [terminalTop, setTerminalTop] = useState('calc(50% - 220px)');
     const [topOfPage, setTopOfPage] = useState(true);
     var [headerFull, setheaderFull] = useState(true);
     const[progBarHeight, setProgBarHeight] = useState(`0px`);
-    const[progBarWidth, setProgBarWidth] = useState(1);
+    const[progBarWidth, setProgBarWidth] = useState(0.5);
     var tempTimeText = Date.now()
       function handleHeaderHeight(){
           var scroll = Math.min(scrollPosition, height);

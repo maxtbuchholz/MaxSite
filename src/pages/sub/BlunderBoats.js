@@ -7,6 +7,7 @@ import { duration } from "@mui/material";
 import { TextField } from "@mui/material";
 import { generateTerrain } from "../../js/bb-proceduralGen";
 import Header from "../../components/Header";
+import ProjectName from "../../components/ProjectName";
 const BlunderBoats = () => {
   const onPage = true;
     const [textBox1V, setTextBox1V] = useState(false);
@@ -149,6 +150,9 @@ useEffect(() => {
       <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={`-100%`}/> 
       <div className="sectionContainer" style={{marginTop: '100px'}}>
         <div className="longSection">
+        <div className='carouselContainer' style={{zIndex: '10'}}>
+          <ProjectName className='' appCount={3} itemChangedCallBack={ () => {} } selectedAppName={"Blunder Boats"} selectedAppIndex={0}/>
+        </div>
         <div  style={{"width" : "100%", "background" : "#FFFFFF"}} className="bbPage">
                                 <div className={`bottomSpacer cyanEnder`}/>
                                 <div className={`darkBottomSpacer darkEnder`}/>

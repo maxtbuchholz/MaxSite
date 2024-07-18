@@ -45,7 +45,7 @@ const About1Page = ({onPage, pageVisibilityChanged}) => {
                     <h3 style={{color: '#FFFFFFdd'}} className="about1Text2 poppins-medium">Software Developer</h3>
                 </div>
             </div>
-             <div className="about1HalfPage2">
+             <div className="about1HalfPage2" style={{background: ''}}>
                 <motion.div variants={gridVariants} initial='closed' animate={onPage ? 'open' : 'closed'} className="about1Container">
                     <motion.div variants={gridItemVariants} className="aConPosUp"><BlueContainer title={"mobile"} oneChild={true} children={<FaMobileScreenButton />} boxWidth='calc(100%)' className="about1ContainerGridPos1"/></motion.div>
                     <motion.div variants={gridItemVariants}><BlueContainer title={"web"} oneChild={true} children={<FaDisplay />} boxWidth='calc(100%)' className="about1ContainerGridPos2"/></motion.div>

@@ -120,12 +120,12 @@ const ProjectsPage = () => {
             }}, closed: {width: '100px'}}}
             />
             <motion.div variants={skillsDivVariants} id="projItemDiv" style={{width: '90vw', maxWidth: '910px', height: '75%', maxHeight: '500px', minHeight: '460px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor: ''}}>
-                {itemRows.map((row) => {
+                {itemRows.map((row, r_index) => {
                     return(
-                        <motion.div variants={skillsRowsVariants} style={{height: itemSize[1], display: 'flex', flexDirection: 'row', justifyContent: 'space-around', background: ''}}>
-                            {row.map((item) => {
+                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: itemSize[1], display: 'flex', flexDirection: 'row', justifyContent: 'space-around', background: ''}}>
+                            {row.map((item, c_index) => {
                                 return(
-                                    <motion.div variants={skillsItemVariants} style={{width: itemSize[0], height: itemSize[1], background: ''}}>
+                                    <motion.div key={c_index} variants={skillsItemVariants} style={{width: itemSize[0], height: itemSize[1], background: ''}}>
                                         <ProjectContainer title={item.title} poster={item.poster} video={item.video} maxWidth={itemSize[0]} link={item.link}/>
                                     </motion.div>
                                 );

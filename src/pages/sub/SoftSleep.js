@@ -13,6 +13,7 @@ import { Button } from "react-native-web";
 import AppleButton from "../../components/AppleButton";
 import AndroidButton from "../../components/AndroidButton";
 import Header from "../../components/Header";
+import ProjectName from "../../components/ProjectName";
 const SoftSleep = ({}) => {
   useEffect(() => {
     var headrRect = document.getElementById('uiHeader');
@@ -221,6 +222,9 @@ const SoftSleep = ({}) => {
       <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={`-100%`}/> 
       <div className="sectionContainer" style={{marginTop: '100px'}}>
         <div className="longSection">
+        <div className='carouselContainer' style={{zIndex: '10'}}>
+          <ProjectName className='' appCount={3} itemChangedCallBack={ () => {} } selectedAppName={"Soft Sleep"} selectedAppIndex={1}/>
+        </div>
         <div className="parentDiv softPage" style={{"width" : "100%"}}>
                                <div className={`bottomSpacer purpleEnder`}/>
                                <div className={`darkBottomSpacer darkEnder`}/>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 120.44768 83.459999"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.44768051,-19.496915)">
+    <path
+       id="path1-0"
+       style="fill:#eeeeee;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5.28565;stroke-linecap:round"
+       d="M 58.312988,19.509478 C 25.252266,20.066192 -0.97556514,38.991179 -0.43961086,61.903077 0.09597551,84.81495 27.194823,103.14121 60.264178,102.95551 93.333552,102.7699 120.0003,84.141769 120,61.226878 L 119.9684,59.87565 C 118.89763,36.97264 91.373876,18.952673 58.312988,19.509478 Z"
+       inkscape:export-filename="wholeNote.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       id="path1"
+       style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.72208;stroke-linecap:round"
+       d="M 58.661836,24.818778 A 55.075333,36.418789 0 0 0 4.9317831,61.817033 55.075333,36.418789 0 0 0 60.446226,97.644815 55.075333,36.418789 0 0 0 115.07545,61.226893 l -0.0289,-1.17926 A 55.075333,36.418789 0 0 0 58.661836,24.818778 Z m -2.62309,8.13077 a 27.592813,18.879292 76.116996 0 1 22.74951,21.720638 l 0.22376,0.865064 A 27.592813,18.879292 76.116996 0 1 67.453036,86.814465 27.592813,18.879292 76.116996 0 1 42.466443,65.028214 27.592813,18.879292 76.116996 0 1 53.620284,33.396549 27.592813,18.879292 76.116996 0 1 56.038746,32.949548 Z"
+       inkscape:export-filename="wholeNote.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

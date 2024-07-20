@@ -170,8 +170,8 @@ hr{
     .topPillowContainer{
         position: absolute;
         width: 100vw;
-        height: 520px;
-        margin-top: 135px;
+        height: 560px;
+        margin-top: 60px;
         /* margin-top: calc((min(40vw, 350px))); */
         display: flex;
         justify-content: center;  

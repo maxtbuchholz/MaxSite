@@ -49,18 +49,18 @@
         position: absolute;
         right: 0;
         left: 0;
-        top: 80px;
+        top: 25px;
         margin: auto;
-        width: 400px;
+        width: 500px;
         height: 20000px;
     }
 }
 @media (max-width: 800px){
     .wholeNoteSymbol{
         position: absolute;
-        left: calc((100vw - 300px) / 2);
-        top: 95px;
-        width: 300px;
+        left: calc((100vw - 380px) / 2);
+        top: 55px;
+        width: 380px;
         height: 1000px;
     }
 }
@@ -82,4 +82,61 @@
     background-position-y: center;
     background-position-x: right;
     transform: rotate(180deg);
+}
+.tt_textbox{
+    position: absolute;
+    min-width: 100px;
+    min-height: 20px;
+}
+@media (min-width: 800px){
+    .tentun_page{
+        height: 2200px;
+    }
+    .tt_textbox{
+        width: 500px;
+        left: 0;
+        right: calc(50% + 20px);
+        margin: auto;
+    }
+    .tt_textbox1{
+        top: 800px;
+    }
+    .tt_textbox2{
+        top: 1400px;
+    }
+    .tentun_page h2{
+        font-size: 26px;
+        font-weight: 300;
+    }
+    .tentun_page h5{
+        margin-top: 5px;
+        font-size: 18px;
+        font-weight: 200;
+    }
+}
+@media (max-width: 800px){
+    .tentun_page{
+        height: 2200px;
+    }
+    .tt_textbox{
+        width: 90%;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+    .tt_textbox1{
+        top: 700px;
+    }
+    .tt_textbox2{
+        top: 1400px;
+    }
+    .tentun_page h2{
+        font-size: 24px;
+        font-weight: 300;
+    }
+    .tentun_page h5{
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 200;
+    }
 }

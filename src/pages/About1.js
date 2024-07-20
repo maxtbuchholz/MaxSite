@@ -7,7 +7,7 @@ import BlueContainer from "../components/BlueContainer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaMobileScreenButton, FaMobileScreen, FaDisplay, FaDatabase, FaComputer } from "react-icons/fa6";
 import { duration } from "@mui/material";
-
+import SoftwareBackground from "../components/SoftwareBackground";
 const About1Page = ({onPage, pageVisibilityChanged}) => {
     const gridVariants = {
         open:{
@@ -38,6 +38,7 @@ const About1Page = ({onPage, pageVisibilityChanged}) => {
     }
     return (
         <div className="about1Page">
+            <SoftwareBackground/>
             <div className="about1HalfPage1">
             <div style={{}} className="about1ProfilePic"><ProfileImage onPage={onPage}/></div>
                 <div style={{width: '100%', textAlign: 'center'}} className="poppins-semibold">

@@ -88,7 +88,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                                 {/* <a className={((currentPage === 1) ? "onButtonsPage" : "notButtonsPage")}id="Header-About-Btn" onClick={() => {scrollTo("About"); headerPositionIconTo("Header-About-Btn"); }}>About</a> */}
                             </li>
                             <li>
-                                <motion.button className={((currentPage === "projects") ? "onButtonsPage" : "notButtonsPage")} id="Header-Projects-Btn" onClick={() => { scrollTo("Projects", scrollButtonCallback, 300); headerPositionIconTo("Header-Projects-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
+                                <motion.button className={((currentPage === "projects") ? "onButtonsPage" : "notButtonsPage")} id="Header-Projects-Btn" onClick={() => { scrollTo("projects", scrollButtonCallback, 300); headerPositionIconTo("Header-Projects-Btn"); }} whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
                                 >Projects</motion.button>
                                 {/* <a className={((currentPage === 2) ? "onButtonsPage" : "notButtonsPage")}id="Header-Projects-Btn" onClick={() => {scrollTo("Projects"); headerPositionIconTo("Header-Projects-Btn"); }}>Projects</a> */}
                             </li>

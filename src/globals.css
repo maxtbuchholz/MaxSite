@@ -303,6 +303,24 @@ body {
   position: absolute;
   z-index: 50;
 }  
+.appStoreLogo1_tt{
+  top: 450px;
+  right: 0px;
+  left: 0px;
+  width: 180px;
+  margin: auto;
+  position: absolute;
+  z-index: 50;
+}
+.appStoreLogo2_tt{
+  top: 530px;
+  right: 0px;
+  left: 0px;
+  width: 180px;
+  margin: auto;
+  position: absolute;
+  z-index: 50;
+}  
 }
 @media (max-width: 800px){
   .appTitle{
@@ -324,6 +342,24 @@ body {
     z-index: 50;
   }
   .appStoreLogo2{
+    top: 500px;
+    right: 0px;
+    left: 0px;
+    width: 160px;
+    margin: auto;
+    position: absolute;
+    z-index: 50;
+  } 
+  .appStoreLogo1_tt{
+    top: 420px;
+    right: 0px;
+    left: 0px;
+    width: 160px;
+    margin: auto;
+    position: absolute;
+    z-index: 50;
+  }
+  .appStoreLogo2_tt{
     top: 500px;
     right: 0px;
     left: 0px;

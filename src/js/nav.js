@@ -54,7 +54,8 @@ export function scrollTo(target, callback, duration) {
       (window.location.pathname !== '/about')&&
       (window.location.pathname !== '/projects') &&
       (window.location.pathname !== '/contact')){
-    window.navigation.navigate(`/${target}`)
+    // window.navigation.navigate(`/${target}`)
+    window.open(`/${target}`,"_self");
     return;
   }
     let scrollWindow = document.getElementById("sectionContainer");

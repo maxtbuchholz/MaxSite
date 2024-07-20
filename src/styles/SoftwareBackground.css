@@ -1,0 +1,16 @@
+.softwareBackground{
+    position: absolute;
+    width: max(calc(50vw - 80px), 500px);
+    aspect-ratio: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+.softwareSet1{
+    top: 40px;
+    left: 120px;
+}
+.softwareSet2{
+    top: 100px;
+    right: 120px;
+}

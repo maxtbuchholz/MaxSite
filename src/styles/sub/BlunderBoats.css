@@ -196,6 +196,9 @@
         margin: auto;
         padding-bottom: 16px;
     }
+    .bbProjNameBox{
+        width: min(500px, 80vw);
+    }
     .bbBoat1{
         width: 150px;
         height: 100px;
@@ -377,14 +380,14 @@
 .island1Container{
     /* aspect-ratio: 794/581; */
     width: 800px;
-    max-width: 100%;
-    height: 
-    min(1000px, 80vh);
+    /* max-width: 100%; */
+    height: 1000px;
+    /* min(1000px, 80vh); */
     position: absolute;
     right: 0;
     left: 0;
     margin: auto;
-    top: 20px;
+    top: -160px;
 }
 }
 @media (min-width: 1000px){

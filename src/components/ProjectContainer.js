@@ -3,7 +3,7 @@ import { MdBatteryChargingFull } from "react-icons/md";
 import { color, delay, motion } from 'framer-motion';
 import '../styles/ProjectsPage.css';
 const ProjectContainer = ({title, poster, video, maxWidth, link}) => {
-    const backColor = '#0a0c1c';
+    const backColor = '#121424';
     const ref = useRef(null)
     const video_ref = useRef(null)
     //const [img_dim, setImg_dim] = useState([1.1,1.1]);
@@ -50,7 +50,7 @@ const ProjectContainer = ({title, poster, video, maxWidth, link}) => {
     }, []);
     return (
         // <div style={{backgroundImage: `url(${poster})`, width:"100%", height:"100%", backgroundSize: 'cover', borderRadius: '30px', border: '1px solid white'}}/>
-        <motion.div onClick={(() => {window.history.replaceState(null, '/', "/projects"); window.navigation.navigate(link)})} whileHover={{ scale: 1.01 }} transition={{ duration: '0.4' }} style={{background: '', width: '100%', height: '100%', position: 'relative'}}>
+        <motion.div onClick={(() => {window.history.replaceState(null, '/', "/projects"); window.open(link,"_self");})} whileHover={{ scale: 1.01 }} transition={{ duration: '0.4' }} style={{background: '', width: '100%', height: '100%', position: 'relative'}}>
             <div style={{background: '', width: '100%', height: '100%', borderRadius: '20px', border: '1px solid white', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <div ref={ref} style={{height: 'calc(100% - 20px)', width: 'calc(100% - 20px)', background: '', overflow: 'hidden', borderRadius: '10px'}}>
                     <video

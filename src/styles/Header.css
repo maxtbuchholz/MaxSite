@@ -315,9 +315,9 @@ ul{
     align-items: center;
 }   
 .headerOnTop ul{
-    width: 440px;
-    max-width: 38%;
-    transition: width 0.3s;
+    width: 550px;
+    max-width: 44%;
+    /* transition: width 0.3s; */
     /* transition: 0.3s ease-out; */
 }   
 .headerFull ul{
@@ -333,7 +333,7 @@ ul{
 .headerFull ul{
     width: 550px;
     max-width: 44%;
-    transition: width 0.3s;
+    /* transition: width 0.3s; */
     /* transition: 0.3s ease-out; */
 }  
 .headerOnTop li:not(:last-child){
@@ -349,20 +349,42 @@ ul{
 }
 }
 .headerContentLogo{
-    margin-top: -8px;
+    margin-top: -10px;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;
     color: white;
-    background: #22aaff;  /* fallback for old browsers */
-    background-image: linear-gradient(109.5deg,  rgba(76,221,242,1) 8.2%, rgba(92,121,255,1) 91.1% );
-
+    /* background: #22aaff; */
+      /* fallback for old browsers */
+    /* background-image: linear-gradient(109.5deg,  rgba(76,221,242,1) 8.2%, rgba(92,121,255,1) 91.1% ); */
+    /* background-image: linear-gradient(110deg,  
+                                        rgba(76,221,242,1) 0%,                                                                         rgba(109,185,249,1) 44%,    
+                                        rgba(109,185,249,1) 46%,  
+                                        rgba(92,121,255,1) 100% 
+                                        ); */
     text-align: center;
     display: block;
     /* rgba(109,185,249,1); */
     /* linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% );  */
 
     
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .headerContentBackLogo{
+    margin-top: -8px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #ffffff00;  /* fallback for old browsers */
+    text-align: center;
+    display: block;
+    /* rgba(109,185,249,1); */
+    /* linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% );  */
+
+    -webkit-text-stroke: 0px #dcedff;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -421,9 +443,9 @@ ul{
     margin: auto;
 } */
 .transitionHelper{
-    /* transition: transform 100ms ease-out;
-    -webkit-transition: transform 100ms ease-out;
-    -moz-transition: transform 100ms ease-out; */
+    transition: all 60ms ease-out;
+    -webkit-transition: all 60ms ease-out;
+    -moz-transition: all 60ms ease-out;
 }
 @media (min-width: 0px){
     .islandBack{
@@ -437,10 +459,10 @@ ul{
         background-repeat: no-repeat;
     }
     .rock1{
-        width: 500px;
+        width: 550px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: 55px;
+        bottom: 65px;
         left: -100px;
         background-image: url('../img/svg/Header/Lighthouse.svg');
         background-position: left bottom;
@@ -463,7 +485,8 @@ ul{
         width: 150px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: -40px;
+        /* bottom: -60px; */
+        bottom: -100%;
         background-image: url('../img/svg/Header/spike1.svg');
         background-position: left bottom;
         background-repeat: no-repeat;
@@ -507,7 +530,8 @@ ul{
         width: 150px;
         aspect-ratio: 1;
         position: fixed;
-        bottom: -40px;
+        /* bottom: -40px; */
+        bottom: -100%;
         background-image: url('../img/svg/Header/spike1.svg');
         background-position: left bottom;
         background-repeat: no-repeat;

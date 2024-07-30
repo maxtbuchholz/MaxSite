@@ -41,9 +41,9 @@ const About1Page = ({onPage, pageVisibilityChanged}) => {
             <SoftwareBackground/>
             <div className="about1HalfPage1">
             <div style={{}} className="about1ProfilePic"><ProfileImage onPage={onPage}/></div>
-                <div style={{width: '100%', textAlign: 'center'}} className="poppins-semibold">
+                <div style={{width: '100%', textAlign: 'center'}} className="poppins-regular">
                     <h2 style={{color: '#FFFFFFee'}} className="about1Text1">Max Buchholz</h2>
-                    <h3 style={{color: '#FFFFFFdd'}} className="about1Text2 poppins-medium">Software Developer</h3>
+                    <h3 style={{color: '#FFFFFFdd'}} className="about1Text2 poppins-regular">Software Developer</h3>
                 </div>
             </div>
              <div className="about1HalfPage2" style={{background: ''}}>

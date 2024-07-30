@@ -18,17 +18,13 @@ import IntroTerminal from "../components/IntroTerminal";
 import { FcPositiveDynamic } from "react-icons/fc";
 import About2Page from "./About2";
 import ProjectsPage from "./projects";
+import RocksBack from "../components/RocksBack";
 const apps = [
     {title: 'Blunder Boats', content: blunderBoatsIcon },
     {title: 'Soft Sleep', content: softSleepIcon },
               {title: 'Tendency Tuner', content: tendencyTunerIcon },
 ]
 const Home = ({page, project}) => {
-    function selectedAppChanged(appIndex){
-        setselectedApIndex(appIndex)
-        let newPage = "/"+currPageName;
-        //window.history.replaceState(null, newPage, newPage);
-      }
       var [isIOS, setIsIOS] = useState(false);
       useLayoutEffect(() => {
         setIsIOS(navigator.userAgent.platform === 'iPad' || navigator.userAgent.platform === 'iPhone' || navigator.userAgent.platform === 'iPod');
@@ -40,15 +36,10 @@ const Home = ({page, project}) => {
             if(pages.includes(page)){
                 scrollToInstant(page);
                 if(page !== 'home'){
-                    // setUlTop(`0%`);
-                    // setTerminalTop('-1000px');
-                    // setHeaderHeight('100px');
-                    // setheaderWaveArray([[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]);
                     height = window.innerHeight;
                     scrollPosition = document.getElementById("sectionContainer").scrollTop;
                     handleHeaderHeight();
                 }
-                // document.getElementById("sectionContainer").scrollBy(100,100);
             }
         }
         if(project != null){
@@ -63,50 +54,59 @@ const Home = ({page, project}) => {
         }
         const handleResize = () => {
             height = window.innerHeight
-            //handleHeaderHeight();
+            width = window.innerWidth
         };
         window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        };
     }, []);
-      const [selectedApIndex, setselectedApIndex] = useState(0);
-      const firstApp = 0;
     var height = window.innerHeight
+    var width = window.innerWidth
     var scrollPosition = 0;
     var [disableScroll, setDisableScroll] = useState(false);
-    const handleScroll = (e) => {
-        updatePageVisabilities();
-        const { scrollTop, scrollHeight, clientHeight } = e.target;
-        if(!isIOS){
-        let target = document.getElementById("projects");
-        if( ((target.offsetTop) < (scrollTop + 50)) &&
-            (((target.offsetTop + target.offsetHeight) - (window.innerHeight)) > (scrollTop + 100))){
-                setDisableScroll(true);
-            }
-            else{
-                setDisableScroll(false);
-            }
-        }
-            scrollPosition = scrollTop;
-            // return;
-            if(true){
-                if((Date.now() - tempTimeText) > 10){
-                    changeProgBarWidth((scrollPosition / (height - 100)) % 1);
-                    handleHeaderHeight();
-                    tempTimeText = Date.now()
+    useEffect(() => {
+        var setScrollTop = null;
+        var prevScrollTop = null;
+        const interval = setInterval(() => {
+            updatePageVisabilities();
+            if(setScrollTop === null){ return; }
+            if(setScrollTop === prevScrollTop){ return; }
+            prevScrollTop = setScrollTop;
+            if(!isIOS){
+                let target = document.getElementById("projects");
+                if( ((target.offsetTop) < (setScrollTop + 50)) &&
+                    (((target.offsetTop + target.offsetHeight) - (window.innerHeight)) > (setScrollTop + 100))){
+                        setDisableScroll(true);
+                }
+                else{
+                    setDisableScroll(false);
                 }
             }
+            scrollPosition = setScrollTop;
+            changeProgBarWidth((setScrollTop / (height - 100)) % 1);
+            handleHeaderHeight();
+        }, 20);
+        const handleScroll = (e) => {
+            setScrollTop = e.target.scrollTop;
     }
+
+    ScrollPageRef.current.addEventListener('scroll', handleScroll);
+    return () => {clearInterval(interval); ScrollPageRef.current.removeEventListener('scroll', handleScroll)}
+}, []);
     function changeProgBarWidth(perc){
-        setProgBarWidth(1 - Math.abs((perc) - 0.5))
+        setProgBarWidth((1 - Math.abs((perc) - 0.5) * 2))
     }
-    const [ulTop, setUlTop] = useState('calc(50% + 140px)');
-    const [terminalTop, setTerminalTop] = useState('calc(50% - 220px)');
+    const [ulTop, setUlTop] = useState(window.innerWidth > 800 ? ((1 * (window.innerHeight)) + (1 * -180)) : ((1 * height) + (0 * -(window.innerHeight * 0.5))) + (1 * -130));
+    const [terminalTop, setTerminalTop] = useState(window.innerWidth > 800 ? ((1 * (window.innerHeight * 0.5)) + (0 * -(window.innerHeight) + (1 * -220))) : ((1 * (window.innerHeight * 0.5)) + (0 * -(window.innerHeight + (window.innerHeight * 0.5))) + (1 * -216)));
     const [topOfPage, setTopOfPage] = useState(true);
-    var [headerFull, setheaderFull] = useState(true);
-    const[progBarHeight, setProgBarHeight] = useState(`0px`);
-    const[progBarWidth, setProgBarWidth] = useState(0.5);
-    var tempTimeText = Date.now()
+    var headerFull = true;
+    const[progBarHeight, setProgBarHeight] = useState(0);
+    const[progBarWidth, setProgBarWidth] = useState(0);
+    const [rocksBackFullTop, setRocksBackFullTop] = useState('100px');
+    const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
       function handleHeaderHeight(){
+            handleMovingScroll((scrollPosition / (height - 100)))
           var scroll = Math.min(scrollPosition, height);
           var headerSize = Math.max(height - scroll, 0);
           scroll = Math.max(scroll, 0)
@@ -114,7 +114,7 @@ const Home = ({page, project}) => {
         var headrRect = document.getElementById('uiHeader');
         if(headerSize > 100){       //still on first header page
             if(!headerFull){
-                setheaderFull(true);
+                headerFull = true;
                 headrRect.classList.remove("headerOnTop");
                 headrRect.classList.add("headerFull");
             }
@@ -136,7 +136,7 @@ const Home = ({page, project}) => {
                 }
             }
             if(headerFull){
-                setheaderFull(false);
+                headerFull = false;
                 handleHeaderWaves(0)
                     setHeaderHeight(`${100}px`)
                     headrRect.classList.add("headerOnTop");
@@ -144,6 +144,31 @@ const Home = ({page, project}) => {
             }
         }
       };
+      function handleMovingScroll(scroll){
+        handleRocksBack(scroll)
+      }
+      function handleRocksBack(scroll){
+        let startPage = 1;
+        let endPage = 2;
+        if(scroll <= startPage - 1){
+            setRocksBackFullTop('100vh')
+            setRockAnimatiionValue(0);
+        }else if(scroll >= endPage + 1){
+            setRockAnimatiionValue(1);
+            setRocksBackFullTop('-100vh')
+        }else if(scroll < startPage){
+            setRockAnimatiionValue(0);
+            let diff = (scroll - startPage);
+            setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 100px)`)
+        }else if(scroll > endPage){
+            setRockAnimatiionValue(1);
+            let diff = (scroll - endPage);
+            setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 100px)`)
+        }else{
+            setRockAnimatiionValue((scroll - startPage) / (endPage - startPage));
+            setRocksBackFullTop('100px')
+        }
+      }
       function handleHeaderWaves(percFul){
         handleHeaderElements(percFul);
         let rock1Y = (((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
@@ -162,32 +187,36 @@ const Home = ({page, project}) => {
         if(scrollPosition === 0){
         let percFul = 1;
         let oneMin = 0;
+        let halfSH = height / 2;
         if(window.innerWidth > 800){
-            setUlTop(`calc(${(percFul * 50)}% + ${(percFul * 140)}px)`);
-            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -100)}% + ${(percFul * -220)}px)`);
-            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+            setUlTop((percFul * height) + (percFul * -180));
+            setTerminalTop((percFul * halfSH) + (oneMin * -height) + (percFul * -220));
+            setProgBarHeight((percFul * height) + (percFul * -100));
         }else{
-            setUlTop(`calc(${(percFul * 50) + (oneMin * -50)}% + ${(percFul * 90)}px)`);
-            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -150)}% + ${(percFul * -223)}px)`);
-            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+            setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
+            setTerminalTop((percFul * halfSH) + (oneMin * -(height + halfSH)) + (percFul * -216));
+            setProgBarHeight((percFul * height) + (percFul * -100));
         }
     }
       }, [])
       function handleHeaderElements(percFul){
         let oneMin = 1 - percFul;
+        let halfSH = height / 2;
+        let lerSH = height * 0.6;
         if(window.innerWidth > 800){
-            setUlTop(`calc(${(percFul * 50)}% + ${(percFul * 140)}px)`);
-            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -100)}% + ${(percFul * -220)}px)`);
-            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+            setUlTop((percFul * height) + (percFul * -180));
+            setTerminalTop((percFul * halfSH) + (oneMin * -height) + (percFul * -220));
+            setProgBarHeight((percFul * height) + (percFul * -100));
         }else{
-            setUlTop(`calc(${(percFul * 50) + (oneMin * -40)}% + ${(percFul * 90)}px)`);
-            setTerminalTop(`calc(${(percFul * 50) + (oneMin * -150)}% + ${(percFul * -223)}px)`);
-            setProgBarHeight(`calc(${(percFul * 100)}% + ${(percFul * -100)}px)`);
+            setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
+            setTerminalTop((percFul * halfSH) + (oneMin * -(height + halfSH)) + (percFul * -216));
+            setProgBarHeight((percFul * height) + (percFul * -100));
         }
       }
       const [headerWaveArray, setheaderWaveArray] = useState([0,0,0]);      
       const [headerHeight, setHeaderHeight] = useState('100%');
       const HomeRef = useRef();
+      const ScrollPageRef = useRef();
       const AboutRef = useRef();
       const ProjectsRef = useRef();
       const ContactRef = useRef();
@@ -223,18 +252,13 @@ const Home = ({page, project}) => {
       const [currPageName, setCurrPageName] = useState("home");
       var autoScrollAmount = 0;
       function changeInAutoScrolling(isScroll){
-        // return;
         if(isScroll){
             autoScrollAmount++;
-            // if(!isAutoScrolling){
                 setAutoScrolling(true);
-            //}
         }else{
             autoScrollAmount--;
             if(autoScrollAmount === 0){
-                // if(isAutoScrolling){
                     setAutoScrolling(false);
-                //}
             }
         }
       }
@@ -279,17 +303,19 @@ const Home = ({page, project}) => {
         }
       }
     return (
-        <div>   
+        <div>
+         <RocksBack fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>   
          <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
-        <div id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")} onScroll={handleScroll}>
+        <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
             <div className="firstSection" id="top" style={{background: '#121424'}}>
                 <div id="Home-Observer" ref={HomeRef} className="pageIntersectionObserver"/>
             </div>
-            <div className="section" id="about">
+            {/* <div className="section" id="about">
                 <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
                 <About1Page onPage = {currPage === 1}/>
-            </div>
+            </div> */}
             <div className="section" id="about2">
+                <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
                 <About2Page />
                 <div id="AboutBottom-Observer" ref={AboutBottomRef} className="pageIntersectionObserver"/>
             </div>

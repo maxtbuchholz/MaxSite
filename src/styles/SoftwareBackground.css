@@ -1,10 +1,13 @@
 .softwareBackground{
     position: absolute;
-    width: max(calc(50vw - 80px), 500px);
+    width: min(max(calc(50vw - 80px), 500px), 1000px);
     aspect-ratio: 1;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 4px;
+}
+.smallSoftware{
+    width: 400px;
 }
 .softwareSet1{
     top: 40px;
@@ -13,4 +16,8 @@
 .softwareSet2{
     top: 100px;
     right: 120px;
+}
+.softwareSet3{
+    top: 200px;
+    right: calc(50% - 200px);
 }

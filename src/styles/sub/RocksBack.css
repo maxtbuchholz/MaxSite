@@ -1,0 +1,5 @@
+.moveable{
+    transition: all 60ms ease-out;
+    -webkit-transition: all 60ms ease-out;
+    -moz-transition: all 60ms ease-out;
+}

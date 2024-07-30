@@ -8,6 +8,7 @@ import MongDB_image from '../img/software-screenshots/MongoDBCompas.png';
 import MySQLW_image from '../img/software-screenshots/MySQLWork.png';
 import XCodex_image from '../img/software-screenshots/Xcode.png';
 import Postman_image from '../img/software-screenshots/Postman.png';
+import GitDesk_image from '../img/software-screenshots/GitDesk.png';
 const SoftwareBackground =({title, image, link}) =>{
 
     return(
@@ -19,8 +20,11 @@ const SoftwareBackground =({title, image, link}) =>{
             </div> 
             <div className="softwareSet2" style={{position: 'absolute', overflow: 'visible'}}>
                 <div className="softwareBackground" style={{top: 0, right: 0, backgroundImage: `url(${Postman_image})`}}/>
-                <div className="softwareBackground" style={{top: '40px', right: '30px', backgroundImage: `url(${MongDB_image})`}}/>
-                <div className="softwareBackground" style={{top: '80px', right: '60px', backgroundImage: `url(${VisStu_image})`}}/>
+                <div className="softwareBackground" style={{top: '20px', right: '20px', backgroundImage: `url(${MongDB_image})`}}/>
+                <div className="softwareBackground" style={{top: '40px', right: '40px', backgroundImage: `url(${VisStu_image})`}}/>
+            </div> 
+            <div className="softwareSet3" style={{position: 'absolute', overflow: 'visible'}}>
+                <div className="softwareBackground smallSoftware" style={{top: 0, right: 0, backgroundImage: `url(${GitDesk_image})`}}/>
             </div> 
         </div>
     )

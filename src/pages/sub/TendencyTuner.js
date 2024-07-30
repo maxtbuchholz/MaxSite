@@ -59,7 +59,7 @@ const TendencyTuner = ({}) => {
     }, []);
     return (
       <div>
-      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={`-100%`}/> 
+      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={-1000000} progresBarWidth={0}/> 
       <div className="sectionContainer" style={{marginTop: '100px'}}>
         <div className="longSection">
           <div className="tenTenWave4" style={{position: 'absolute', width: '200vw', height: '650px', backgroundColor: '', backgroundPositionX: `${time * 20 + 807}px`, transition: {duration: '100ms'}}}/>

@@ -40,8 +40,8 @@ const IntroTerminal = ({ onPage }) => {
         }
     }
     return(
-        <div className="introTerminalIn" style={{background: 'rgba(30,30,30,0.7)', width: '550px', height: '363px', borderStyle: 'solid', borderWidth: '1.0px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
-        'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 0px 0px, rgb(10, 10, 10) 0px 0px 0px 0.5px', color: 'white'}}>
+        <div style={{background: 'rgba(30,30,30,0.7)', width: '550px', borderStyle: 'solid', borderWidth: '1.0px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
+        'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 0px 0px, rgb(10, 10, 10) 0px 0px 0px 0.5px', color: 'white'}} className="introTerminalIn terminalScale">
             <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
                 <h3 className="poppins-regular" style={{color: 'rgba(144,145,146,1)', fontSize: '14px', position: 'absolute', right: 0, left: 0, margin: 'auto',  width: '100%', textAlign: 'center', marginTop: '1px'}}>intro.cs</h3>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
@@ -182,7 +182,7 @@ const CodeLine = ({texts, index, length, finishFunction, scrollFunction, outputF
                       }, 50);
                 }
             }
-        }, 30)
+        }, 20)
     }, []);
     const [isNewConsole, setIsNewConsole] = useState(false);
     return(
@@ -219,7 +219,9 @@ const RichSubableText = ({texts, length}) => {
     );
 }
 var outputLines = [];
-const origOutputLines = `Hello I am Max Buchholz
+const origOutputLines = 
+`Hello I am Max Buchholz
+I am a Software Developer!
 Heres some quick music math!
 There are 12 notes per octave
 E-1320hz is 19 notes above A-440hz
@@ -234,6 +236,7 @@ const origCodeLines =
 `string hello = "Hello I am";
 string name = "Max Buchholz";
 Console.WriteLine($"{hello} {name}");
+Console.WriteLine("I am a Software Developer!");
 Console.WriteLine("Heres some quick music math!");
 double notes_up(double lower, double upper){
     return 12 * Math.Log(upper / lower) / Math.Log(2);

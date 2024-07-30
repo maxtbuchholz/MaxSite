@@ -6,6 +6,8 @@ import SkillsContainer from "../components/SkillsContainer";
 import img_github from '../img/logos/github-mark-white.svg'
 import img_swift from '../img/logos/Swift_logo_color.svg'
 import { duration } from "@mui/material";
+import greenBlob from '../img/svg/greenBlob.svg';
+import { green } from "@mui/material/colors";
 
 const About2Page = () => {
     const itemSizes = [120,80];
@@ -121,6 +123,19 @@ const About2Page = () => {
     }, []);
     return (
         <motion.div className="about2Page" initial={'closed'} animate={onPage ? "open" : "closed"}>
+            {/* <div style={{   backgroundImage: `url(${greenBlob})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: '0',
+                            backgroundSize: 'contain',
+                            backgroundColor: 'transparent',
+                            width: 'max(100%, 1000px)',
+                            height: '160%',
+                            position: 'absolute',
+                            zIndex: '-1',
+                            top: '20%',
+                            left: '-30%'
+                        }}>
+                </div> */}
             <h2 className="titleText">Skills</h2>
             <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '14px'}}
             variants={{open: {width: 'min(350px, 80vw)',       

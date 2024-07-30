@@ -13,6 +13,7 @@ import SoftSleep_image from '../img/projectMedia/SoftSleep_image.png';
 import SoftSleep_video from '../img/projectMedia/SoftSleep_video.mp4';
 import TendencyTuner_image from '../img/projectMedia/TendencyTuner_image.png';
 import TendencyTuner_video from '../img/projectMedia/TendencyTuner_video.mp4';
+import greenBlob from '../img/svg/greenBlob.svg';
 
 const ProjectsPage = () => {
     const [itemSize, setItemSize] = useState([400,180]);
@@ -110,6 +111,19 @@ const ProjectsPage = () => {
     }, []);
     return (
         <motion.div className="about2Page" initial={'closed'} animate={onPage ? "open" : "closed"}>
+                        {/* <div style={{   backgroundImage: `url(${greenBlob})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: '0',
+                            backgroundSize: 'contain',
+                            backgroundColor: 'transparent',
+                            width: 'max(100%, 1000px)',
+                            height: '160%',
+                            position: 'absolute',
+                            zIndex: '-1',
+                            bottom: '20%',
+                            left: '-30%'
+                        }}>
+                </div> */}
             <h2 className="titleText">Projects</h2>
             <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '8px'}}
             variants={{open: {width: 'min(350px, 80vw)',       

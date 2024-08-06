@@ -15,7 +15,7 @@ const About2Page = () => {
     const skillsDivVariants = {
         open:{
             transition:{
-                staggerChildren: 0.34,
+                staggerChildren: 0.24,
             }
         },
         closed:{
@@ -31,7 +31,7 @@ const About2Page = () => {
             transition:{
                 type: "spring",
                 stiffness: 60,
-                staggerChildren: 0.14,
+                staggerChildren: 0.08,
                 staggerDirection: -1,
             }
         },
@@ -53,7 +53,7 @@ const About2Page = () => {
             }
         },
         closed:{
-            y: 50,
+            y: 70,
             opacity: 0,
             transition:{
                 delay: 0.2,

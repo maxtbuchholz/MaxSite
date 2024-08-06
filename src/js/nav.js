@@ -51,7 +51,7 @@ var requestAnimFrame = (function(){
 export function scrollTo(target, callback, duration) {
   if( (window.location.pathname !== '/') &&
       (window.location.pathname !== '/home') &&
-      (window.location.pathname !== '/about')&&
+      (window.location.pathname !== '/skills')&&
       (window.location.pathname !== '/projects') &&
       (window.location.pathname !== '/contact')){
     // window.navigation.navigate(`/${target}`)

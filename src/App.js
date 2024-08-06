@@ -27,8 +27,8 @@ const App = () => {
       element: <Home page={"home"}/>,
     },
     {
-      path: "/about",
-      element: <Home page={"about"}/>,
+      path: "/skills",
+      element: <Home page={"skills"}/>,
     },
     {
       path: "/projects",

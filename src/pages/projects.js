@@ -22,7 +22,7 @@ const ProjectsPage = () => {
     const skillsDivVariants = {
         open:{
             transition:{
-                staggerChildren: 0.34,
+                staggerChildren: 0.2,
             }
         },
         closed:{

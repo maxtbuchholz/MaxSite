@@ -29,7 +29,7 @@ const Sidebar = ({scrollButtonCallback}) => {
     }
     const items = [
         "Home",
-        "About",
+        "Skills",
         "Projects",
         "Contact",
     ]

@@ -19,6 +19,7 @@ import { FcPositiveDynamic } from "react-icons/fc";
 import About2Page from "./About2";
 import ProjectsPage from "./projects";
 import RocksBack from "../components/RocksBack";
+import ContactBack from "../components/ContactBack";
 const apps = [
     {title: 'Blunder Boats', content: blunderBoatsIcon },
     {title: 'Soft Sleep', content: softSleepIcon },
@@ -29,7 +30,7 @@ const Home = ({page, project}) => {
       useLayoutEffect(() => {
         setIsIOS(navigator.userAgent.platform === 'iPad' || navigator.userAgent.platform === 'iPhone' || navigator.userAgent.platform === 'iPod');
         if(isIOS) setDisableScroll(false);
-        const pages = ["home", "about", "projects", "contact"];
+        const pages = ["home", "skills", "projects", "contact"];
         const projects = ["soft-sleep", "blunder-boats", "tendency-tuner"];
         if(page != null){
             page = page.toLowerCase();
@@ -102,6 +103,8 @@ const Home = ({page, project}) => {
     const [topOfPage, setTopOfPage] = useState(true);
     var headerFull = true;
     const[progBarHeight, setProgBarHeight] = useState(0);
+    const[headerBackTop, setHeaderBackTop] = useState(0);
+    const[contactBackTop, setContactBackTop] = useState(0);
     const[progBarWidth, setProgBarWidth] = useState(0);
     const [rocksBackFullTop, setRocksBackFullTop] = useState('100px');
     const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
@@ -146,6 +149,14 @@ const Home = ({page, project}) => {
       };
       function handleMovingScroll(scroll){
         handleRocksBack(scroll)
+        //handleHeaderBack(scroll)
+        handleContactBack(scroll)
+      }
+      function handleHeaderBack(scroll){
+        setHeaderBackTop(Math.max(Math.min(scroll, 1), 0));
+      }
+      function handleContactBack(scroll){
+        setContactBackTop(Math.max(Math.min(1 - (scroll - 2), 1), 0));
       }
       function handleRocksBack(scroll){
         let startPage = 1;
@@ -294,7 +305,7 @@ const Home = ({page, project}) => {
             //window.history.replaceState(null, currPageName, "/projects");
         }else if(aboutVisible){
             setCurrPage(1);
-            setCurrPageName("about")
+            setCurrPageName("skills")
             //window.history.replaceState(null, currPageName, "/about");
         }else if(homeVisible){
             setCurrPage(0);
@@ -304,8 +315,9 @@ const Home = ({page, project}) => {
       }
     return (
         <div>
-         <RocksBack fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>   
-         <Header currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
+         <ContactBack fullBodyTop={contactBackTop}/>
+         <RocksBack fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
+         <Header headerBackTop={headerBackTop} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
             <div className="firstSection" id="top" style={{background: '#121424'}}>
                 <div id="Home-Observer" ref={HomeRef} className="pageIntersectionObserver"/>
@@ -314,7 +326,7 @@ const Home = ({page, project}) => {
                 <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
                 <About1Page onPage = {currPage === 1}/>
             </div> */}
-            <div className="section" id="about2">
+            <div className="section" id="skills">
                 <div id="About-Observer" ref={AboutRef} className="pageIntersectionObserver"/>
                 <About2Page />
                 <div id="AboutBottom-Observer" ref={AboutBottomRef} className="pageIntersectionObserver"/>

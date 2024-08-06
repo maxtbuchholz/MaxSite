@@ -18,7 +18,8 @@ import { delay, motion } from 'framer-motion';
 import zIndex from "@mui/material/styles/zIndex.js";
 import ProfileImage from "./ProfileImage.js";
 import IntroTerminal from "./IntroTerminal.js";
-const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth}) => {
+import Headerback from "./HeaderBack.js";
+const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth, headerBackTop}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler =() =>{
         setMenuOpen((p) => !p)
@@ -48,6 +49,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
     }, [size.width, menuOpen]);
     return(
         <div id="uiHeader" className="headerContainer headerFirst headerFull transitionHelper" style={{height: '100px', width: '100%'}}>
+                     {/* <Headerback fullBodyTop={headerBackTop}/>    */}
                                 {/* <div className="transitionHelper" style={{width: '100%', background: '', height: '100px', position: 'fixed', display: 'flex', flexDirection: 'column-reverse', alignItems: 'center', top: 0, transform: `translate(0px, ${progresBarTop}px)`}}><div className="transitionHelper" style={{width: `min(1600px, 96vw)`, marginBottom: '6px', height: '2px', 
                                 transform: `scale(${progresBarWidth}, 1)`,
                                 // background: '#6db9f9',
@@ -90,8 +92,8 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                                 {/* <a className={((currentPage === 0) ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("Home"); headerPositionIconTo("Header-Home-Btn"); }}>Home</a> */}
                             </li>
                             <li>
-                                <motion.button className={((currentPage === "about") ? "onButtonsPage" : "notButtonsPage")} id="Header-About-Btn" onClick={() => { scrollTo("about", scrollButtonCallback, 300); headerPositionIconTo("Header-About-Btn"); }}   whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
-                                >About</motion.button>
+                                <motion.button className={((currentPage === "skills") ? "onButtonsPage" : "notButtonsPage")} id="Header-About-Btn" onClick={() => { scrollTo("skills", scrollButtonCallback, 300); headerPositionIconTo("Header-About-Btn"); }}   whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}
+                                >Skills</motion.button>
                                 {/* <a className={((currentPage === 1) ? "onButtonsPage" : "notButtonsPage")}id="Header-About-Btn" onClick={() => {scrollTo("About"); headerPositionIconTo("Header-About-Btn"); }}>About</a> */}
                             </li>
                             <li>
@@ -114,11 +116,11 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                         </div> */}
                     </div>
         </header>
-        <div style={{top: '0px', width: '100%', height: '400px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden', opacity: 0.6}}>
+        <div style={{top: '0px', width: '100%', height: '400px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden', opacity: 1.0}}>
             <div className="header-cloud-2 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
             <div className="header-cloud-1 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
         </div>
-        <div className="islandBack transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/>
+        {/* <div className="islandBack transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/> */}
         <div style={{bottom: '0px', width: '100%', height: '350px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden'}}>
             <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
                 <div className="header-wave-l3 header-wave" />

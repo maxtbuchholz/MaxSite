@@ -5,7 +5,7 @@ export function navToGitHub() {
     window.open("https://github.com/maxtbuchholz", "gitHub");
 }
 export function startEmail() {
-    window.open("mailto:maxtbuchholz@gmail.com?&subject=test&body=mail", "email");
+    window.open("mailto:maxtbuchholz@gmail.com", "email");
     // window.open("mailto:maxtbuchholz@gmail.com", "email");
     // window.location.href = "mailto:user@example.com?subject=Subject&body=message%20goes%20here";
 }

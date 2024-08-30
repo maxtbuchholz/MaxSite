@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/sub/RocksBack.css';
 const ContactBack = ({fullBodyTop}) => {
     return(
-        <div className="moveable" style={{transform: `translate(0, calc(${fullBodyTop} * 100vh))`, position: 'fixed', width: '100vw', height: '100vh', background: 'transparent'}}>
+        <div className="pageMovable" style={{transform: `translate(0, calc(${fullBodyTop} * 100vh))`, position: 'fixed', width: '100vw', height: '100vh', background: 'transparent'}}>
 
 
 

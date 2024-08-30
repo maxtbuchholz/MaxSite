@@ -5,6 +5,7 @@ import { type } from "@testing-library/user-event/dist/type";
 import SkillsContainer from "../components/SkillsContainer";
 import img_github from '../img/logos/github-mark-white.svg'
 import img_swift from '../img/logos/Swift_logo_color.svg'
+import img_java from '../img/logos/java-icon.svg'
 import { duration } from "@mui/material";
 import greenBlob from '../img/svg/greenBlob.svg';
 import { green } from "@mui/material/colors";
@@ -15,7 +16,7 @@ const About2Page = () => {
     const skillsDivVariants = {
         open:{
             transition:{
-                staggerChildren: 0.24,
+                staggerChildren: 0.18,
             }
         },
         closed:{
@@ -31,12 +32,12 @@ const About2Page = () => {
             transition:{
                 type: "spring",
                 stiffness: 60,
-                staggerChildren: 0.08,
+                staggerChildren: 0.06,
                 staggerDirection: -1,
             }
         },
         closed:{
-            x: -100,
+            x: -50,
             transition:{
                 delay: 0.3,
                 duration: 0.1,
@@ -53,7 +54,7 @@ const About2Page = () => {
             }
         },
         closed:{
-            y: 70,
+            y: 30,
             opacity: 0,
             transition:{
                 delay: 0.2,
@@ -65,7 +66,7 @@ const About2Page = () => {
     const items = [
         {site: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png', title: 'javaScript'},
         {site: 'https://react.dev/', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png', title: 'react'},
-        {site: 'https://www.java.com/en/', image: 'https://static-00.iconduck.com/assets.00/java-icon-2048x2048-3pfathb3.png', title: 'java'},
+        {site: 'https://www.java.com/en/', image: img_java, title: 'java'},
         {site: 'https://github.com/', image: img_github, title: 'github'},
         {site: 'https://en.wikipedia.org/wiki/C%2B%2B', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/612px-ISO_C%2B%2B_Logo.svg.png', title: 'c++'},
         {site: 'https://flutter.dev/', image: 'https://storage.googleapis.com/cms-storage-bucket/4fd5520fe28ebf839174.svg', title: 'flutter'},

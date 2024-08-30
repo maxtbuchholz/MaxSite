@@ -86,7 +86,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
 
                     {(size.width >= 800) && <nav className={"headerContentNav"} >
                         {/* <div id="locationRect" className="locationRect"></div> */}
-                        <ul style={{position: 'fixed', top: 0, transform: `translate(0px, ${ulTop}px)`}} className="transitionHelper">
+                        <ul style={{position: 'fixed', top: 0, transform: `translate(0px, ${ulTop}px)`}} className="transitionHeaderHelper">
                             <li>
                                 <motion.button className={((currentPage === "home") ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("home", scrollButtonCallback, 300); headerPositionIconTo("Header-Home-Btn"); }}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>Home</motion.button>
                                 {/* <a className={((currentPage === 0) ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("Home"); headerPositionIconTo("Header-Home-Btn"); }}>Home</a> */}

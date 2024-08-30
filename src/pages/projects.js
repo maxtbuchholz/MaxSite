@@ -17,12 +17,12 @@ import greenBlob from '../img/svg/greenBlob.svg';
 
 const ProjectsPage = () => {
     const [itemSize, setItemSize] = useState([400,180]);
-    const itemSizes = [[400,180], ['min(88%, 340px)', 140]]
+    const itemSizes = [[400,180], ['min(88%, 250px)', 112.5]]
     // const itemAspect = 180/400;
     const skillsDivVariants = {
         open:{
             transition:{
-                staggerChildren: 0.2,
+                staggerChildren: 0,
             }
         },
         closed:{
@@ -37,16 +37,16 @@ const ProjectsPage = () => {
             x: 0,
             transition:{
                 type: "spring",
-                stiffness: 60,
-                staggerChildren: 0.14,
+                stiffness: 30,
+                staggerChildren: 0.0,
                 staggerDirection: 1,
             }
         },
         closed:{
             x: 0,
             transition:{
-                delay: 0.2,
-                duration: 0.1,
+                delay: 0.02,
+                duration: 0.05,
             }
         }
     }
@@ -56,15 +56,15 @@ const ProjectsPage = () => {
             opacity: 1,
             transition:{
                 type: "spring",
-                stiffness: 50,
+                stiffness: 20,
             }
         },
         closed:{
-            y: 50,
+            y: 10,
             opacity: 0,
             transition:{
-                delay: 0.2,
-                duration: 0.1,
+                delay: 0.05,
+                duration: 0.05,
             }
         }
     }
@@ -125,12 +125,12 @@ const ProjectsPage = () => {
                         }}>
                 </div> */}
             <h2 className="titleText">Projects</h2>
-            <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '8px'}}
+            <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '-4px'}}
             variants={{open: {width: 'min(350px, 80vw)',       
                 transition:{
                     type: "linear",
                     delay: 0.1,
-                    duration: 0.2,
+                    duration: 0.05,
             }}, closed: {width: '100px'}}}
             />
             <motion.div variants={skillsDivVariants} id="projItemDiv" style={{width: '90vw', maxWidth: '910px', height: '75%', maxHeight: '500px', minHeight: '460px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor: ''}}>

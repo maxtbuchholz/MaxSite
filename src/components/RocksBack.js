@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/sub/RocksBack.css';
 const RocksBack = ({fullBodyTop, rockAnimateValue}) => {
     return(
-        <div className="moveable" style={{transform: `translate(0, ${fullBodyTop})`, position: 'fixed', width: '100vw', height: 'calc(100vh - 100px)', background: 'transparent'}}>
+        <div className="pageMovable" style={{transform: `translate(0, ${fullBodyTop})`, position: 'fixed', width: '100vw', height: 'calc(100vh - 100px)', background: 'transparent'}}>
 
             <div className="moveable" style={{transform: `translate(0, calc(${-10 * (1 - 0)}vh + calc(10vh + 100px)))`, position: 'absolute', width: '20%', height: '72vh', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
             <div className="moveable" style={{transform: `translate(0, calc(${-10 * (1 - 0)}vh + calc(10vh + 100px)))`, position: 'absolute', width: '20%', height: '72vh', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>

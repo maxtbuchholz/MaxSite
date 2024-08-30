@@ -6,8 +6,12 @@
             radial-gradient(ellipse at right center, #c115e8ff, transparent),
             radial-gradient(ellipse at left bottom, #2c1eebff, transparent);
             background-color: #18112a;
+            /* background: white; */
             scroll-snap-align: none;
             scroll-behavior: smooth;
+}
+.flip{
+    transform: "rotate(180deg)"
 }
 .purpleSpacer{
     aspect-ratio: 1800/600;
@@ -65,6 +69,9 @@ hr{
     backdrop-filter: blur(10px);
 }
 @media (min-width: 800px){
+    .appstorelogo{
+        top: 500px;
+    }
     .purpleBlob1{
         /* transform: translate(-800px, 0); */
         position: absolute;
@@ -112,7 +119,7 @@ hr{
         width: 100px;
         height: 100px;
         position: absolute;
-        left: calc(50% + 300px);
+        left: calc(50% + 230px);
         top: 150px;
         transition: 0.5s;
     }
@@ -120,7 +127,7 @@ hr{
         width: 75px;
         height: 75px;
         position: absolute;
-        left: calc(50% + 280px);
+        left: calc(50% + 210px);
         top: 70px;
         transition: 0.5s;
     }
@@ -128,7 +135,7 @@ hr{
         width: 50px;
         height: 50px;
         position: absolute;
-        left: calc(50% + 370px);
+        left: calc(50% + 300px);
         top: 110px;
         transition: 0.5s;
     }
@@ -137,15 +144,15 @@ hr{
         height: 80px;
         position: absolute;
         left: calc(50% - 300px);
-        top: 20px;
+        top: 50px;
         transition: 0.5s;
     }
     .star5{
         width: 80px;
         height: 80px;
         position: absolute;
-        left: calc(50% - 400px);
-        top: 500px;
+        left: calc(50% - 300px);
+        top: 230px;
         transition: 0.5s;
     }
     .star6{
@@ -153,7 +160,7 @@ hr{
         height: 50px;
         position: absolute;
         left: calc(50% + 290px);
-        top: 630px;
+        top: 350px;
         transition: 0.5s;
     }
     .topPillow{
@@ -171,7 +178,7 @@ hr{
         position: absolute;
         width: 420px;
         height: 560px;
-        margin-top: -70px;
+        margin-top: -80px;
         left: calc((100vw - 420px) / 2);
         /* margin-top: calc((min(40vw, 350px))); */
         display: flex;
@@ -244,32 +251,32 @@ hr{
         width: 50px;
         height: 50px;
         position: absolute;
-        left: calc(50% + 185px);
-        top: 100px;
+        left: calc(50% + 145px);
+        top: 200px;
         transition: 0.5s;
     }
     .star2{
         width: 40px;
         height: 40px;
         position: absolute;
-        left: calc(50% + 180px);
-        top: 40px;
+        left: calc(50% + 140px);
+        top: 140px;
         transition: 0.5s;
     }
     .star3{
         width: 25px;
         height: 25px;
         position: absolute;
-        left: calc(50% + 215px);
-        top: 75px;
+        left: calc(50% + 185px);
+        top: 175px;
         transition: 0.5s;
     }
     .star4{
         width: 40px;
         height: 40px;
         position: absolute;
-        left: calc(50% - 230px);
-        top: 32px;
+        left: calc(50% - 190px);
+        top: 132px;
         transition: 0.5s;
     }
     .star5{
@@ -277,7 +284,7 @@ hr{
         height: 40px;
         position: absolute;
         left: calc(50% - 100px);
-        top: 540px;
+        top: 520px;
         transition: 0.5s;
     }
     .star6{
@@ -285,7 +292,7 @@ hr{
         height: 25px;
         position: absolute;
         left: calc(50% + 40px);
-        top: 540px;
+        top: 520px;
         transition: 0.5s;
     }
     .topPillow{
@@ -361,24 +368,24 @@ hr{
         width: 50px;
         height: 50px;
         position: absolute;
-        left: calc(50% + 30%);
-        top: 80px;
+        left: calc(50% + 32%);
+        top: 180px;
         transition: 0.5s;
     }
     .star2{
         width: 40px;
         height: 40px;
         position: absolute;
-        left: calc(50% + 36%);
-        top: 40px;
+        left: calc(50% + 38%);
+        top: 140px;
         transition: 0.5s;
     }
     .star3{
         width: 25px;
         height: 25px;
         position: absolute;
-        left: calc(50% + 42%);
-        top: 75px;
+        left: calc(50% + 44%);
+        top: 175px;
         transition: 0.5s;
     }
     .star4{
@@ -386,7 +393,7 @@ hr{
         height: 40px;
         position: absolute;
         left: calc(50% - 46%);
-        top: 26px;
+        top: 126px;
         transition: 0.5s;
     }
     .star5{
@@ -394,7 +401,7 @@ hr{
         height: 40px;
         position: absolute;
         left: calc(50% - 30%);
-        top: 530px;
+        top: 510px;
         transition: 0.5s;
     }
     .star6{
@@ -402,7 +409,7 @@ hr{
         height: 25px;
         position: absolute;
         left: calc(50% + 10%);
-        top: 540px;
+        top: 520px;
         transition: 0.5s;
     }
 }

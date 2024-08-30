@@ -44,7 +44,130 @@
     background-position-x: center;
     background-position-y: start;
 }
+.trebleClefSymbol{
+    background-image: url('../../img/svg//TendencyTuner/TrebleClef.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 95.116/153.12;
+}
+.bassClefSymbol{
+    background-image: url('../../img/svg//TendencyTuner/BassClef.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 41.161/47.605;
+}
+.longWave{
+    background-image: url('../../img/svg//TendencyTuner/long_wave.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 101.5002/36.222435;
+}
+.lightWave{
+    background-image: url('../../img/svg//TendencyTuner/light_wave.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 100/100;
+}
+.midWave{
+    background-image: url('../../img/svg//TendencyTuner/mid_wave.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 99.999992/100;
+}
+.darkWave{
+    background-image: url('../../img/svg//TendencyTuner/dar_wave.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    aspect-ratio: 100/101.09411;
+}
+.tenTunChev{
+    position: absolute;
+    aspect-ratio: 20;
+}
+
 @media (min-width: 800px){
+    .tenTunChev{
+        height: 80px;
+    }
+    .ttc_1{
+        top: 650px;
+    }
+    .ttc_2{
+        top: 1060px;
+    }
+    .ttc_3{
+        top: 1120px;
+    }
+    .ttc_4{
+        top: 700px;
+    }
+    .ttc_5{
+        top: 1180px;
+    }    
+    .ttc_6{
+        top: 1240px;
+    }
+    .ttc_7{
+        top: 610px;
+    }
+    .ttc_8{
+        top: 690px;
+    }
+    .ttc_9{
+        top: 660px;
+    }
+    .ttc_10{
+        top: 740px;
+    }
+    .ttc_11{
+        top: 1020px;
+    }
+    .ttc_12{
+        top: 1100px;
+    }
+    .ttc_13{
+        top: 1080px;
+    }
+    .ttc_14{
+        top: 1160px;
+    }
+    .ttc_15{
+        top: 1140px;
+    }
+    .ttc_16{
+        top: 1220px;
+    }
+    .ttc_17{
+        top: 1280px;
+    }
+    .ttc_18{
+        top: 1200px;
+    }
+    .longWaveBox{
+        position: absolute;
+        width: 500px;
+        top: 1600px;
+        right: 200px;
+        margin: auto;
+    }
+    .trebleClefBox{
+        position: absolute;
+        width: min(200px, calc(calc(100vw - 600px) / 2));
+        top: 750px;
+        left: max(calc(100px + 50vw), 540px);
+    }
+    .bassClefBox{
+        position: absolute;
+        width: min(120px, calc(calc(100vw - 700px) / 1.8));
+        top: 900px;
+        left: max(calc(300px + 50vw), 510px);
+    }
     .wholeNoteSymbol{
         position: absolute;
         right: 0;
@@ -54,14 +177,217 @@
         width: 500px;
         height: 20000px;
     }
+    .lightWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1370px;
+        right: 600px;
+        margin: auto;
+    }
+    .darkWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1368px;
+        right: 350px;
+        margin: auto;
+    }
+    .midWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1370px;
+        right: 100px;
+        margin: auto;
+    }
+}
+@media (max-width: 1400px){
+    .lightWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1620px;
+        left: -100px;
+        margin: auto;
+    }
+    .darkWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1408px;
+        right: 500px;
+        margin: auto;
+    }
+    .midWaveBox{
+        position: absolute;
+        width: 200px;
+        top: 1410px;
+        right: 200px;
+        margin: auto;
+    }
+}
+@media (max-width: 1270px){
+    .lightWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1370px;
+        right: 20px;
+        left: auto;
+        margin: auto;
+    }
+    .darkWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1568px;
+        right: 220px;
+        margin: auto;
+    }
+    .midWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1570px;
+        right: 20px;
+        margin: auto;
+    }
+    .longWaveBox{
+        position: absolute;
+        width: min(84vw, 600px);
+        top: 1670px;
+        right: calc(50vw - (min(84vw, 600px) / 2));
+        margin: auto;
+    }
+}
+@media (max-width: 900px){
+    .lightWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1370px;
+        right: 20px;
+        left: auto;
+        margin: auto;
+    }
+    .darkWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1438px;
+        right: 160px;
+        margin: auto;
+    }
+    .midWaveBox{
+        position: absolute;
+        width: 150px;
+        top: 1570px;
+        right: 20px;
+        margin: auto;
+    }
 }
 @media (max-width: 800px){
+    .tenTunChev{
+        height: 60px;
+    }
+    .ttc_1{
+        top: 600px;
+    }
+    .ttc_2{
+        top: 910px;
+    }
+    .ttc_3{
+        top: 950px;
+    }
+    .ttc_4{
+        top: 650px;
+    }
+    .ttc_5{
+        top: 1240px;
+    }
+    .ttc_6{
+        top: 1300px;
+    }
+    .ttc_7{
+        top: 570px;
+    }
+    .ttc_8{
+        top: 630px;
+    }
+    .ttc_9{
+        top: 620px;
+    }
+    .ttc_10{
+        top: 680px;
+    }
+    .ttc_11{
+        top: 880px;
+    }
+    .ttc_12{
+        top: 940px;
+    }
+    .ttc_13{
+        top: 920px;
+    }
+    .ttc_14{
+        top: 980px;
+    }
+    .ttc_15{
+        top: 1210px;
+    }
+    .ttc_16{
+        top: 1270px;
+    }
+    .ttc_17{
+        top: 1330px;
+    }
+    .ttc_18{
+        top: 1270px;
+    }
+    .trebleClefBox{
+        position: absolute;
+        width: min(26vw, 160px);
+        top: 1005px;
+        left: 10%;
+        right: 50%;
+        margin: auto;
+    }
+    .bassClefBox{
+        position: absolute;
+        width: min(19.5vw, 110px);
+        top: 1110px;
+        right: 10%;
+        left: 50%;
+        margin: auto;
+    }
     .wholeNoteSymbol{
         position: absolute;
         left: calc((100vw - 380px) / 2);
         top: 55px;
         width: 380px;
         height: 1000px;
+    }
+    .longWaveBox{
+        position: absolute;
+        width: min(84vw, 500px);
+        top: 1800px;
+        right: calc(50vw - (min(84vw, 500px) / 2));
+        margin: auto;
+    }
+    .lightWaveBox{
+        position: absolute;
+        width: min(26vw, 160px);
+        top: 1630px;
+        left: calc(50vw - (min(84vw, 500px) / 2));
+        right: auto;
+        margin: auto;
+    }
+    .darkWaveBox{
+        position: absolute;
+        width: min(26vw, 160px);
+        top: 1628px;
+        right: calc(50vw - (min(26vw, 160px) / 2));
+        left: auto;
+        margin: auto;
+    }
+    .midWaveBox{
+        position: absolute;
+        width: min(26vw, 160px);
+        top: 1630px;
+        right: calc(50vw - (min(84vw, 500px) / 2));
+        left: auto;
+        margin: auto;
     }
 }
 .tenTunTextBack{

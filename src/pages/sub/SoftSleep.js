@@ -14,6 +14,7 @@ import AppleButton from "../../components/AppleButton";
 import AndroidButton from "../../components/AndroidButton";
 import Header from "../../components/Header";
 import ProjectName from "../../components/ProjectName";
+import WaveHeader from "../../components/WaveHeader";
 const SoftSleep = ({}) => {
   useEffect(() => {
     var headrRect = document.getElementById('uiHeader');
@@ -226,12 +227,28 @@ const SoftSleep = ({}) => {
           <ProjectName className='' appCount={3} itemChangedCallBack={ () => {} } selectedAppName={"Soft Sleep"} selectedAppIndex={1}/>
         </div>
         <div className="parentDiv softPage" style={{"width" : "100%"}}>
-                               <div className={`bottomSpacer purpleEnder`}/>
+                                {/* bottom */}
+                                <WaveHeader className='flip' bottom={'360px'} top={'auto'} color={'rgb(93, 56, 196)'} rotate={0}/>
+                                <WaveHeader className='flip' bottom={'300px'} top={'auto'} color={'rgb(104, 68, 203)'} rotate={0}/>
+                                <WaveHeader className='flip' bottom={'240px'} top={'auto'} color={'rgb(114, 78, 210)'} rotate={0}/>
+                                <WaveHeader className='flip' bottom={'180px'} top={'auto'} color={'rgb(126, 90, 218)'} rotate={0}/>
+                                <WaveHeader className='flip' bottom={'120px'} top={'auto'} color={'rgb(138, 102,225)'} rotate={0}/>
+                                <WaveHeader className='flip' bottom={'60px'} top={'auto'} color={'rgb(149,113,232)'} rotate={0}/>
+                               {/* <div className={`bottomSpacer purpleEnder`}/>     */}
                                <div className={`darkBottomSpacer darkEnder`}/>
-                               <div className={`topSpacer purpleEnder`}/>
-                               <div className={`darkTopSpacer darkEnder`}/>
+
+                                {/* top */}
+                                <WaveHeader className='flip' top={'370px'} bottom={'auto'} color={'rgb(93, 56, 196)'} rotate={180}/>
+                                <WaveHeader className='flip' top={'310px'} bottom={'auto'} color={'rgb(104, 68, 203)'} rotate={180}/>
+                                <WaveHeader className='flip' top={'250px'} bottom={'auto'} color={'rgb(114, 78, 210)'} rotate={180}/>
+                                <WaveHeader className='flip' top={'190px'} bottom={'auto'} color={'rgb(126, 90, 218)'} rotate={180}/>
+                                <WaveHeader className='flip' top={'130px'} bottom={'auto'} color={'rgb(138, 102,225)'} rotate={180}/>
+                               <WaveHeader className='flip' top={'70px'} bottom={'auto'} color={'rgb(149,113,232)'} rotate={180}/>
+                               <WaveHeader className='flip' top={'15px'} bottom={'auto'} color={'rgb(18, 20, 36)'} rotate={180}/>
+                               {/* <div className={`purpleTopSoftSleep purpleEnder`}/>
+                               <div className={`darkTopSpacer darkEnder`}/> */}
           {/* <div className="projectLinksContainer"> */}
-            <div className="appStoreLogo1">
+            <div className="appStoreLogo1 appstorelogo">
               <AppleButton onPage={onPage} buttonLink={'https://apps.apple.com/us/app/soft-sleep/id6499560370'}/>
             </div>
           {/* </div> */}
@@ -239,14 +256,6 @@ const SoftSleep = ({}) => {
           {/* <motion.div className="purpleSpacer purpleTop" initial={"closed"} animate={onPage ? "open" : "closed"}
           variants={{open: {y: -100}, closed: {y: -100}}}/> */}
 
-            <Animated.View style={{opacity: 1, transform: [{ translateY: pillowHeight }]}}>
-                            <div className="topPillowContainer">
-                <motion.img 
-                initial={"closed"} 
-                animate={onPage ? "open" : "closed"} 
-                className="topPillow" src={pillowShape} alt={"Pillow-Shape"} variants={pillowVariants}/>
-                                </div>
-                        </Animated.View>
 
                 <motion.div initial={"closed"}
                 animate={onPage ? "open" : "closed"} variants={leftStarVariants}
@@ -294,6 +303,17 @@ const SoftSleep = ({}) => {
                 <motion.img src={starShape} alt={"Star-Shape"}/>
                 </Animated.View>
                 </motion.div>
+
+                <Animated.View style={{opacity: 1, transform: [{ translateY: pillowHeight }]}}>
+                            <div className="topPillowContainer">
+                <motion.img 
+                initial={"closed"} 
+                animate={onPage ? "open" : "closed"} 
+                className="topPillow" src={pillowShape} alt={"Pillow-Shape"} variants={pillowVariants}/>
+                                </div>
+                        </Animated.View>
+
+
                 <div className="waveSVG"><WaveSVG onScreen={textBox1Visible}/></div>
                 <motion.div className="swiftSVG" animate={textBox2Visible ? "open" : "closed"} variants={swiftLogoVariants} initial={"closed"}
                 ><SwiftSVG onScreen={textBox1Visible}/></motion.div>

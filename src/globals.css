@@ -141,6 +141,20 @@ html{
 }
 .darkTopSpacer{
   aspect-ratio: 1800/600;
+  height: 600px;
+  width: 200px;
+  max-height: 30vw;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: -5px;
+  pointer-events: none;
+  transform: rotate(180deg);
+}
+.purpleTopSoftSleep{
+  aspect-ratio: 1800/600;
   height: 350px;
   width: 200px;
   max-height: 50vw;

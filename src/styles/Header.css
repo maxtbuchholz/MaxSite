@@ -448,6 +448,11 @@ ul{
     -webkit-transition: all 60ms ease-out;
     -moz-transition: all 60ms ease-out;
 }
+.transitionHeaderHelper{
+    transition: all 45ms ease-out;
+    -webkit-transition: all 45ms ease-out;
+    -moz-transition: all 45ms ease-out;
+}
 @media (min-width: 0px){
     .islandBack{
         width: 80px;

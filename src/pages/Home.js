@@ -199,13 +199,14 @@ const Home = ({page, project}) => {
         let percFul = 1;
         let oneMin = 0;
         let halfSH = height / 2;
+        let hMOH = height - 100;
         if(window.innerWidth > 800){
             setUlTop((percFul * height) + (percFul * -180));
-            setTerminalTop((percFul * halfSH) + (oneMin * -height) + (percFul * -220));
+            setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
             setProgBarHeight((percFul * height) + (percFul * -100));
         }else{
             setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
-            setTerminalTop((percFul * halfSH) + (oneMin * -(height + halfSH)) + (percFul * -216));
+            setTerminalTop((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246));
             setProgBarHeight((percFul * height) + (percFul * -100));
         }
     }
@@ -213,14 +214,15 @@ const Home = ({page, project}) => {
       function handleHeaderElements(percFul){
         let oneMin = 1 - percFul;
         let halfSH = height / 2;
+        let hMOH = height - 100;
         let lerSH = height * 0.6;
         if(window.innerWidth > 800){
             setUlTop((percFul * height) + (percFul * -180));
-            setTerminalTop((percFul * halfSH) + (oneMin * -height) + (percFul * -220));
+            setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
             setProgBarHeight((percFul * height) + (percFul * -100));
         }else{
             setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
-            setTerminalTop((percFul * halfSH) + (oneMin * -(height + halfSH)) + (percFul * -216));
+            setTerminalTop((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246));
             setProgBarHeight((percFul * height) + (percFul * -100));
         }
       }

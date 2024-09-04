@@ -108,10 +108,10 @@
         top: 700px;
     }
     .ttc_5{
-        top: 1180px;
+        top: 1880px;
     }    
     .ttc_6{
-        top: 1240px;
+        top: 1940px;
     }
     .ttc_7{
         top: 610px;
@@ -138,16 +138,16 @@
         top: 1160px;
     }
     .ttc_15{
-        top: 1140px;
+        top: 1840px;
     }
     .ttc_16{
-        top: 1220px;
+        top: 1920px;
     }
     .ttc_17{
-        top: 1280px;
+        top: 1980px;
     }
     .ttc_18{
-        top: 1200px;
+        top: 1900px;
     }
     .longWaveBox{
         position: absolute;
@@ -285,10 +285,10 @@
         top: 600px;
     }
     .ttc_2{
-        top: 910px;
+        top: 960px;
     }
     .ttc_3{
-        top: 950px;
+        top: 1000px;
     }
     .ttc_4{
         top: 650px;
@@ -312,16 +312,16 @@
         top: 680px;
     }
     .ttc_11{
-        top: 880px;
+        top: 930px;
     }
     .ttc_12{
-        top: 940px;
+        top: 990px;
     }
     .ttc_13{
-        top: 920px;
+        top: 970px;
     }
     .ttc_14{
-        top: 980px;
+        top: 1030px;
     }
     .ttc_15{
         top: 1210px;
@@ -337,17 +337,17 @@
     }
     .trebleClefBox{
         position: absolute;
-        width: min(26vw, 160px);
-        top: 1005px;
-        left: 10%;
+        width: min(24vw, 96px);
+        top: 1055px;
+        left: 26%;
         right: 50%;
         margin: auto;
     }
     .bassClefBox{
         position: absolute;
-        width: min(19.5vw, 110px);
-        top: 1110px;
-        right: 10%;
+        width: min(14.5vw, 96px);
+        top: 1140px;
+        right: 20%;
         left: 50%;
         margin: auto;
     }

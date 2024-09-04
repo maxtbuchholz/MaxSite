@@ -40,7 +40,7 @@ const About2Page = () => {
             x: -50,
             transition:{
                 delay: 0.3,
-                duration: 0.1,
+                duration: 0.01,
             }
         }
     }
@@ -58,7 +58,7 @@ const About2Page = () => {
             opacity: 0,
             transition:{
                 delay: 0.2,
-                duration: 0.1,
+                duration: 0.01,
             }
         }
     }

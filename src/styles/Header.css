@@ -32,7 +32,8 @@
 
 }
 .header{
-    background-color: #121424;
+    background-color: transparent;
+     /* #121424; */
     /* 121424 */
 }
 .onButtonsPage{
@@ -444,14 +445,14 @@ ul{
     margin: auto;
 } */
 .transitionHelper{
-    transition: all 60ms ease-out;
-    -webkit-transition: all 60ms ease-out;
-    -moz-transition: all 60ms ease-out;
+    transition: all 300ms ease-out;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
 }
 .transitionHeaderHelper{
-    transition: all 45ms ease-out;
-    -webkit-transition: all 45ms ease-out;
-    -moz-transition: all 45ms ease-out;
+    transition: all 300ms ease-out;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
 }
 @media (min-width: 0px){
     .islandBack{

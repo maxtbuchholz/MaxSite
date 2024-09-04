@@ -79,7 +79,6 @@ const IntroTerminal = ({ onPage }) => {
 function color_the_code(text){
     let isLog = text.includes("Console");
     let textLength = text.length + 1;
-    let debug = text.includes('cents_sharp') && text.includes('int')
     var texts = [{ text: text, color: 'white'}];
     function split_and_color(spText, spColor){
         let newTexts = [];

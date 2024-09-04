@@ -54,8 +54,9 @@ const Home = ({page, project}) => {
             }
         }
         const handleResize = () => {
-            height = window.innerHeight
-            width = window.innerWidth
+            height = window.innerHeight;
+            width = window.innerWidth;
+            setTerminalInitTop();
         };
         window.addEventListener("resize", handleResize);
         return () => {
@@ -72,7 +73,7 @@ const Home = ({page, project}) => {
         const interval = setInterval(() => {
             updatePageVisabilities();
             if(setScrollTop === null){ return; }
-            if(setScrollTop === prevScrollTop){ return; }
+            //if(setScrollTop === prevScrollTop){ return; }
             prevScrollTop = setScrollTop;
             if(!isIOS){
                 let target = document.getElementById("projects");
@@ -87,7 +88,7 @@ const Home = ({page, project}) => {
             scrollPosition = setScrollTop;
             changeProgBarWidth((setScrollTop / (height - 100)) % 1);
             handleHeaderHeight();
-        }, 20);
+        }, 100);
         const handleScroll = (e) => {
             setScrollTop = e.target.scrollTop;
     }
@@ -103,11 +104,11 @@ const Home = ({page, project}) => {
     const [topOfPage, setTopOfPage] = useState(true);
     var headerFull = true;
     const[progBarHeight, setProgBarHeight] = useState(0);
-    const[headerBackTop, setHeaderBackTop] = useState(0);
-    const[contactBackTop, setContactBackTop] = useState(0);
+    const[headerBackTop, setHeaderBackTop] = useState(1);
+    const[contactBackTop, setContactBackTop] = useState(1);
     const[progBarWidth, setProgBarWidth] = useState(0);
-    const [rocksBackFullTop, setRocksBackFullTop] = useState('100px');
-    const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
+    const [rocksBackFullTop, setRocksBackFullTop] = useState('200vh');
+    const [rockAnimatiionValue, setRockAnimatiionValue] = useState(100);
       function handleHeaderHeight(){
             handleMovingScroll((scrollPosition / (height - 100)))
           var scroll = Math.min(scrollPosition, height);
@@ -156,17 +157,30 @@ const Home = ({page, project}) => {
         setHeaderBackTop(Math.max(Math.min(scroll, 1), 0));
       }
       function handleContactBack(scroll){
-        setContactBackTop(Math.max(Math.min(1 - (scroll - 2), 1), 0));
+        let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
+        prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.15);
+        previousContactTime = new Date();
+        setContactBackTop(prevContactTop);
       }
       function handleRocksBack(scroll){
         let startPage = 1;
         let endPage = 2;
+
+        prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.15);
+        previousMiddleTime = new Date();
+        scroll = prevMiddleTop;
+
         if(scroll <= startPage - 1){
-            setRocksBackFullTop('100vh')
+            // setRocksBackFullTop('100vh')
             setRockAnimatiionValue(0);
+            let diff = (scroll - startPage);
+            setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 100px)`)
         }else if(scroll >= endPage + 1){
+            // setRockAnimatiionValue(1);
+            // setRocksBackFullTop('-100vh')
             setRockAnimatiionValue(1);
-            setRocksBackFullTop('-100vh')
+            let diff = (scroll - endPage);
+            setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 100px)`)
         }else if(scroll < startPage){
             setRockAnimatiionValue(0);
             let diff = (scroll - startPage);
@@ -181,9 +195,15 @@ const Home = ({page, project}) => {
         }
       }
       function handleHeaderWaves(percFul){
-        handleHeaderElements(percFul);
-        let rock1Y = (((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
+        //handleHeaderElements(percFul);
+        // let rock1Y = percFul * 200;//(((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
         percFul = 1 - percFul;
+        let rock1Y = 0;
+        if(width > 800){
+            rock1Y = (((Math.sin(((1 - percFul) * 3) - 1.4) * 1) -1) * -100);//+100;
+        }else{
+            rock1Y = percFul * 200;//(((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
+        }
         setheaderWaveArray([
                             -percFul * 100, 
                             percFul * 100,
@@ -195,37 +215,41 @@ const Home = ({page, project}) => {
                         ])
       }
       useLayoutEffect(() => {
-        if(scrollPosition === 0){
-        let percFul = 1;
-        let oneMin = 0;
-        let halfSH = height / 2;
-        let hMOH = height - 100;
-        if(window.innerWidth > 800){
-            setUlTop((percFul * height) + (percFul * -180));
-            setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
-            setProgBarHeight((percFul * height) + (percFul * -100));
-        }else{
-            setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
-            setTerminalTop((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246));
-            setProgBarHeight((percFul * height) + (percFul * -100));
-        }
-    }
+        setTerminalInitTop();
       }, [])
-      function handleHeaderElements(percFul){
-        let oneMin = 1 - percFul;
-        let halfSH = height / 2;
-        let hMOH = height - 100;
-        let lerSH = height * 0.6;
-        if(window.innerWidth > 800){
-            setUlTop((percFul * height) + (percFul * -180));
-            setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
-            setProgBarHeight((percFul * height) + (percFul * -100));
-        }else{
-            setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
-            setTerminalTop((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246));
-            setProgBarHeight((percFul * height) + (percFul * -100));
-        }
+      function setTerminalInitTop(){
+        // if(scrollPosition === 0){
+            let percFul = 1;
+            let oneMin = 0;
+            let halfSH = height / 2;
+            let hMOH = height - 100;
+            if(window.innerWidth > 800){
+                //setUlTop((percFul * height) + (percFul * -180));
+                setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
+                //setTerminalTop(180);
+                //setProgBarHeight((percFul * height) + (percFul * -100));
+            }else{
+                //setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
+                setTerminalTop(Math.max((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246), 136));
+                //setProgBarHeight((percFul * height) + (percFul * -100));
+            }
+        // }
       }
+    //   function handleHeaderElements(percFul){
+        // let oneMin = 1 - percFul;
+        // let halfSH = height / 2;
+        // let hMOH = height - 100;
+        // let lerSH = height * 0.6;
+        // if(window.innerWidth > 800){
+            //setUlTop((percFul * height) + (percFul * -180));
+            //setTerminalTop((percFul * halfSH) + (oneMin * -hMOH) + (percFul * -220));
+            //setProgBarHeight((percFul * height) + (percFul * -100));
+        // }else{
+            //setUlTop((percFul * height) + (oneMin * -halfSH) + (percFul * -130));
+            //setTerminalTop((percFul * halfSH) + (oneMin * -(hMOH + halfSH)) + (percFul * -246));
+            //setProgBarHeight((percFul * height) + (percFul * -100));
+        // }
+    //   }
       const [headerWaveArray, setheaderWaveArray] = useState([0,0,0]);      
       const [headerHeight, setHeaderHeight] = useState('100%');
       const HomeRef = useRef();
@@ -315,13 +339,36 @@ const Home = ({page, project}) => {
             //window.history.replaceState(null, currPageName, "/home");
         }
       }
+      var prevContactTop = null;
+      var prevMiddleTop = null;
+      var previousContactTime = null;
+      var previousMiddleTime = null;
+      var currentTime = null;
+      function lerpBackAnimate(val, pastVal, prevTime, L){
+            //set up first time
+            if((pastVal == null) || (prevTime == null)){
+                return val;
+            }else{//normal running
+                currentTime = new Date();
+                let s = (currentTime.getTime() - prevTime.getTime()) / 1000;
+                if(s >= 1){
+                    s = 1;
+                }
+                s /= L;
+                val = (s * val) + ((1 - s) * pastVal);
+                return val;
+            }
+      }
     return (
         <div>
          <ContactBack fullBodyTop={contactBackTop}/>
          <RocksBack fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
          <Header headerBackTop={headerBackTop} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
-            <div className="firstSection" id="top" style={{background: '#121424'}}>
+            <div className="firstSection" id="top" style={{background: '#12142400'}}>
+                <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
+                    <IntroTerminal/>
+                </div>
                 <div id="Home-Observer" ref={HomeRef} className="pageIntersectionObserver"/>
             </div>
             {/* <div className="section" id="about">

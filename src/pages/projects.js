@@ -45,7 +45,7 @@ const ProjectsPage = () => {
         closed:{
             x: 0,
             transition:{
-                delay: 0.02,
+                delay: 0.05,
                 duration: 0.05,
             }
         }

@@ -62,9 +62,9 @@
     .introTerminal{
         position: absolute;
         /* right: 0; */
-        margin-left: -6%;
+        margin-left: -9%;
         /* bottom: max(250px, 32%); */
-        width: 112%;
+        width: 118%;
         /* margin: auto; */
         display: flex;
         align-items: center;
@@ -72,8 +72,8 @@
         /* transform: scale(0.8); */
     }
     .terminalScale{
-        transform: scale(0.8);
-        height: 290px;
+        transform: scale(0.7);
+        height: 276px;
     }
     }
 .introTerminalIn *{

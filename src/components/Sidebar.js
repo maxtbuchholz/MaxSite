@@ -40,22 +40,21 @@ const Sidebar = ({scrollButtonCallback}) => {
             clipPath: `circle(1200px at 349px 50px)`,
             transition:{
                 type: "spring",
-                stiffness: 30,
+                stiffness: 34,
             }
         },
         closed: {
             clipPath: `circle(30px at 349px 50px)`,
             transition: {
-                delay: 0.1,
+                delay: 0.0,
                 type: "spring",
                 stiffness: 38,
-                //dampening: 100,
             }
         }}}>
                 {/* Links */}
                 <motion.div className={`links ${open ? "interactable" : "nonInteractable"}`} variants={linkVariants}>
                 {items.map((item) => (
-                    <motion.a onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(prev => !prev)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
+                    <motion.a style={{color: '#121424'}} onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(prev => !prev)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
                     whileTap={{scale: 0.95}}
                     >
                         {item}
@@ -64,12 +63,14 @@ const Sidebar = ({scrollButtonCallback}) => {
                 </motion.div>  
             </motion.div>
             {/* Toggle Button */}
-            <button onClick={() => setOpen(prev => !prev)} style={{}}>
-                <svg width="23" height="23" viewBox="0 0 23 23">
-                <motion.path strokeWidth="3" stroke="black" strokeLinecap="round" variants={{ closed: {d: "M 2 2.5 L 20 2.5"}, open: {d: "M 3 16.5 L 17 2.5"},}}/>
-                <motion.path strokeWidth="3" stroke="black" strokeLinecap="round" d="M 2 9.423 L 20 9.423" variants={{closed: {opacity: 1}, open: {opacity: 0}}}/>
-                <motion.path strokeWidth="3" stroke="black" strokeLinecap="round" variants={{ closed: {d: "M 2 16.346 L 20 16.346"}, open: {d: "M 3 2.5 L 17 16.346"},}}/>
+            <button onClick={() => setOpen(prev => !prev)} style={{right: '10px', top: '10px', overflow: 'clip'}}>
+            <div style={{width: '60px', height: '60px', paddingTop: '20px', borderRadius: '50%', position: 'absolute', top: '10px', right: '10px', background: 'transparent', overflow: 'clip'}}>
+                <svg width="23" height="23" viewBox="0 0 23 23" style={{background: 'transparent', overflow: 'clip'}}>
+                <motion.path style={{overflow: 'clip'}} strokeWidth="3" stroke="#121424" strokeLinecap="round" variants={{ closed: {d: "M 2 2.5 L 20 2.5"}, open: {d: "M 3 16.5 L 17 2.5"},}}/>
+                <motion.path style={{overflow: 'clip'}} strokeWidth="3" stroke="#121424" strokeLinecap="round" d="M 2 9.423 L 20 9.423" variants={{closed: {opacity: 1}, open: {opacity: 0}}}/>
+                <motion.path style={{overflow: 'clip'}} strokeWidth="3" stroke="#121424" strokeLinecap="round" variants={{ closed: {d: "M 2 16.346 L 20 16.346"}, open: {d: "M 3 2.5 L 17 16.346"},}}/>
                 </svg>
+                </div>
             </button>
         </motion.div>
     )

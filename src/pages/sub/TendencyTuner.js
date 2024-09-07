@@ -89,7 +89,7 @@ const TendencyTuner = ({}) => {
     }, []);
     return (
       <div>
-      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={-1000000} progresBarWidth={0}/> 
+      <Header currentPage={"projects"} classList='darkHeader' scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={-1000000} progresBarWidth={0}/> 
       <div className="sectionContainer" style={{marginTop: '100px'}}>
         <div className="longSection">
           <div className="tenTenWave4" style={{position: 'absolute', width: '200vw', height: '650px', backgroundColor: '', backgroundPositionX: `${time * 20 + 807}px`, transition: {duration: '100ms'}}}/>
@@ -112,7 +112,7 @@ const TendencyTuner = ({}) => {
           duration: 1.2,
           delay: 0.3,
         }}}}><TenTunChev color={'rgb(27,66,150)'} rotate={true}/></motion.div>
-        <motion.div className='tenTunChev ttc_9' initial="closed" animate={textBox1V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_9' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '87vw',transition: {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
@@ -123,9 +123,9 @@ const TendencyTuner = ({}) => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
           delay: 0.3,
-        }}}}><TenTunChev color={'rgb(27,66,150)'} rotate={false}/></motion.div>
+        }}}}><TenTunChev color={'rgb(27,66,150)'} rotate={false}/></motion.div> */}
         
-        <motion.div className='tenTunChev ttc_11' initial="closed" animate={textBox1V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_11' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {right: '150vw'}, open: {right: '70vw',transition: {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
@@ -136,7 +136,7 @@ const TendencyTuner = ({}) => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
           delay: 0.3,
-        }}}}><TenTunChev color={'rgb(12,35,118)'} rotate={true}/></motion.div>
+        }}}}><TenTunChev color={'rgb(12,35,118)'} rotate={true}/></motion.div> */}
         <motion.div className='tenTunChev ttc_13' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '62vw',transition: {
           ease: [0.22, 1, 0.36, 1],
@@ -185,24 +185,24 @@ const TendencyTuner = ({}) => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
         }}}}><TenTunChev color={'rgb(240,240,240)'} rotate={true}/></motion.div>
-        <motion.div className='tenTunChev ttc_2' initial="closed" animate={textBox1V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_2' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {right: '150vw'}, open: {right: '50vw',transition: {
           delay: 0.1,
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
-        }}}}><TenTunChev color={'rgb(230,230,230)'} rotate={true}/></motion.div>
+        }}}}><TenTunChev color={'rgb(230,230,230)'} rotate={true}/></motion.div> */}
         <motion.div className='tenTunChev ttc_3' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '50vw',transition: {
           delay: 0.2,
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
         }}}}><TenTunChev color={'rgb(220,220,220)'} rotate={false}/></motion.div>
-        <motion.div className='tenTunChev ttc_4' initial="closed" animate={textBox1V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_4' initial="closed" animate={textBox1V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '80vw',transition: {
           delay: 0.3,
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
-        }}}}><TenTunChev color={'rgb(244,244,244)'} rotate={false}/></motion.div>
+        }}}}><TenTunChev color={'rgb(244,244,244)'} rotate={false}/></motion.div> */}
 
         <motion.div className='tenTunChev ttc_5' initial="closed" animate={textBox2V ? "open" : "closed"} 
         variants={{ closed: {right: '150vw'}, open: {right: '50vw',transition: {

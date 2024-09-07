@@ -1,8 +1,8 @@
 import React from "react";
 import '../styles/sub/RocksBack.css';
-const ContactBack = ({fullBodyTop}) => {
+const ContactBack = ({fullBodyTop, ease}) => {
     return(
-        <div className="pageMovable" style={{transform: `translate(0, calc(${fullBodyTop} * 100vh))`, position: 'fixed', width: '100vw', height: '100vh', background: 'transparent'}}>
+        <div className={`${ease ? 'pageMovable' : ''}`} style={{transform: `translate(0, calc(${fullBodyTop} * 100vh))`, position: 'fixed', width: '100vw', height: '100vh', top: '-160px', background: 'transparent'}}>
 
 
 
@@ -53,46 +53,46 @@ const ContactBack = ({fullBodyTop}) => {
 
 
 
-            <div className="moveable" style={{transform: `translate(0, calc(${38 * (fullBodyTop)}vh - calc(-49vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', left: '10%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${60 * (fullBodyTop)}vh - calc(-44vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${38 * (fullBodyTop)}vh - calc(-49vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', left: '10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${60 * (fullBodyTop)}vh - calc(-44vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>
 
-            <div className="moveable" style={{transform: `translate(0, calc(${28 * (fullBodyTop)}vh - calc(-47vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', right: '30%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${50 * (fullBodyTop)}vh - calc(-48vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: '30%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${28 * (fullBodyTop)}vh - calc(-47vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', right: '30%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${50 * (fullBodyTop)}vh - calc(-48vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: '30%', borderRadius: '10vw'}}/>
 
-            <div className="moveable" style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-40vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${0 * (fullBodyTop)}vh - calc(-50vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
-
-
-            <div className="moveable" style={{transform: `translate(0, calc(${120 * (fullBodyTop)}vh - calc(-53vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: 0, borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${70 * (fullBodyTop)}vh - calc(-62vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(24,34,61)', right: 0, borderRadius: '10vw'}}/>
-
-            <div className="moveable" style={{transform: `translate(0, calc(${116 * (fullBodyTop)}vh - calc(-56vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(24,34,61)', left: '20%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${102 * (fullBodyTop)}vh - calc(-60vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '20%', borderRadius: '10vw'}}/>
-
-            <div className="moveable" style={{transform: `translate(0, calc(${72 * (fullBodyTop)}vh - calc(-58vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '40%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-40vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${0 * (fullBodyTop)}vh - calc(-50vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
 
 
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${120 * (fullBodyTop)}vh - calc(-53vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: 0, borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${70 * (fullBodyTop)}vh - calc(-62vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(24,34,61)', right: 0, borderRadius: '10vw'}}/>
+
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${116 * (fullBodyTop)}vh - calc(-56vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(24,34,61)', left: '20%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${102 * (fullBodyTop)}vh - calc(-60vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '20%', borderRadius: '10vw'}}/>
+
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${72 * (fullBodyTop)}vh - calc(-58vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '40%', borderRadius: '10vw'}}/>
 
 
 
 
-            <div className="moveable" style={{transform: `translate(0, calc(${74 * (fullBodyTop)}vh - calc(-73vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${116 * (fullBodyTop)}vh - calc(-59vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', right: '10%', borderRadius: '10vw'}}/>
-
-            <div className="moveable" style={{transform: `translate(0, calc(${74 * (fullBodyTop)}vh - calc(-67vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', right: '30%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${57 * (fullBodyTop)}vh - calc(-69vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', left: '30%', borderRadius: '10vw'}}/>
-
-            <div className="moveable" style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-52vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${50 * (fullBodyTop)}vh - calc(-74vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
 
 
-            <div className="moveable" style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-78vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', left: 0, borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${80 * (fullBodyTop)}vh - calc(-97vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', right: 0, borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${74 * (fullBodyTop)}vh - calc(-73vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${116 * (fullBodyTop)}vh - calc(-59vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', right: '10%', borderRadius: '10vw'}}/>
 
-            <div className="moveable" style={{transform: `translate(0, calc(${96 * (fullBodyTop)}vh - calc(-84vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', left: '20%', borderRadius: '10vw'}}/>
-            <div className="moveable" style={{transform: `translate(0, calc(${92 * (fullBodyTop)}vh - calc(-95vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '20%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${74 * (fullBodyTop)}vh - calc(-67vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(23,31,55)', right: '30%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${57 * (fullBodyTop)}vh - calc(-69vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(21,25,45)', left: '30%', borderRadius: '10vw'}}/>
 
-            <div className="moveable" style={{transform: `translate(0, calc(${62 * (fullBodyTop)}vh - calc(-90vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', right: '40%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-52vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${50 * (fullBodyTop)}vh - calc(-74vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
+
+
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${100 * (fullBodyTop)}vh - calc(-78vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', left: 0, borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${80 * (fullBodyTop)}vh - calc(-97vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', right: 0, borderRadius: '10vw'}}/>
+
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${96 * (fullBodyTop)}vh - calc(-84vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', left: '20%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${92 * (fullBodyTop)}vh - calc(-95vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(26,39,70)', right: '20%', borderRadius: '10vw'}}/>
+
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${62 * (fullBodyTop)}vh - calc(-90vh + 100px)))`, position: 'absolute', width: '20%', height: '120vh', background: 'rgb(28,44,79)', right: '40%', borderRadius: '10vw'}}/>
 
 
 

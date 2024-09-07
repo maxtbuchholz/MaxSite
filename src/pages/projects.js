@@ -45,8 +45,8 @@ const ProjectsPage = () => {
         closed:{
             x: 0,
             transition:{
-                delay: 0.05,
-                duration: 0.05,
+                delay: 0.1,
+                duration: 0.08,
             }
         }
     }
@@ -63,8 +63,8 @@ const ProjectsPage = () => {
             y: 10,
             opacity: 0,
             transition:{
-                delay: 0.05,
-                duration: 0.05,
+                delay: 0.07,
+                duration: 0.08,
             }
         }
     }

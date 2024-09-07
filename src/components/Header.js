@@ -19,7 +19,7 @@ import zIndex from "@mui/material/styles/zIndex.js";
 import ProfileImage from "./ProfileImage.js";
 import IntroTerminal from "./IntroTerminal.js";
 import Headerback from "./HeaderBack.js";
-const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth, headerBackTop}) => {
+const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth, headerBackTop, ease}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler =() =>{
         setMenuOpen((p) => !p)
@@ -48,7 +48,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
         }
     }, [size.width, menuOpen]);
     return(
-        <div id="uiHeader" className="headerContainer headerFirst headerFull transitionHelper" style={{height: '100px', width: '100%'}}>
+        <div id="uiHeader" className={`headerContainer headerFirst headerFull ${ease ? 'transitionHelper' : ''}`} style={{height: '100px', width: '100%'}}>
                      {/* <Headerback fullBodyTop={headerBackTop}/>    */}
                                 {/* <div className="transitionHelper" style={{width: '100%', background: '', height: '100px', position: 'fixed', display: 'flex', flexDirection: 'column-reverse', alignItems: 'center', top: 0, transform: `translate(0px, ${progresBarTop}px)`}}><div className="transitionHelper" style={{width: `min(1600px, 96vw)`, marginBottom: '6px', height: '2px', 
                                 transform: `scale(${progresBarWidth}, 1)`,
@@ -62,9 +62,9 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
         //     </div> */}
         <header className="header">
                     <div className="headerContent" style={{marginRight: 0, marginLeft: 0, margin: 'auto'}}>
-                        <div style={{position: 'absolute', height: '100px', width: '128px', background: 'transparent', top: '0', left: '0', alignItems: 'center', alignContent: 'center', overflow: 'hidden'}}>
+                        {/* <div style={{position: 'absolute', height: '100px', width: '128px', background: 'transparent', top: '0', left: '0', alignItems: 'center', alignContent: 'center', overflow: 'hidden'}}>
                             <h2 style={{position: 'absolute', top: '8px', left: '8px', margin: 'auto'}} className="poppins-bold headerContentBackLogo">max</h2>
-                        </div>
+                        </div> */}
                         <div style={{position: 'absolute', height: '100px', width: '128px', background: 'transparent', top: '0', left: '0', alignItems: 'center', alignContent: 'center', overflow: 'hidden'}}>
                             <h2 style={{position: 'absolute', top: '8px', left: '8px', margin: 'auto', 
                             // backgroundImage: `linear-gradient(110deg,  
@@ -86,7 +86,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
 
                     {(size.width >= 800) && <nav className={"headerContentNav"} >
                         {/* <div id="locationRect" className="locationRect"></div> */}
-                        <ul style={{position: 'fixed', top: 0, transform: `translate(0px, 0px`}} className="transitionHeaderHelper">
+                        <ul style={{position: 'fixed', top: 0, transform: `translate(0px, 0px`}} className={`${ease ? 'transitionHeaderHelper' : ''}`}>
                             <li>
                                 <motion.button className={((currentPage === "home") ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("home", scrollButtonCallback, 300); headerPositionIconTo("Header-Home-Btn"); }}  whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>Home</motion.button>
                                 {/* <a className={((currentPage === 0) ? "onButtonsPage" : "notButtonsPage")} id="Header-Home-Btn" onClick={() => { scrollTo("Home"); headerPositionIconTo("Header-Home-Btn"); }}>Home</a> */}
@@ -117,19 +117,19 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                     </div>
         </header>
         <div style={{top: '0px', width: '100%', height: '400px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden', opacity: 1.0}}>
-            <div className="header-cloud-2 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
-            <div className="header-cloud-1 header-cloud transitionHelper" style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
+            <div className={`header-cloud-2 header-cloud ${ease ? 'transitionHelper' : ''}`} style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
+            <div className={`header-cloud-1 header-cloud ${ease ? 'transitionHelper' : ''}`} style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
         </div>
         {/* <div className="islandBack transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/> */}
         <div style={{bottom: '0px', width: '100%', height: '350px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden'}}>
-            <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
+            <div className={`${ease ? 'transitionHelper' : ''}`} style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
                 <div className="header-wave-l3 header-wave" />
                 <div className="header-wave-r3 header-wave"/>
                 <div className="rock2"/>
                 <div className="header-wave-l2 header-wave"/>
             </div>
-            <div className="rock1 transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/>
-            <div className="transitionHelper" style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[1]}%, ${waveTransforms[3]}%)`}}>
+            <div className={`rock1 ${ease ? 'transitionHelper' : ''}`} style={{transform: `translate(${0}%, ${waveTransforms[4]}%)`}}/>
+            <div className={`${ease ? 'transitionHelper' : ''}`} style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[1]}%, ${waveTransforms[3]}%)`}}>
                 <div className="header-wave-r2 header-wave"/>
                 <div className="rock3"/>
                 <div className="header-wave-l1 header-wave"/>

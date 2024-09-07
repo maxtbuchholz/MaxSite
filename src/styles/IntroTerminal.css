@@ -54,7 +54,7 @@
     justify-content: center;
 }
 .terminalScale{
-    transform: scale(1);
+    transform: scale(0.95);
     height: 363px;
 }
 }

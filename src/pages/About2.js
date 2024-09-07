@@ -16,12 +16,12 @@ const About2Page = () => {
     const skillsDivVariants = {
         open:{
             transition:{
-                staggerChildren: 0.18,
+                staggerChildren: 0.05,
             }
         },
         closed:{
             transition:{
-                staggerChildren: 0.0,
+                staggerChildren: 0.02,
                 staggerDirection: -1,
             }
         }
@@ -31,16 +31,16 @@ const About2Page = () => {
             x: 0,
             transition:{
                 type: "spring",
-                stiffness: 60,
-                staggerChildren: 0.06,
+                stiffness: 120,
+                staggerChildren: 0.08,
                 staggerDirection: -1,
             }
         },
         closed:{
-            x: -50,
+            x: -25,
             transition:{
                 delay: 0.3,
-                duration: 0.01,
+                duration: 0.2,
             }
         }
     }
@@ -50,15 +50,15 @@ const About2Page = () => {
             opacity: 1,
             transition:{
                 type: "spring",
-                stiffness: 50,
+                stiffness: 120,
             }
         },
         closed:{
-            y: 30,
+            y: 20,
             opacity: 0,
             transition:{
-                delay: 0.2,
-                duration: 0.01,
+                delay: 0.5,
+                duration: 0.1,
             }
         }
     }
@@ -149,7 +149,7 @@ const About2Page = () => {
             <motion.div variants={skillsDivVariants} id="itemDiv" style={{width: '90vw', maxWidth: '1000px', height: '70%', maxHeight: '500px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
                 {itemRows.map((row, r_index) => {
                     return(
-                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: itemWidth, display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
+                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: (itemWidth - 5), display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
                             {row.map((item, c_index) => {
                                 return(
                                     <motion.div key={c_index} variants={skillsItemVariants} style={{width: itemWidth, height: itemWidth}}>

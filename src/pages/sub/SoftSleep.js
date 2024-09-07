@@ -220,7 +220,7 @@ const SoftSleep = ({}) => {
     }
     return (
       <div>
-      <Header currentPage={"projects"} scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={-1000000} progresBarWidth={0}/> 
+      <Header currentPage={"projects"} classList='darkHeader' scrollButtonCallback={(() => {})} waveTransforms={[[-1000],[-1000],[-1000],[-1000],[-1000],[-1000],[-1000]]} headerHeight={'100px'} topOfPage={0} ulTop={0} terminalTop={-1000000} progresBarWidth={0}/> 
       <div className="sectionContainer" style={{marginTop: '100px'}}>
         <div className="longSection">
         <div className='carouselContainer' style={{zIndex: '10'}}>

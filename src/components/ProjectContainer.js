@@ -63,14 +63,10 @@ const ProjectContainer = ({title, poster, video, maxWidth, link}) => {
                     onMouseOver={event => event.target.play()}
                     onMouseOut={event => event.target.pause()}
                     src={video}
-                    muted="true"
+                    muted={true}
                     loop>
                     </video>
                 </div>
-                {/* <image src={poster} alt={title} width="100%" height="100%" style={{background: 'red'}}/> */}
-                {/* <video width="100%" height="100%" controls={true} >
-                     <source src={video} type="video/mp4"/>
-                </video> */}
             </div>
             <h3 style={{display: 'flex', justifyContent: 'center'}} className='about1boxtextmargin'><span style={{color: 'white', background: backColor, textAlign: 'center', padding: '2px', fontSize: '11px', lineHeight: '11px', fontWeight: 300, bottom: '-8px', position: 'absolute'}} className='poppins-medium'>{title}</span></h3>
         </motion.div>

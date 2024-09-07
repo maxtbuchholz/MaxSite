@@ -270,7 +270,7 @@ body {
 }
 .firstSection{
   /* scroll-behavior: smooth; */
-  height: 100vh;
+  height: calc(100vh - 100px);
   scroll-snap-align: start;
   overflow: hidden;
   /* scroll-margin-top: 100px; */

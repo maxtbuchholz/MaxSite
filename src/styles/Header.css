@@ -36,6 +36,9 @@
      /* #121424; */
     /* 121424 */
 }
+.darkHeader{
+    background-color: #121424; 
+}
 .onButtonsPage{
     text-align: center;
     height: 35px;

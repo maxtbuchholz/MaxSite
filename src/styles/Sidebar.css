@@ -81,3 +81,6 @@
 .nonInteractable{
     pointer-events: none;
 }
+a{
+    margin-left: max(0px, calc(1 * calc(400px - 100vw)));
+}

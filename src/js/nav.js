@@ -83,7 +83,7 @@ export function scrollTo(target, callback, duration) {
       // increment the time
       currentTime += increment;
       // find the value with the quadratic in-out easing function
-      var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      var val = Math.easeInCubic(currentTime, start, change, duration);
       // move the document.body
       move(val, scrollWindow);
       // do the animation unless its over

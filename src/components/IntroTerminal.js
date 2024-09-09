@@ -181,7 +181,7 @@ const CodeLine = ({texts, index, length, finishFunction, scrollFunction, outputF
                       }, 50);
                 }
             }
-        }, 30)
+        }, 40)
     }, []);
     const [isNewConsole, setIsNewConsole] = useState(false);
     return(

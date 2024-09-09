@@ -23,7 +23,7 @@ const Sidebar = ({scrollButtonCallback}) => {
             opacity: 1,
         },
         closed:{
-            y: 60,
+            y: 20,
             opacity: 0,
         }
     }
@@ -39,22 +39,28 @@ const Sidebar = ({scrollButtonCallback}) => {
             open: {
             clipPath: `circle(1200px at 349px 50px)`,
             transition:{
-                type: "spring",
-                stiffness: 34,
+                duration: 0.4
             }
+            // transition:{
+            //     type: "spring",
+            //     stiffness: 34,
+            // }
         },
         closed: {
             clipPath: `circle(30px at 349px 50px)`,
-            transition: {
-                delay: 0.0,
-                type: "spring",
-                stiffness: 38,
+            transition:{
+                duration: 0.4
             }
+            // transition: {
+            //     delay: 0.0,
+            //     type: "spring",
+            //     stiffness: 38,
+            // }
         }}}>
                 {/* Links */}
                 <motion.div className={`links ${open ? "interactable" : "nonInteractable"}`} variants={linkVariants}>
                 {items.map((item) => (
-                    <motion.a style={{color: '#121424'}} onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 500); setOpen(prev => !prev)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
+                    <motion.a style={{color: '#121424', width: 'min(400px, 100vw)', textAlign: 'center'}} className="poppins-regular" onClick={() => {scrollTo(item.toLowerCase(), scrollButtonCallback, 300); setOpen(prev => !prev)}} key={item} variants={itemVariants} whileHover={{scale: 1.1}} 
                     whileTap={{scale: 0.95}}
                     >
                         {item}

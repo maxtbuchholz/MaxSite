@@ -17,7 +17,7 @@ import greenBlob from '../img/svg/greenBlob.svg';
 
 const ProjectsPage = () => {
     const [itemSize, setItemSize] = useState([400,180]);
-    const itemSizes = [[400,180], ['min(88%, 250px)', 112.5]]
+    const itemSizes = [[400,180], [0, 0]]
     // const itemAspect = 180/400;
     const skillsDivVariants = {
         open:{
@@ -83,6 +83,14 @@ const ProjectsPage = () => {
             setItemSize(window.innerWidth > 920 ? itemSizes[0] : itemSizes[1]);
             let amWidth = (window.innerWidth > 920 ? 2 : 1);
             // let amHeight = Math.max(Math.floor(element.clientHeight / itemSize[1]),1);
+            if(amWidth === 1){
+                let rem = window.innerHeight - 250;
+                if(rem > 4 * window.innerWidth){
+                    //setItemSize(Math.min(window.innerWidth * 0.7, 400), Math.min(window.innerWidth * 0.7 * (180/400), 180))
+                }else{
+                    setItemSize([Math.min(window.innerWidth * 0.7, 350), Math.min(window.innerWidth * 0.7 * (180/400), 157.5)])
+                }
+            }
             let currentTopOfRow = 0;
             let newRows = []
             for(let i = 0; i < items.length; i++){
@@ -130,17 +138,17 @@ const ProjectsPage = () => {
                 transition:{
                     type: "linear",
                     delay: 0.1,
-                    duration: 0.05,
+                    duration: 0.2,
             }}, closed: {width: '100px'}}}
             />
-            <motion.div variants={skillsDivVariants} id="projItemDiv" style={{width: '90vw', maxWidth: '910px', height: '75%', maxHeight: '500px', minHeight: '460px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor: ''}}>
+            <motion.div variants={skillsDivVariants} id="projItemDiv" style={{paddingTop: '20px', width: '90vw', height: 'calc(100vh - 200px)', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', gap: '30px',flexDirection: 'column', justifyContent: 'start', backgroundColor: 'transparent'}}>
                 {itemRows.map((row, r_index) => {
                     return(
-                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: itemSize[1], display: 'flex', flexDirection: 'row', justifyContent: 'space-around', background: ''}}>
+                        <motion.div key={r_index} variants={skillsRowsVariants} style={{gap: '30px',height: `${itemSize[1]}px`, display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
                             {row.map((item, c_index) => {
                                 return(
-                                    <motion.div key={c_index} variants={skillsItemVariants} style={{width: itemSize[0], height: itemSize[1], background: ''}}>
-                                        <ProjectContainer title={item.title} poster={item.poster} video={item.video} maxWidth={itemSize[0]} link={item.link}/>
+                                    <motion.div key={c_index} variants={skillsItemVariants} style={{height: `${itemSize[1]}px`, width: itemSize[0], background: ''}}>
+                                        <ProjectContainer title={item.title} poster={item.poster} video={item.video} width={`${itemSize[0]}px`} link={item.link}/>
                                     </motion.div>
                                 );
                             })}

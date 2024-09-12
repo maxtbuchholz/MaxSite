@@ -249,7 +249,7 @@ useEffect(() => {
               <div className="bblrTextBoxBottomBar rightBar"/>
               <h3>Neural Network</h3>
               <h5>Python ML agents was used to train neural networks for the game</h5>
-              <h5>The neural networks control enemy ship movement, making them move toward and around targets, as well as tryig to avoid terrain</h5>
+              <h5>The neural networks control enemy ship movement, making them move toward and around targets, as well as trying to avoid terrain</h5>
             </motion.div>
             <div className="bbScrollSenseDiv" ref={TB3Ref}/>
             </div>

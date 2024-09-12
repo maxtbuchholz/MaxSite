@@ -88,7 +88,7 @@ const ProjectsPage = () => {
                 if(rem > 4 * window.innerWidth){
                     //setItemSize(Math.min(window.innerWidth * 0.7, 400), Math.min(window.innerWidth * 0.7 * (180/400), 180))
                 }else{
-                    setItemSize([Math.min(window.innerWidth * 0.7, 350), Math.min(window.innerWidth * 0.7 * (180/400), 157.5)])
+                    setItemSize([Math.min(window.innerWidth * 0.65, 350), Math.min(window.innerWidth * 0.65 * (180/400), 157.5)])
                 }
             }
             let currentTopOfRow = 0;

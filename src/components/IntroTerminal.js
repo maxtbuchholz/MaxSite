@@ -102,6 +102,12 @@ function color_the_code(text){
         texts = structuredClone(newTexts);
     }
     // console.log(texts)
+    //let green = 'rgb(78,97,56)';//'rgb(105,183,163)';
+    //let blue = 'rgb(45,97,182)';//'rgb(147,187,214)';
+    //let darkBlue = 'rgb(19,50,135)';//'rgb(96,141,190)';
+    //let orange = 'rgb(125,183,244)';//'rgb(197,148,124)';
+    //let purple = 'rgb(163,59,54)';//'rgb(171,126,172)';
+    //let yellow = 'rgb(246,246,192)';//'rgb(209,209,167)';
     let green = 'rgb(105,183,163)';
     let blue = 'rgb(147,187,214)';
     let darkBlue = 'rgb(96,141,190)';
@@ -229,7 +235,8 @@ A-452.89hz is 49 cents sharper than A-440hz
 C-258.62hz is 20 cents flatter than C-261.626hz
 The 5th harmonic of A-440hz is C#-2200hz in octave 7
 Humans can hear around 120 notes in the 12 note western scale from 20hz to 20_000hz
-Dogs can hear around 127 notes from 40hz to 60_000hz`
+Dogs can hear around 127 notes from 40hz to 60_000hz
+Scroll down for more!`
 var codeLines = [];
 const origCodeLines = 
 `string hello = "Hello I am";
@@ -265,5 +272,6 @@ double noteUp = harmonic_of(440, 5);
 Console.WriteLine($"The 5th harmonic of {note_name(440)}-440hz is {note_name(noteUp)}-{noteUp}hz in octave {octave_num(noteUp)}");
 Console.WriteLine($"Humans can hear around {Math.Round(notes_up(20,20_000))} notes in the 12 note western scale from 20hz to 20_000hz");
 Console.WriteLine($"Dogs can hear around {Math.Round(notes_up(40,60_000))} notes from 40hz to 60_000hz");
+Console.WriteLine($"Scroll down for more!");
 `
 export default IntroTerminal

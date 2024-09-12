@@ -54,16 +54,19 @@ const ContactBack = ({fullBodyTop, ease, onePercHeight}) => {
 
 
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(38 * (fullBodyTop)) * onePercHeight}px - calc(${-45 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(21,25,45)', left: '10%', borderRadius: '10vw'}}/>
+            {/* rgb(21,25,45) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(60 * (fullBodyTop)) * onePercHeight}px - calc(${-44 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>
-
+            {/* rgb(23,31,55) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(28 * (fullBodyTop)) * onePercHeight}px - calc(${-47 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(21,25,45)', right: '30%', borderRadius: '10vw'}}/>
+            {/* rgb(21,25,45) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(50 * (fullBodyTop)) * onePercHeight}px - calc(${-48 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(23,31,55)', left: '30%', borderRadius: '10vw'}}/>
-
+            {/* rgb(23,31,55) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(100 * (fullBodyTop)) * onePercHeight}px - calc(${-46 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(60 * (fullBodyTop)) * onePercHeight}px - calc(${-44 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
 
 
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(120 * (fullBodyTop)) * onePercHeight}px - calc(${-53 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(23,31,55)', left: 0, borderRadius: '10vw'}}/>
+            {/* rgb(23,31,55) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(70 * (fullBodyTop)) * onePercHeight}px - calc(${-56 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(24,34,61)', right: 0, borderRadius: '10vw'}}/>
 
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(116 * (fullBodyTop)) * onePercHeight}px - calc(${-56 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(24,34,61)', left: '20%', borderRadius: '10vw'}}/>
@@ -76,12 +79,14 @@ const ContactBack = ({fullBodyTop, ease, onePercHeight}) => {
 
 
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(74 * (fullBodyTop)) * onePercHeight}px - calc(${-73 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(74 * (fullBodyTop)) * onePercHeight}px - calc(${-73 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(21,25,45)', left: '10%', borderRadius: '10vw'}}/>
+            {/* rgb(21,25,45) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(116 * (fullBodyTop)) * onePercHeight}px - calc(${-68 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(21,25,45)', right: '10%', borderRadius: '10vw'}}/>
-
+            {/* rgb(21,25,45)' */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(74 * (fullBodyTop)) * onePercHeight}px - calc(${-67 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(23,31,55)', right: '30%', borderRadius: '10vw'}}/>
+            {/* rgb(23,31,55) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(57 * (fullBodyTop)) * onePercHeight}px - calc(${-69 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(21,25,45)', left: '30%', borderRadius: '10vw'}}/>
-
+            {/* rgb(21,25,45) */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(100 * (fullBodyTop)) * onePercHeight}px - calc(${-68 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(50 * (fullBodyTop)) * onePercHeight}px - calc(${-74 * onePercHeight}px + 100px)))`, position: 'absolute', width: '20%', height: '120%', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
 

@@ -56,6 +56,11 @@ const Home = ({page, project}) => {
         const handleResize = () => {
             height = window.innerHeight;
             width = window.innerWidth;
+            if(window.innerWidth > 800){
+                setLargeScreen(true)
+            }else{
+                setLargeScreen(false)
+            }
             setOnePercBackHeight(Math.min(window.innerHeight, 1000) / 100);
             setTerminalInitTop();
         };
@@ -64,6 +69,7 @@ const Home = ({page, project}) => {
             window.removeEventListener("resize", handleResize)
         };
     }, []);
+    const [largeScreen, setLargeScreen] = useState(true);
     var height = window.innerHeight
     var width = window.innerWidth
     var scrollPosition = 0;
@@ -165,8 +171,9 @@ const Home = ({page, project}) => {
             }
         }
       };
+      const [midCloundsL, setMidCloudsL] = useState(0);
       function handleMovingScroll(scroll){
-        console.log(scroll)
+        setMidCloudsL(Math.max(Math.min(scroll, 1)))
         handleRocksBack(scroll)
         //handleHeaderBack(scroll)
         handleContactBack(scroll)
@@ -176,7 +183,7 @@ const Home = ({page, project}) => {
       }
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
-        prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.18);
+        prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
         previousContactTime = new Date();
         setContactBackTop(prevContactTop);
       }
@@ -184,7 +191,7 @@ const Home = ({page, project}) => {
         let startPage = 1;
         let endPage = 2;
 
-        prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.18);
+        prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.25);
         previousMiddleTime = new Date();
         scroll = prevMiddleTop;
         //scroll += 0.01;
@@ -382,6 +389,9 @@ const Home = ({page, project}) => {
          <Header ease={usetreansitionAnimate} headerBackTop={headerBackTop} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
             <div className="firstSection" id="top" style={{background: '#ff000000'}}>
+                <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 2) + (midCloundsL * -200)}vw` : `${((1 - midCloundsL) * 2) + (midCloundsL * -400)}vw`)}}/>
+                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -200)}vw` : `${((1 - midCloundsL) * 2) + (midCloundsL * -400)}vw`)}}/>
+                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -400)}vw` : `${((1 - midCloundsL) * 12) + (midCloundsL * -800)}vw`)}}/>
                 <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
                     <IntroTerminal/>
                 </div>

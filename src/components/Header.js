@@ -120,7 +120,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
             <div className={`header-cloud-2 header-cloud ${ease ? 'transitionHelper' : ''}`} style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
             <div className={`header-cloud-1 header-cloud ${ease ? 'transitionHelper' : ''}`} style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
         </div>
-        {/* <div className="islandBack transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/> */}
+        <div className="islandBack transitionHelper" style={{transform: `translate(${0}%, ${waveTransforms[6]}%)`}}/>
         <div style={{bottom: '0px', width: '100%', height: '350px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden'}}>
             <div className={`${ease ? 'transitionHelper' : ''}`} style={{zIndex: 0, position: 'absolute', width: '100%', height: '100%', transform: `translate(${waveTransforms[0]}%, ${waveTransforms[2]}%)`}}>
                 <div className="header-wave-l3 header-wave" />

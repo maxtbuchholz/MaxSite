@@ -71,7 +71,7 @@ const About2Page = () => {
         {site: 'https://dotnet.microsoft.com/en-us/languages/csharp', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/512px-Logo_C_sharp.svg.png?20221121173824', title: 'c#'},
         {site: 'https://dotnet.microsoft.com/en-us/', image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_.NET_logo.png?20200524033331', title: '.net'},
         {site: 'https://dotnet.microsoft.com/en-us/apps/xamarin', image: 'https://logodix.com/logo/2165424.png', title: 'xamarin'},
-        {site: 'https://developer.apple.com/xcode/', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Xcode_14_icon.png/240px-Xcode_14_icon.png', title: 'xCode'},
+        {site: 'https://developer.apple.com/xcode/', image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Xcode.svg', title: 'xCode'},
         {site: 'https://en.wikipedia.org/wiki/HTML', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/240px-HTML5_logo_and_wordmark.svg.png', title: 'html'},
         {site: 'https://www.mysql.com/', image: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png', title: 'mySQL'},
         {site: 'https://nodejs.org/en', image: 'https://nodejs.org/static/logos/jsIconGreen.svg', title: 'node.js'},

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from 'framer-motion';
+import React from "react";
 import '../globals.css'
 import '../styles/SoftwareBackground.css';
 import VSCode_image from '../img/software-screenshots/VSCode.png';

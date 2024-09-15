@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { color, delay, motion } from 'framer-motion';
+import React, { useState, useRef } from "react";
+import { motion } from 'framer-motion';
 import '../styles/Contact.css'
 import emailjs from '@emailjs/browser';
 import { TextField } from "@mui/material";
-import { alpha, duration, styled } from '@mui/material/styles';
-import { CgChart } from "react-icons/cg";
+import { styled } from '@mui/material/styles';
 const ContactPage = ({onPage, pageVisibilityChanged}) => {
     const [error, setError] = useState(false);
     const form = useRef();

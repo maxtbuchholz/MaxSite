@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { delay, motion } from 'framer-motion';
+import React from "react";
 import '../styles/ProfileImage.css'
 // import profilePic from '../img/MaxBuchholzProfile.png'
 const ProfileImage = ({ onPage, buttonLink }) => {

@@ -1,24 +1,15 @@
 "use client"
-import { Fragment, useState, useEffect, useLayoutEffect } from "react";
-import gitHubImage from '../img/github-mark.png';
-import { navToGitHub, startEmail } from '../js/nav.js';
-import { BiMenuAltRight } from 'react-icons/bi'
-import { AiOutlineClose } from 'react-icons/ai'
-import { RiMenu5Line } from "react-icons/ri";
+import { useState, useEffect } from "react";
+import { startEmail } from '../js/nav.js';
 import React from 'react';
 import '../styles/Header.css'
 import Sidebar from "./Sidebar.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee, faEnvelope, faEnvelopeSquare, faEnvelopeOpen } from '@fortawesome/fontawesome-free-solid'
+import { faEnvelope } from '@fortawesome/fontawesome-free-solid'
 import "../globals.css"
 import { scrollTo } from '../js/nav.js'
 import { headerPositionIconTo } from "../js/headerScripts.js"
-import { color, transform } from "framer-motion";
-import { delay, motion } from 'framer-motion';
-import zIndex from "@mui/material/styles/zIndex.js";
-import ProfileImage from "./ProfileImage.js";
-import IntroTerminal from "./IntroTerminal.js";
-import Headerback from "./HeaderBack.js";
+import { motion } from 'framer-motion';
 const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight, topOfPage, ulTop, terminalTop, progresBarTop, progresBarWidth, headerBackTop, ease}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler =() =>{

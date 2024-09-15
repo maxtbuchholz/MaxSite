@@ -1,17 +1,14 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { useState, useEffect, useRef, Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import pillowShape from '../../img/soft-sleep/pillowAlone.png';
 import starShape from '../../img/soft-sleep/star.png';
 import '../../styles/sub/SoftSleep.css';
 import { WaveSVG } from "../../img/svg/WaveSVG";
 import { SwiftSVG } from "../../img/svg/SwiftSVG";
 import { LineWaveSVG } from "../../img/svg/LineWaveSVG";
-import {Animated, Easing, View} from 'react-native';
-import { AnimatePresence, delay, easeIn, easeInOut, motion, transform, useReducedMotion } from 'framer-motion';
-import { GiDuration } from "react-icons/gi";
-import { Button } from "react-native-web";
+import {Animated} from 'react-native';
+import { motion } from 'framer-motion';
 import AppleButton from "../../components/AppleButton";
-import AndroidButton from "../../components/AndroidButton";
 import Header from "../../components/Header";
 import ProjectName from "../../components/ProjectName";
 import WaveHeader from "../../components/WaveHeader";

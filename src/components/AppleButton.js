@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
-import { delay, motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion';
 import '../styles/Logos.css'; 
 const AppleButton = ({onPage, buttonLink}) => {
     return(

@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../../styles/sub/TendencyTuner.css'
 import AppleButton from "../../components/AppleButton";
 import AndroidButton from "../../components/AndroidButton";
 import Header from "../../components/Header";
 import ProjectName from "../../components/ProjectName";
-import { duration } from "@mui/material";
 import TenTunChev from "../../components/TenTunChev";
 const TendencyTuner = ({}) => {
     const ProjectsBottomRef = useRef();

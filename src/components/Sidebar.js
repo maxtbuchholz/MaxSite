@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Sidebar.css";
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { scrollTo } from "../js/nav";
 const Sidebar = ({scrollButtonCallback}) => {
     const [open, setOpen] = useState(false);

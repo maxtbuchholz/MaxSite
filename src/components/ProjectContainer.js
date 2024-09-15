@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { MdBatteryChargingFull } from "react-icons/md";
-import { color, delay, motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 import '../styles/ProjectsPage.css';
 const ProjectContainer = ({title, poster, video, maxWidth, link}) => {
     const backColor = '#121424';

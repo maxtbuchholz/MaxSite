@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import React from 'react';
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import '../styles/Carousel.css'
 import '../styles/ProjectName.css'

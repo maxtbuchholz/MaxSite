@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import { delay, motion } from 'framer-motion';
 import '../styles/ProfileImage.css';
 import '../styles/IntroTerminal.css';
 const IntroTerminal = ({ onPage }) => {

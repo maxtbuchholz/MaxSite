@@ -1,6 +1,5 @@
-import Header from './Header';
-import React, { useState, useEffect, useRef } from "react";
-import { color, delay, motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from 'framer-motion';
 import '../globals.css'
 const BlueContainer =({title, children, oneChild, boxWidth, boxHeight}) =>{
     const edgeColor = '#6db9f9';

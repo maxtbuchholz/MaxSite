@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { delay, easeIn, motion, transform } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 import '../../styles/sub/BlunderBoats.css'
 import AppleButton from "../../components/AppleButton";
 import AndroidButton from "../../components/AndroidButton";
-import { duration } from "@mui/material";
 import { TextField } from "@mui/material";
 import { generateTerrain } from "../../js/bb-proceduralGen";
 import Header from "../../components/Header";

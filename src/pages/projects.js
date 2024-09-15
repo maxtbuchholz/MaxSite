@@ -1,11 +1,6 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { color, delay, easeOut, motion, transform } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 import '../styles/About2.css'
-import { type } from "@testing-library/user-event/dist/type";
-import SkillsContainer from "../components/SkillsContainer";
-import img_github from '../img/logos/github-mark-white.svg'
-import img_swift from '../img/logos/Swift_logo_color.svg'
-import { duration } from "@mui/material";
 import ProjectContainer from "../components/ProjectContainer";
 import BlunderBoats_image from '../img/projectMedia/BlunderBoats_image.png';
 import BlunderBoats_video from '../img/projectMedia/BlunderBoats_video.mp4';
@@ -13,7 +8,6 @@ import SoftSleep_image from '../img/projectMedia/SoftSleep_image.png';
 import SoftSleep_video from '../img/projectMedia/SoftSleep_video.mp4';
 import TendencyTuner_image from '../img/projectMedia/TendencyTuner_image.png';
 import TendencyTuner_video from '../img/projectMedia/TendencyTuner_video.mp4';
-import greenBlob from '../img/svg/greenBlob.svg';
 
 const ProjectsPage = () => {
     const [itemSize, setItemSize] = useState([400,180]);

@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { color, delay, easeOut, motion, transform } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion} from 'framer-motion';
 import '../styles/About2.css'
-import { type } from "@testing-library/user-event/dist/type";
 import SkillsContainer from "../components/SkillsContainer";
 import img_github from '../img/logos/github-mark-white.svg'
 import img_swift from '../img/logos/Swift_logo_color.svg'
 import img_java from '../img/logos/java-icon.svg'
-import { duration } from "@mui/material";
-import greenBlob from '../img/svg/greenBlob.svg';
-import { green } from "@mui/material/colors";
 
 const About2Page = () => {
     const itemSizes = [120,80];

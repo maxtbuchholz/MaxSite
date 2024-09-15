@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { color, delay, easeOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../styles/About1.css'
 import '../styles/AboutContainers.css'
 import ProfileImage from "../components/ProfileImage";
 import BlueContainer from "../components/BlueContainer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FaMobileScreenButton, FaMobileScreen, FaDisplay, FaDatabase, FaComputer } from "react-icons/fa6";
-import { duration } from "@mui/material";
+import { FaMobileScreenButton, FaDisplay, FaDatabase, FaComputer } from "react-icons/fa6";
 import SoftwareBackground from "../components/SoftwareBackground";
 const About1Page = ({onPage, pageVisibilityChanged}) => {
     const gridVariants = {

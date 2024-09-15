@@ -25,15 +25,21 @@ const About2Page = () => {
     const skillsRowsVariants = {
         open:{                
             x: 0,
+            // transition:{
+            //     type: "spring",
+            //     stiffness: 120,
+            //     staggerChildren: 0.08,
+            //     staggerDirection: -1,
+            // }
             transition:{
-                type: "spring",
-                stiffness: 120,
+                delay: 0.3,
+                duration: 0.3,
                 staggerChildren: 0.08,
                 staggerDirection: -1,
             }
         },
         closed:{
-            x: -25,
+            x: -10,
             transition:{
                 delay: 0.3,
                 duration: 0.2,

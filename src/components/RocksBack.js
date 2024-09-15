@@ -2,27 +2,28 @@ import React from "react";
 import '../styles/sub/RocksBack.css';
 const RocksBack = ({fullBodyTop, rockAnimateValue, ease, onePercHeight}) => {
     return(
-        <div className={`${ease ? 'pageMovable' : ''}`} style={{transform: `translate(0, ${fullBodyTop})`, position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(calc(100vh - 100px), 1000px)', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(10% + 100px)))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(10% + 100px)))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>
+        <div className={`${ease ? 'pageMovable' : ''}`} style={{position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(calc(100vh - 100px), 1000px)', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
+            {/* ${fullBodyTop} */}
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(5% + 100px)))`, position: 'absolute', width: '20%', height: '88%', background: 'rgb(21,25,45)', right: '30%', borderRadius: '10vw'}}/>
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(5% + 100px)))`, position: 'absolute', width: '20%', height: '88%', background: 'rgb(21,25,45)', left: '30%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(-5% + 100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '88%', background: 'rgb(21,25,45)', right: '30%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(-5% + 100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '88%', background: 'rgb(21,25,45)', left: '30%', borderRadius: '10vw'}}/>
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(14% + 100px)))`, position: 'absolute', width: '20%', height: '74%', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${-10 * (1 - 0)}% + calc(14% + 100px)))`, position: 'absolute', width: '20%', height: '74%', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(8% + 100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '74%', background: 'rgb(28,38,65)', right: '-10%', borderRadius: '10vw'}}/>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(8% + 100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '74%', background: 'rgb(28,38,65)', left: '-10%', borderRadius: '10vw'}}/>
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(80 * (1 - rockAnimateValue)) * onePercHeight}px - calc(${50 * onePercHeight}px + 00px)))`, height: '100%', width: '100%', position: 'absolute', }}>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(80 * (1 - rockAnimateValue)) * onePercHeight}px - calc(${50 * onePercHeight}px + 00px) + ${fullBodyTop}))`, height: '100%', width: '100%', position: 'absolute', }}>
                 <div style={{position: 'absolute', width: '20%', height: '130%', background: 'rgb(28,44,79)', left: 0, borderRadius: '10vw'}}/>
                 <div style={{position: 'absolute', width: '20%', height: '130%', background: 'rgb(28,44,79)', right: 0, borderRadius: '10vw'}}/>
             </div>
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(110 * (1 - rockAnimateValue)) * onePercHeight}px - calc(${60 * onePercHeight}px + 00px)))`, height: `100%`, width: '100%', position: 'absolute', background: 'transparent'}}>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(110 * (1 - rockAnimateValue)) * onePercHeight}px - calc(${60 * onePercHeight}px + 00px) + ${fullBodyTop}))`, height: `100%`, width: '100%', position: 'absolute', background: 'transparent'}}>
                 <div style={{position: 'absolute', width: `20%`, height: `${130 * onePercHeight}px`, background: 'rgb(26,39,70)', left: '20%', borderRadius: '10vw'}}/>
                 <div style={{position: 'absolute', width: `20%`, height: `${130 * onePercHeight}px`, background: 'rgb(26,39,70)', right: '20%', borderRadius: '10vw'}}/>
             </div>
 
-            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(140 * (1 - rockAnimateValue) * onePercHeight)}px - calc(${77 * onePercHeight}px + 000px)))`, height: `100%`, width: '100%', position: 'absolute', }}>
+            <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(${(140 * (1 - rockAnimateValue) * onePercHeight)}px - calc(${77 * onePercHeight}px + 000px) + ${fullBodyTop}))`, height: `100%`, width: '100%', position: 'absolute', }}>
                 <div style={{position: 'absolute', width: '20%', height: `${130 * onePercHeight}px`, background: 'rgb(24,34,61)', right: '40%', borderRadius: `10vw`}}/>
             </div>
 

@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import softSleepIcon from '../img/app-icons/softSleep-icon.png';
-import blunderBoatsIcon from '../img/app-icons/blunderBoats-icon.png';
-import tendencyTunerIcon from '../img/app-icons/tendencyTuner-icon.png';
 import { scrollToInstant } from "../js/nav";
 import ContactPage from "./Contact";
 import Header from "../components/Header";
@@ -10,11 +7,6 @@ import About2Page from "./About2";
 import ProjectsPage from "./projects";
 import RocksBack from "../components/RocksBack";
 import ContactBack from "../components/ContactBack";
-const apps = [
-    {title: 'Blunder Boats', content: blunderBoatsIcon },
-    {title: 'Soft Sleep', content: softSleepIcon },
-              {title: 'Tendency Tuner', content: tendencyTunerIcon },
-]
 const Home = ({page, project}) => {
       var [isIOS, setIsIOS] = useState(false);
       useLayoutEffect(() => {
@@ -45,7 +37,6 @@ const Home = ({page, project}) => {
                 if(projButton != null){
                     projButton.click();
                 }
-                //firstApp = projects.indexOf(project);
             }
         }
         const handleResize = () => {
@@ -72,9 +63,9 @@ const Home = ({page, project}) => {
     const [usetreansitionAnimate, setUseTransitionAnimate] = useState(false);
     const [onePercBackHeight, setOnePercBackHeight] = useState(Math.min(window.innerHeight, 800) / 100);
     useLayoutEffect(() => {
-        setInterval(() => {
+        let startTransInterval = setInterval(() => {
             setUseTransitionAnimate(true);
-            return true;
+            clearInterval(startTransInterval);
       }, 10);
     }, [])
     useEffect(() => {
@@ -109,7 +100,7 @@ const Home = ({page, project}) => {
         }, 100);
         const handleScroll = (e) => {
             setScrollTop = e.target.scrollTop;
-    }
+        }
 
     ScrollPageRef.current.addEventListener('scroll', handleScroll);
     return () => {clearInterval(interval); ScrollPageRef.current.removeEventListener('scroll', handleScroll)}
@@ -117,12 +108,9 @@ const Home = ({page, project}) => {
     function changeProgBarWidth(perc){
         setProgBarWidth((1 - Math.abs((perc) - 0.5) * 2))
     }
-    const [ulTop, setUlTop] = useState(window.innerWidth > 800 ? ((1 * (window.innerHeight)) + (1 * -180)) : ((1 * height) + (0 * -(window.innerHeight * 0.5))) + (1 * -130));
     const [terminalTop, setTerminalTop] = useState(window.innerWidth > 800 ? ((1 * (window.innerHeight * 0.5)) + (0 * -(window.innerHeight) + (1 * -220))) : ((1 * (window.innerHeight * 0.5)) + (0 * -(window.innerHeight + (window.innerHeight * 0.5))) + (1 * -216)));
     const [topOfPage, setTopOfPage] = useState(true);
     var headerFull = true;
-    const[progBarHeight, setProgBarHeight] = useState(0);
-    const[headerBackTop, setHeaderBackTop] = useState(1);
     const[contactBackTop, setContactBackTop] = useState(1);
     const[progBarWidth, setProgBarWidth] = useState(0);
     const [rocksBackFullTop, setRocksBackFullTop] = useState('100vh');
@@ -133,12 +121,9 @@ const Home = ({page, project}) => {
           var headerSize = Math.max(height - scroll, 0);
           scroll = Math.max(scroll, 0)
           headerSize = Math.min(height, headerSize);
-        var headrRect = document.getElementById('uiHeader');
         if(headerSize > 100){       //still on first header page
             if(!headerFull){
                 headerFull = true;
-                // headrRect.classList.remove("headerOnTop");
-                // headrRect.classList.add("headerFull");
             }
             if(!topOfPage){
                 if(scroll <= 10){
@@ -150,7 +135,6 @@ const Home = ({page, project}) => {
                 }
             }
             handleHeaderWaves((headerSize - 100) / (height - 100))
-                setHeaderHeight(`${headerSize}px`)
         }else{                      //past first header page
             if(topOfPage){
                 if(scroll > 10){
@@ -160,9 +144,6 @@ const Home = ({page, project}) => {
             if(headerFull){
                 headerFull = false;
                 handleHeaderWaves(0)
-                    setHeaderHeight(`${100}px`)
-                    // headrRect.classList.add("headerOnTop");
-                    // headrRect.classList.remove("headerFull");
             }
         }
       };
@@ -170,11 +151,7 @@ const Home = ({page, project}) => {
       function handleMovingScroll(scroll){
         setMidCloudsL(Math.max(Math.min(scroll, 1)))
         handleRocksBack(scroll)
-        //handleHeaderBack(scroll)
         handleContactBack(scroll)
-      }
-      function handleHeaderBack(scroll){
-        setHeaderBackTop(Math.max(Math.min(scroll, 1), 0));
       }
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
@@ -189,45 +166,17 @@ const Home = ({page, project}) => {
         prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.25);
         previousMiddleTime = new Date();
         scroll = prevMiddleTop;
-        //scroll += 0.01;
-        // if(scroll <= startPage - 1){
-        //     // setRocksBackFullTop('100vh')
-        //     setRockAnimatiionValue(0);
-        //     let diff = (scroll - startPage);
-        //     setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 200px)`)
-        // }else if(scroll >= endPage + 1){
-        //     // setRockAnimatiionValue(1);
-        //     // setRocksBackFullTop('-100vh')
-        //     setRockAnimatiionValue(1);
-        //     let diff = (scroll - endPage);
-        //     setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 200px)`)
-        // }else if(scroll < startPage){
-        //     setRockAnimatiionValue(0);
-        //     let diff = (scroll - startPage);
-        //     setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 200px)`)
-        // }else if(scroll > endPage){
-        //     setRockAnimatiionValue(1);
-        //     let diff = (scroll - endPage);
-        //     setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 200px)`)
-        // }else{
-        //     setRockAnimatiionValue((scroll - startPage) / (endPage - startPage));
-        //     setRocksBackFullTop('0px')
-        // }
 
         let extraHeight = Math.max(height - 700, 0);
         if(scroll < startPage){
-            // console.log('before: ' + scroll)
             let diff = (scroll - startPage);
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + ${extraHeight}px)`)
         }else if(scroll > endPage){
-            // console.log('after : ' + scroll)
             let diff = (scroll - endPage);
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 00px)`)
         }else{
             let l = (scroll - startPage) / (endPage - startPage);
-            // console.log('in    : ' + scroll)
             setRocksBackFullTop(`calc(${(1 - l) * extraHeight}px)`)
-            // setRocksBackFullTop('0px')
         }
         if(scroll < 0.96){
             scroll = 0.96;
@@ -235,14 +184,12 @@ const Home = ({page, project}) => {
         setRockAnimatiionValue(scroll - 1)
       }
       function handleHeaderWaves(percFul){
-        //handleHeaderElements(percFul);
-        // let rock1Y = percFul * 200;//(((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
         percFul = 1 - percFul;
         let rock1Y = 0;
         if(width > 800){
-            rock1Y = (((Math.sin(((1 - percFul) * 3) - 1.4) * 1) -1) * -100);//+100;
+            rock1Y = (((Math.sin(((1 - percFul) * 3) - 1.4) * 1) -1) * -100);
         }else{
-            rock1Y = percFul * 200;//(((Math.sin((percFul * 3) - 1.4) * 1) -1) * -100);//+100;
+            rock1Y = percFul * 200;
         }
         setheaderWaveArray([
                             -percFul * 100, 
@@ -269,7 +216,6 @@ const Home = ({page, project}) => {
             }
       }
       const [headerWaveArray, setheaderWaveArray] = useState([0,0,0]);      
-      const [headerHeight, setHeaderHeight] = useState('100%');
       const HomeRef = useRef();
       const ScrollPageRef = useRef();
       const AboutRef = useRef();
@@ -342,19 +288,15 @@ const Home = ({page, project}) => {
         if(contactVisible){
             setCurrPage(3);
             setCurrPageName("contact")
-            //window.history.replaceState(null, currPageName, "/contact");
         }else if(projectsVisible){
             setCurrPage(2);
             setCurrPageName("projects")
-            //window.history.replaceState(null, currPageName, "/projects");
         }else if(aboutVisible){
             setCurrPage(1);
             setCurrPageName("skills")
-            //window.history.replaceState(null, currPageName, "/about");
         }else if(homeVisible){
             setCurrPage(0);
             setCurrPageName("home")
-            //window.history.replaceState(null, currPageName, "/home");
         }
       }
       var prevContactTop = null;
@@ -381,7 +323,7 @@ const Home = ({page, project}) => {
         <div>
          <ContactBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}/>
          <RocksBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
-         <Header ease={usetreansitionAnimate} headerBackTop={headerBackTop} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
+         <Header ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
         <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`)}}/>
                 <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`)}}/>

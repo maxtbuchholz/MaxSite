@@ -133,11 +133,11 @@ const ProjectsPage = () => {
                         }}>
                 </div> */}
             <h2 className="titleText">Projects</h2>
-            <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '-4px'}}
+            <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '10px'}}
             variants={{open: {width: 'min(350px, 80vw)',       
                 transition:{
                     type: "linear",
-                    delay: 0.1,
+                    delay: 0.15,
                     duration: 0.2,
             }}, closed: {width: '100px'}}}
             />

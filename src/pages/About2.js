@@ -142,7 +142,7 @@ const About2Page = () => {
             variants={{open: {width: 'min(350px, 80vw)',       
                 transition:{
                 type: "linear",
-                delay: 0.1,
+                delay: 0.15,
                 duration: 0.2,
             }}, closed: {width: '100px'}}}
             />

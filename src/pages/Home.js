@@ -28,6 +28,11 @@ const apps = [
 const Home = ({page, project}) => {
       var [isIOS, setIsIOS] = useState(false);
       useLayoutEffect(() => {
+        if(window.innerWidth > 800){
+            setLargeScreen(true)
+        }else{
+            setLargeScreen(false)
+        }
         setIsIOS(navigator.userAgent.platform === 'iPad' || navigator.userAgent.platform === 'iPhone' || navigator.userAgent.platform === 'iPod');
         if(isIOS) setDisableScroll(false);
         const pages = ["home", "skills", "projects", "contact"];
@@ -388,10 +393,10 @@ const Home = ({page, project}) => {
          <RocksBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
          <Header ease={usetreansitionAnimate} headerBackTop={headerBackTop} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={headerHeight} topOfPage={topOfPage} ulTop={ulTop} terminalTop={terminalTop} progresBarTop={progBarHeight} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
+        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`)}}/>
+                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`)}}/>
+                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`)}}/>
             <div className="firstSection" id="top" style={{background: '#ff000000'}}>
-                <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 2) + (midCloundsL * -200)}vw` : `${((1 - midCloundsL) * 2) + (midCloundsL * -400)}vw`)}}/>
-                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -200)}vw` : `${((1 - midCloundsL) * 2) + (midCloundsL * -400)}vw`)}}/>
-                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -400)}vw` : `${((1 - midCloundsL) * 12) + (midCloundsL * -800)}vw`)}}/>
                 <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
                     <IntroTerminal/>
                 </div>

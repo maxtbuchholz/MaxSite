@@ -40,9 +40,9 @@ const IntroTerminal = ({ onPage }) => {
         }
     }
     return(
-        <div style={{background: 'rgba(30,30,30,0.7)', width: '550px', borderStyle: 'solid', borderWidth: '1.0px', borderColor: 'rgba(71,71,71,1)', borderRadius: '10px', display: 
-        'flex', flexDirection: 'column', overflow: 'hidden', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 0px 0px, rgb(10, 10, 10) 0px 0px 0px 0.5px', color: 'white'}} className="introTerminalIn terminalScale">
-            <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
+        <div style={{background: 'rgba(30,30,30,1.0)', width: '550px',borderRadius: '10px', display: 
+        'flex', flexDirection: 'column', overflow: 'hidden', color: 'white'}} className="introTerminalIn terminalScale">
+            <div style={{height: '26px', width: '100%', background: 'rgba(41,42,44,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
                 <h3 className="poppins-regular" style={{color: 'rgba(144,145,146,1)', fontSize: '14px', position: 'absolute', right: 0, left: 0, margin: 'auto',  width: '100%', textAlign: 'center', marginTop: '1px'}}>intro.cs</h3>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
                 <div style={{background: 'rgba(71, 71, 78, 0.5)', width: '12px', height: '12px', marginLeft: '7px', borderRadius: '50%', marginTop: '6px'}}/>
@@ -54,12 +54,11 @@ const IntroTerminal = ({ onPage }) => {
                     {loadedOutputLines.map((text, index) => {
                         return(
                             <OutputLine key={index} text={text.text}/>
-                            // <h3>{text.text}</h3>
                         );
                     })}    
                     </div>
                 </div>
-                <div style={{height: '22px', width: '100%', background: 'rgba(41,42,44,1)',  borderBottomStyle: 'solid', borderBottomWidth: '0.5px', borderBottomColor: 'rgba(11,11,11,1)',  borderTopStyle: 'solid', borderTopWidth: '0.5px', borderTopColor: 'rgba(71,71,71,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
+                <div style={{height: '22px', width: '100%', background: 'rgba(41,42,44,1)', display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
                     <h3 style={{color: 'rgba(144,145,146,0.8)', fontSize: '10px', right: 0, left: 0, margin: 'auto', marginTop: '-0.5px', fontWeight: '500'}}>output</h3>
                 </div>
                 <div className="poppins-regular" style={{height: '100%', width: '100%', overflow: 'hidden'}}>
@@ -156,16 +155,8 @@ function color_the_code(text){
     split_and_color("upper", blue);
     split_and_color("lower", blue);
 
-    // console.log(texts)
-    // const substring = new RegExp("Console");
-    // text = text.replace(substring, (highlight) => `<div style="color: yellow">${highlight}</div>`);
     texts[0].fullLength = textLength;
     texts[0].isConsoleLog = isLog;
-    // texts = texts.filter(a => a.text !== "")
-    // if(debug){
-    //     //console.log(texts);
-    // }
-    // console.log(texts);
     return texts;
 }
 const CodeLine = ({texts, index, length, finishFunction, scrollFunction, outputFunction}) => {
@@ -187,7 +178,7 @@ const CodeLine = ({texts, index, length, finishFunction, scrollFunction, outputF
                       }, 50);
                 }
             }
-        }, 40)
+        }, 20)
     }, []);
     const [isNewConsole, setIsNewConsole] = useState(false);
     return(

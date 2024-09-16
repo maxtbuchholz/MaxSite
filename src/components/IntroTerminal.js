@@ -262,6 +262,6 @@ double noteUp = harmonic_of(440, 5);
 Console.WriteLine($"The 5th harmonic of {note_name(440)}-440hz is {note_name(noteUp)}-{noteUp}hz in octave {octave_num(noteUp)}");
 Console.WriteLine($"Humans can hear around {Math.Round(notes_up(20,20_000))} notes in the 12 note western scale from 20hz to 20_000hz");
 Console.WriteLine($"Dogs can hear around {Math.Round(notes_up(40,60_000))} notes from 40hz to 60_000hz");
-Console.WriteLine($"Scroll down for more!");
+Console.WriteLine("Scroll down for more!");
 `
 export default IntroTerminal

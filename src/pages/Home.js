@@ -160,7 +160,7 @@ const Home = ({page, project}) => {
       };
       const [midCloundsL, setMidCloudsL] = useState(0);
       function handleMovingScroll(scroll){
-        setMidCloudsL(Math.max(Math.min(scroll, 1)))
+        setMidCloudsL(Math.max(Math.min(scroll, 1), 0))
         handleRocksBack(scroll)
         handleContactBack(scroll)
       }

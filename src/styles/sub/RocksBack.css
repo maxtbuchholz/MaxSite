@@ -1,8 +1,3 @@
-.pageMovable{
-    transition: all 300ms ease-out;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-}
 .moveable{
     transition: all 300ms ease-out;
     -webkit-transition: all 300ms ease-out;

@@ -62,12 +62,22 @@ const Home = ({page, project}) => {
     var [disableScroll, setDisableScroll] = useState(false);
     const [usetreansitionAnimate, setUseTransitionAnimate] = useState(false);
     const [onePercBackHeight, setOnePercBackHeight] = useState(Math.min(window.innerHeight, 800) / 100);
+    //const [previousScrollTime, setPreviousScrollTime] = useState(null);
+    //var previousScrollTime = new Date();
     useLayoutEffect(() => {
         let startTransInterval = setInterval(() => {
             setUseTransitionAnimate(true);
             clearInterval(startTransInterval);
       }, 10);
     }, [])
+    //useEffect(() => {
+        // let newScrollTime = Date.now;
+        // if(previousScrollTime != null){
+        //     console.log(newScrollTime.getTime() - previousScrollTime.getTime());
+        // }
+        // setPreviousScrollTime(new Date());
+        //setPreviousScrollTime(newScrollTime);
+    // })
     useEffect(() => {
         var setScrollTop = null;
         var prevScrollTop = null;
@@ -112,6 +122,7 @@ const Home = ({page, project}) => {
     const [topOfPage, setTopOfPage] = useState(true);
     var headerFull = true;
     const[contactBackTop, setContactBackTop] = useState(1);
+    const[contactBackDownTop, setContactBackDownTop] = useState('100vh');
     const[progBarWidth, setProgBarWidth] = useState(0);
     const [rocksBackFullTop, setRocksBackFullTop] = useState('100vh');
     const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
@@ -158,6 +169,7 @@ const Home = ({page, project}) => {
         prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
         previousContactTime = new Date();
         setContactBackTop(prevContactTop);
+        setContactBackDownTop(`${prevContactTop * 100}vh`);
       }
       function handleRocksBack(scroll){
         let startPage = 1;
@@ -321,7 +333,7 @@ const Home = ({page, project}) => {
       }
     return (
         <div>
-         <ContactBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}/>
+         <ContactBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}contactTop={contactBackDownTop}/>
          <RocksBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
          <Header ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>

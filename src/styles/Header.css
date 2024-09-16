@@ -515,16 +515,6 @@ ul{
     bottom: 0;
     margin: auto;
 } */
-.transitionHelper{
-    transition: all 300ms ease-out;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-}
-.transitionHeaderHelper{
-    transition: all 300ms ease-out;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-}
 @media (min-width: 0px){
     .islandBack{
         width: 80px;

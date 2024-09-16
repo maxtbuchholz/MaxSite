@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/sub/RocksBack.css';
 const ContactBack = ({fullBodyTop, ease, onePercHeight, contactTop}) => {
     return(
-        <div className={`${ease ? 'pageMovable' : ''}`} style={{transform: `translate(0, calc(max(calc(100vh - 1000px), 0px)))`, position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(100vh, 1000px)', top: '30px', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
+        <div className={`${ease ? 'pageMovable' : ''}`} style={{transform: `translate(0, calc(max(calc(100vh - 1000px), 0px)))`, position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(100vh, 1400px)', top: '30px', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
 
 
 

@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/sub/RocksBack.css';
 const RocksBack = ({fullBodyTop, rockAnimateValue, ease, onePercHeight}) => {
     return(
-        <div className={`${ease ? 'pageMovable' : ''}`} style={{position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(calc(100vh - 100px), 1000px)', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
+        <div className={`${ease ? 'pageMovable' : ''} iosBackRocks`} style={{position: 'fixed', width: 'min(100vw, 1600px)', height: 'min(calc(100vh - 100px), 1400px)', background: 'transparent', left: 'max(calc(calc(100vw - 1600px)/2),0px)'}}>
             {/* ${fullBodyTop} */}
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', left: '10%', borderRadius: '10vw'}}/>
             <div className={`${ease ? 'moveable' : ''}`} style={{transform: `translate(0, calc(100px + ${fullBodyTop}))`, position: 'absolute', width: '20%', height: '92%', background: 'rgb(23,31,55)', right: '10%', borderRadius: '10vw'}}/>

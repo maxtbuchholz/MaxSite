@@ -126,7 +126,7 @@ const ProjectsPage = () => {
                             left: '-30%'
                         }}>
                 </div> */}
-            <h2 className="titleText">Projects</h2>
+            <h2 className="titleText iosTopSpacer">Projects</h2>
             <motion.div style={{background: 'white', width: '300px', height: '2px', borderRadius: '1px', marginRight: 0, marginLeft: 0, margin: 'auto', marginTop: '10px', marginBottom: '10px'}}
             variants={{open: {width: 'min(350px, 80vw)',       
                 transition:{

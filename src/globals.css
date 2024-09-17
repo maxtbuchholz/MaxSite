@@ -17,6 +17,9 @@
     font-size: 50px;
     line-height: 50px;
   }
+  .iosTopSpacer{
+    margin-top: -5px;
+  }
 }
 html{
   background-color: #121424;
@@ -387,7 +390,7 @@ body {
   @supports (-webkit-touch-callout: none) {
     .firstSection{
       scroll-behavior: smooth;
-      height: calc(100vh);
+      height: calc(100vh - 100px);
       scroll-snap-align: start;
       overflow: hidden;
       /* scroll-margin-top: 100px; */
@@ -397,7 +400,7 @@ body {
   } 
   .section{
     /* scroll-behavior: smooth; */
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     scroll-snap-align: start;
     overflow: hidden;
     scroll-margin-top: 100px;
@@ -418,7 +421,7 @@ body {
   }
   .lastSection{
     /* scroll-behavior: smooth; */
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     scroll-snap-align: start;
     overflow: hidden;
     scroll-margin-top: 100px;

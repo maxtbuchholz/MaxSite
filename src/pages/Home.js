@@ -163,23 +163,23 @@ const Home = ({page, project}) => {
         }
       };
       const [midCloundsL, setMidCloudsL] = useState(0);
-      const [midCloudsOpacity, setMidCloudsOpacity] = useState(1);
-      var previousCloudsOpacity = null;
-      var previousOpacityTime = null;
+    //   const [midCloudsOpacity, setMidCloudsOpacity] = useState(1);
+    //   var previousCloudsOpacity = null;
+    //   var previousOpacityTime = null;
       function handleMovingScroll(scroll){
         handleRocksBack(scroll)
         handleContactBack(scroll)
         setMidCloudsL(Math.max(Math.min(scroll, 1), 0))
 
-        previousCloudsOpacity = lerpBackAnimate(
-            Math.pow(Math.max(Math.min((1 - scroll) + 0.1, 1), 0), 2),
-            previousCloudsOpacity,
-            previousOpacityTime,
-            0.25
-        );
-        previousOpacityTime = new Date();
-        console.log(previousCloudsOpacity)
-        setMidCloudsOpacity(previousCloudsOpacity)
+        // previousCloudsOpacity = lerpBackAnimate(
+        //     Math.pow(Math.max(Math.min((1 - scroll) + 0.1, 1), 0), 1),
+        //     previousCloudsOpacity,
+        //     previousOpacityTime,
+        //     0.25
+        // );
+        // previousOpacityTime = new Date();
+        // console.log(previousCloudsOpacity)
+        // setMidCloudsOpacity(previousCloudsOpacity)
       }
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
@@ -389,11 +389,11 @@ const Home = ({page, project}) => {
         <div>
          <ContactBack opacity={contactBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}contactTop={contactBackDownTop}/>
          <RocksBack opacity={rocksBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
-         <Header opacity={midCloudsOpacity} ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
+         <Header opacity={1} ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
-        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`), opacity: midCloudsOpacity}}/>
-                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`), opacity: midCloudsOpacity}}/>
-                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`), opacity: midCloudsOpacity}}/>
+        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`), opacity: 1}}/>
+                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`), opacity: 1}}/>
+                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`), opacity: 1}}/>
             <div className="firstSection" id="top" style={{background: '#ff000000'}}>
                 <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
                     <IntroTerminal/>

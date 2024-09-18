@@ -97,7 +97,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                     </div>
         </header>
 
-        <div style={{width: '100vw', height: '100vh', opacity: opacity}}>
+        {/* <div style={{width: '100vw', height: '100vh', opacity: opacity, position: 'absolute'}}> */}
         <div style={{top: '0px', width: '100%', height: '400px', position: 'fixed', padding: 0, margin: 0, overflow: 'hidden', opacity: 0.7}}>
             <div className={`header-cloud-2 header-cloud ${ease ? 'moveable' : ''}`} style={{transform: `translate(${waveTransforms[0]}%, ${waveTransforms[5]}%)`}}/>
             <div className={`header-cloud-1 header-cloud ${ease ? 'moveable' : ''}`} style={{transform: `translate(${waveTransforms[1]}%, ${waveTransforms[0]}%)`}}/>
@@ -118,7 +118,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                 <div className="header-wave-r1 header-wave"/>
             </div>
         </div>
-        </div>                
+        {/* </div>                 */}
 
 
         </div>

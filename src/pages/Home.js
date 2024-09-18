@@ -123,9 +123,13 @@ const Home = ({page, project}) => {
     var headerFull = true;
     const[contactBackTop, setContactBackTop] = useState(1);
     const[contactBackDownTop, setContactBackDownTop] = useState('100vh');
+    const[contactBackOpacity, setContactBackOpacity] = useState(0);
     const[progBarWidth, setProgBarWidth] = useState(0);
     const [rocksBackFullTop, setRocksBackFullTop] = useState('100vh');
     const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
+    const[rocksBackOpacity, setRocksBackOpacity] = useState(0);
+    var prevRocksOpacity = null;
+    var previousRocksOpacityTime = null;
       function handleHeaderHeight(){
             handleMovingScroll(Math.round((scrollPosition / (height - 100)) * 1000) / 1000)
           var scroll = Math.min(scrollPosition, height);
@@ -159,10 +163,23 @@ const Home = ({page, project}) => {
         }
       };
       const [midCloundsL, setMidCloudsL] = useState(0);
+      const [midCloudsOpacity, setMidCloudsOpacity] = useState(1);
+      var previousCloudsOpacity = null;
+      var previousOpacityTime = null;
       function handleMovingScroll(scroll){
-        setMidCloudsL(Math.max(Math.min(scroll, 1), 0))
         handleRocksBack(scroll)
         handleContactBack(scroll)
+        setMidCloudsL(Math.max(Math.min(scroll, 1), 0))
+
+        previousCloudsOpacity = lerpBackAnimate(
+            Math.pow(Math.max(Math.min((1 - scroll) + 0.1, 1), 0), 2),
+            previousCloudsOpacity,
+            previousOpacityTime,
+            0.25
+        );
+        previousOpacityTime = new Date();
+        console.log(previousCloudsOpacity)
+        setMidCloudsOpacity(previousCloudsOpacity)
       }
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
@@ -170,6 +187,15 @@ const Home = ({page, project}) => {
         previousContactTime = new Date();
         setContactBackTop(prevContactTop);
         setContactBackDownTop(`${prevContactTop * 100}vh`);
+
+            prevContactOpacity = lerpBackAnimate(
+                Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0),
+                prevContactOpacity,
+                previousContactOpacityTime,
+                0.25
+            )
+            setContactBackOpacity(prevContactOpacity);
+        previousContactOpacityTime = new Date();
       }
       function handleRocksBack(scroll){
         let startPage = 1;
@@ -180,16 +206,42 @@ const Home = ({page, project}) => {
         scroll = prevMiddleTop;
 
         let extraHeight = Math.max(height - 700, 0);
+        
         if(scroll < startPage){
             let diff = (scroll - startPage);
+
+            prevRocksOpacity = lerpBackAnimate(
+                Math.pow(Math.max(Math.min(scroll + 0.1, 1), 0), 2),
+                prevRocksOpacity,
+                previousRocksOpacityTime,
+                0.25
+            );
+
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + ${extraHeight}px)`)
         }else if(scroll > endPage){
+
+            prevRocksOpacity = lerpBackAnimate(
+                Math.pow((Math.max(Math.min(((1 -(scroll - 2)) + 0.1), 1), 0)), 2),
+                prevRocksOpacity,
+                previousRocksOpacityTime,
+                0.25
+            );
+
             let diff = (scroll - endPage);
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 00px)`)
         }else{
             let l = (scroll - startPage) / (endPage - startPage);
             setRocksBackFullTop(`calc(${(1 - l) * extraHeight}px)`)
+            prevRocksOpacity = lerpBackAnimate(
+                1,
+                prevRocksOpacity,
+                previousRocksOpacityTime,
+                0.25
+            );
         }
+
+        setRocksBackOpacity(prevRocksOpacity)
+        previousRocksOpacityTime = new Date();
         if(scroll < 0.96){
             scroll = 0.96;
         }
@@ -312,8 +364,10 @@ const Home = ({page, project}) => {
         }
       }
       var prevContactTop = null;
+      var prevContactOpacity = null;
       var prevMiddleTop = null;
       var previousContactTime = null;
+      var previousContactOpacityTime = null;
       var previousMiddleTime = null;
       var currentTime = null;
       function lerpBackAnimate(val, pastVal, prevTime, L){
@@ -333,13 +387,13 @@ const Home = ({page, project}) => {
       }
     return (
         <div>
-         <ContactBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}contactTop={contactBackDownTop}/>
-         <RocksBack onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
-         <Header ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
+         <ContactBack opacity={contactBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}contactTop={contactBackDownTop}/>
+         <RocksBack opacity={rocksBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
+         <Header opacity={midCloudsOpacity} ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
-        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`)}}/>
-                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`)}}/>
-                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`)}}/>
+        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`), opacity: midCloudsOpacity}}/>
+                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`), opacity: midCloudsOpacity}}/>
+                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`), opacity: midCloudsOpacity}}/>
             <div className="firstSection" id="top" style={{background: '#ff000000'}}>
                 <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
                     <IntroTerminal/>

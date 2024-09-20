@@ -78,22 +78,33 @@ const Home = ({page, project}) => {
         // setPreviousScrollTime(new Date());
         //setPreviousScrollTime(newScrollTime);
     // })
+    var previousScrollTime = null;
     useEffect(() => {
         var setScrollTop = null;
         var prevScrollTop = null;
         var amountSameInARow = 0;
         const interval = setInterval(() => {
             updatePageVisabilities();
-            if(setScrollTop === null){ return; }
+            //if(setScrollTop === null){ return; }
+            prevScrollTop = lerpBackAnimate(
+                setScrollTop,
+                prevScrollTop,
+                previousScrollTime,
+                0.3
+            )
+            previousScrollTime = new Date();
             if(setScrollTop === prevScrollTop){
                 if(amountSameInARow >= 10){ 
-                    return;
+                    //return;
                 }
                 amountSameInARow++;
             }else if(amountSameInARow !== 0){
                 amountSameInARow = 0;
             }
-            prevScrollTop = setScrollTop;
+            //prevScrollTop = setScrollTop;
+
+
+            //prevScrollTop = setScrollTop;
             if(!isIOS){
                 let target = document.getElementById("projects");
                 if( ((target.offsetTop) < (setScrollTop + 50)) &&
@@ -104,7 +115,17 @@ const Home = ({page, project}) => {
                     setDisableScroll(false);
                 }
             }
-            scrollPosition = setScrollTop;
+
+
+
+            scrollPosition = prevScrollTop;
+
+
+
+
+
+
+            console.log(scrollPosition)
             changeProgBarWidth((setScrollTop / (height - 100)) % 1);
             handleHeaderHeight();
         }, 100);
@@ -188,60 +209,63 @@ const Home = ({page, project}) => {
         setContactBackTop(prevContactTop);
         setContactBackDownTop(`${prevContactTop * 100}vh`);
 
-            prevContactOpacity = lerpBackAnimate(
-                Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0),
-                prevContactOpacity,
-                previousContactOpacityTime,
-                0.25
-            )
-            setContactBackOpacity(prevContactOpacity);
-        previousContactOpacityTime = new Date();
+            // prevContactOpacity = lerpBackAnimate(
+            //     Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0),
+            //     prevContactOpacity,
+            //     previousContactOpacityTime,
+            //     0.25
+            // )
+            setContactBackOpacity(Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0));
+        //previousContactOpacityTime = new Date();
       }
       function handleRocksBack(scroll){
         let startPage = 1;
         let endPage = 2;
 
-        prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.25);
-        previousMiddleTime = new Date();
-        scroll = prevMiddleTop;
+        // prevMiddleTop = lerpBackAnimate(scroll, prevMiddleTop, previousMiddleTime, 0.25);
+        // previousMiddleTime = new Date();
+        // scroll = prevMiddleTop;
 
         let extraHeight = Math.max(height - 700, 0);
         
         if(scroll < startPage){
             let diff = (scroll - startPage);
 
-            prevRocksOpacity = lerpBackAnimate(
-                Math.pow(Math.max(Math.min(scroll + 0.1, 1), 0), 2),
-                prevRocksOpacity,
-                previousRocksOpacityTime,
-                0.25
-            );
+            // prevRocksOpacity = lerpBackAnimate(
+            //     Math.pow(Math.max(Math.min(scroll + 0.1, 1), 0), 2),
+            //     prevRocksOpacity,
+            //     previousRocksOpacityTime,
+            //     0.25
+            // );
+            setRocksBackOpacity(Math.pow(Math.max(Math.min(scroll + 0.1, 1), 0), 1.1))
 
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + ${extraHeight}px)`)
         }else if(scroll > endPage){
 
-            prevRocksOpacity = lerpBackAnimate(
-                Math.pow((Math.max(Math.min(((1 -(scroll - 2)) + 0.1), 1), 0)), 2),
-                prevRocksOpacity,
-                previousRocksOpacityTime,
-                0.25
-            );
+            // prevRocksOpacity = lerpBackAnimate(
+            //     Math.pow((Math.max(Math.min(((1 -(scroll - 2)) + 0.1), 1), 0)), 2),
+            //     prevRocksOpacity,
+            //     previousRocksOpacityTime,
+            //     0.25
+            // );
+            setRocksBackOpacity(Math.pow((Math.max(Math.min(((1 -(scroll - 2)) + 0.1), 1), 0)), 1.1))
 
             let diff = (scroll - endPage);
             setRocksBackFullTop(`calc(calc(-100vh * ${diff}) + 00px)`)
         }else{
             let l = (scroll - startPage) / (endPage - startPage);
             setRocksBackFullTop(`calc(${(1 - l) * extraHeight}px)`)
-            prevRocksOpacity = lerpBackAnimate(
-                1,
-                prevRocksOpacity,
-                previousRocksOpacityTime,
-                0.25
-            );
+            // prevRocksOpacity = lerpBackAnimate(
+            //     1,
+            //     prevRocksOpacity,
+            //     previousRocksOpacityTime,
+            //     0.25
+            // );
+            setRocksBackOpacity(1)
         }
 
-        setRocksBackOpacity(prevRocksOpacity)
-        previousRocksOpacityTime = new Date();
+        //setRocksBackOpacity(prevRocksOpacity)
+        //previousRocksOpacityTime = new Date();
         if(scroll < 0.96){
             scroll = 0.96;
         }

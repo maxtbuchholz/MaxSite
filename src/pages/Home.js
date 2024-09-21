@@ -204,9 +204,9 @@ const Home = ({page, project}) => {
       }
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
-        prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
-        previousContactTime = new Date();
-        setContactBackTop(prevContactTop);
+        // prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
+        // previousContactTime = new Date();
+        setContactBackTop(val);
         setContactBackDownTop(`${prevContactTop * 100}vh`);
 
             // prevContactOpacity = lerpBackAnimate(

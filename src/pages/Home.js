@@ -119,13 +119,6 @@ const Home = ({page, project}) => {
 
 
             scrollPosition = prevScrollTop;
-
-
-
-
-
-
-            console.log(scrollPosition)
             changeProgBarWidth((setScrollTop / (height - 100)) % 1);
             handleHeaderHeight();
         }, 100);
@@ -143,14 +136,12 @@ const Home = ({page, project}) => {
     const [topOfPage, setTopOfPage] = useState(true);
     var headerFull = true;
     const[contactBackTop, setContactBackTop] = useState(1);
-    const[contactBackDownTop, setContactBackDownTop] = useState('100vh');
+    const[contactBackDownTop, setContactBackDownTop] = useState('0vh');
     const[contactBackOpacity, setContactBackOpacity] = useState(0);
     const[progBarWidth, setProgBarWidth] = useState(0);
     const [rocksBackFullTop, setRocksBackFullTop] = useState('100vh');
     const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
     const[rocksBackOpacity, setRocksBackOpacity] = useState(0);
-    var prevRocksOpacity = null;
-    var previousRocksOpacityTime = null;
       function handleHeaderHeight(){
             handleMovingScroll(Math.round((scrollPosition / (height - 100)) * 1000) / 1000)
           var scroll = Math.min(scrollPosition, height);
@@ -206,8 +197,7 @@ const Home = ({page, project}) => {
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
         // prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
         // previousContactTime = new Date();
-        setContactBackTop(val);
-        setContactBackDownTop(`${prevContactTop * 100}vh`);
+        //setContactBackDownTop(`${0}vh`);
 
             // prevContactOpacity = lerpBackAnimate(
             //     Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0),
@@ -215,7 +205,13 @@ const Home = ({page, project}) => {
             //     previousContactOpacityTime,
             //     0.25
             // )
-            setContactBackOpacity(Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0));
+            if(scroll < 2){
+                setContactBackOpacity(0);
+                setContactBackTop(0);
+            }else{
+                setContactBackOpacity(Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0));
+                setContactBackTop(val);
+            }
         //previousContactOpacityTime = new Date();
       }
       function handleRocksBack(scroll){

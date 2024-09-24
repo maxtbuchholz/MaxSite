@@ -207,7 +207,7 @@ const Home = ({page, project}) => {
             // )
             if(scroll < 2){
                 setContactBackOpacity(0);
-                setContactBackTop(0);
+                setContactBackTop(1);
             }else{
                 setContactBackOpacity(Math.max(Math.min(Math.pow(scroll-1.85, 2), 1), 0));
                 setContactBackTop(val);

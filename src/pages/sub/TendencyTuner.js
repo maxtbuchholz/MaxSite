@@ -161,7 +161,7 @@ const TendencyTuner = ({}) => {
           duration: 1.2,
           delay: 0.3,
         }}}}><TenTunChev color={'rgb(45,97,182)'} rotate={true}/></motion.div>
-        <motion.div className='tenTunChev ttc_17' initial="closed" animate={textBox2V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_17' initial="closed" animate={textBox2V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '62vw',transition: {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
@@ -172,7 +172,7 @@ const TendencyTuner = ({}) => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
           delay: 0.5,
-        }}}}><TenTunChev color={'rgb(12,35,118)'} rotate={false}/></motion.div>
+        }}}}><TenTunChev color={'rgb(12,35,118)'} rotate={false}/></motion.div> */}
 
 
 
@@ -209,12 +209,12 @@ const TendencyTuner = ({}) => {
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
         }}}}><TenTunChev color={'rgb(234,234,234)'} rotate={true}/></motion.div>
-        <motion.div className='tenTunChev ttc_6' initial="closed" animate={textBox2V ? "open" : "closed"} 
+        {/* <motion.div className='tenTunChev ttc_6' initial="closed" animate={textBox2V ? "open" : "closed"} 
         variants={{ closed: {left: '150vw'}, open: {left: '50vw',transition: {
           delay: 0.2,
           ease: [0.22, 1, 0.36, 1],
           duration: 1.2,
-        }}}}><TenTunChev color={'rgb(240,240,240)'} rotate={false}/></motion.div>
+        }}}}><TenTunChev color={'rgb(240,240,240)'} rotate={false}/></motion.div> */}
                       <div className={`bottomSpacer tanEnder`}/>
                       <div className={`darkBottomSpacer darkEnder`}/>
                       <div className={`topSpacer tanEnder`}/>

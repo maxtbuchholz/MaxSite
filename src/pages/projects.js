@@ -10,8 +10,8 @@ import TendencyTuner_image from '../img/projectMedia/TendencyTuner_image.png';
 import TendencyTuner_video from '../img/projectMedia/TendencyTuner_video.mp4';
 
 const ProjectsPage = () => {
-    const [itemSize, setItemSize] = useState([400,180]);
-    const itemSizes = [[400,180], [0, 0]]
+    const [itemSize, setItemSize] = useState([300,180]);
+    const itemSizes = [[300,180], [0, 0]]
     // const itemAspect = 180/400;
     const skillsDivVariants = {
         open:{
@@ -135,7 +135,7 @@ const ProjectsPage = () => {
                     duration: 0.2,
             }}, closed: {width: '100px'}}}
             />
-            <motion.div variants={skillsDivVariants} id="projItemDiv" style={{paddingTop: '20px', width: '90vw', height: 'calc(100vh - 200px)', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', gap: '30px',flexDirection: 'column', justifyContent: 'start', backgroundColor: 'transparent'}}>
+            <motion.div variants={skillsDivVariants} id="projItemDiv" style={{paddingTop: '20px', width: '80vw', height: 'calc(100vh - 200px)', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', gap: '30px',flexDirection: 'column', justifyContent: 'start', backgroundColor: 'transparent'}}>
                 {itemRows.map((row, r_index) => {
                     return(
                         <motion.div key={r_index} variants={skillsRowsVariants} style={{gap: '30px',height: `${itemSize[1]}px`, display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>

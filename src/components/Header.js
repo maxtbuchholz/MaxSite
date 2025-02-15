@@ -90,7 +90,7 @@ const Header = ({currentPage, scrollButtonCallback, waveTransforms, headerHeight
                         {(size.width >= 800) &&<button className="headerButton poppins-regular" style={{}} onClick={() => {startEmail();}}>
                             <FontAwesomeIcon style={{paddingRight: '10px'}} icon={faEnvelope} />Email</button>}
                     </nav>}
-                    {(size.width < 800) &&  <Sidebar  scrollButtonCallback={scrollButtonCallback}/>}
+                    {(size.width < 800) &&  <Sidebar  scrollButtonCallback={(scrollButtonCallback)}/>}
                     {/* <div className="headerContentToggle">
                             {menuOpen ? <AiOutlineClose onClick={menuToggleHandler} /> : <RiMenu5Line onClick={menuToggleHandler} />}
                         </div> */}

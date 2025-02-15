@@ -198,24 +198,24 @@
 /* mobile */
 @media (max-width: 800px){
     .cloud_1{
-        bottom: max(20vh, 210px);
+        bottom: max(20vh, 180px);
         /* left: -6vw; */
-        width: 400px;
+        width: 800px;
         margin: 0;
         padding: 0;
     }
     .cloud_2{
-        bottom: max(20vh, 230px);
+        bottom: max(20vh, 200px);
         /* right: -5vw; */
-        width: 400px;
+        width: 800px;
         margin: 0;
         padding: 0;
     }
     .cloud_3{
-        bottom: max(25vh, 260px);
+        bottom: max(25vh, 230px);
         /* left: 12vw; */
         margin: auto;
-        width: 550px;
+        width: 850px;
         margin: 0;
         padding: 0;
     }

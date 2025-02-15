@@ -19,6 +19,7 @@
     position: absolute;
     top: 250px;
     margin: -20px;
+    pointer-events: none;
 }
 .bbBoat1{
     background-image: url('../../img/svg/BlunderBoats/ship1.svg');
@@ -63,7 +64,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 26px;
+    font-size: 18px;
 }
 .blunderBoatsTextBox h5{
     color: black;
@@ -72,7 +73,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
 }
 .bbTextBoxSideBar{
     width: 3px;
@@ -103,6 +104,7 @@
     bottom: 0;
 }
 .blunderBoatsTextBox{
+    pointer-events: none;
     padding-bottom: 14px;
     padding-right: 12px;
 }
@@ -166,16 +168,16 @@
 @media (max-width: 800px){
     .proceduralGraphParent{
         position: absolute;
-        top: 2200px;
-        width: 90%;
+        top: 1900px;
+        width: 70%;
         left: 0;
         right: 0;
         margin: auto;
     }
     .bbProjectileGraph{
-        width: min(200px, 60vw);
-        height: 400px;
-        top: 1250px;
+        width: min(150px, 60vw);
+        height: 300px;
+        top: 1120px;
         left: 0;
         right: 0;
         margin: auto;
@@ -188,12 +190,10 @@
         left: 0;
     }
     .blunderBoatsTextBox{
-        width: 100%;
+        /* width: 100%; */
         min-height: 20vh;
-        max-width: 90%;
-        right: 0;
-        left: 0;
-        margin: auto;
+        max-width: 90vw;
+        min-width: 20vw;
         padding-bottom: 16px;
     }
     .bbProjNameBox{
@@ -209,14 +209,14 @@
         width: 200px;
         height: 200px;
         max-width: 40vw;
-        top: 3000px;
+        top: 2800px;
         right: 20px;
     }
     .bbBoat3{
         width: 200px;
         max-width: 40vw;
         height: 200px;
-        top: 3050px;
+        top: 2850px;
         left: 20px;
     }
     .bbPage{
@@ -232,20 +232,23 @@
     .bbTextBox1{
         position: absolute;
         top: 800px;
+        left: 10px;
     }
     .bbTextBox2{
         position: absolute;
-        top: 1700px;
+        top: 1400px;
+        left: 10px;
     }
     .bbTextBox3{
         position: absolute;
-        top: 2800px;
+        top: 2450px;
+        left: 10px;
     }
     .dottedPath{
         width: 300px;
         max-width: 50%;
         height: 300px;
-        top: 3200px;
+        top: 3000px;
         right: 0;
         left: 0;
         margin: auto;
@@ -270,18 +273,23 @@
     position: absolute;
 }
 @media (max-width: 600px){
+    .bbTextBox2{
+        position: absolute;
+        top: 1450px;
+        left: 10px;
+    }
     .proceduralGraphParent{
         position: absolute;
-        top: 2300px;
+        top: 2000px;
         width: 90%;
         left: 0;
         right: 0;
         margin: auto;
     }
     .bbProjectileGraph{
-        width: min(200px, 60vw);
-        height: 400px;
-        top: 1350px;
+        width: min(150px, 60vw);
+        height: 300px;
+        top: 1200px;
         left: 22px;
         background-position: top;
     }
@@ -350,7 +358,7 @@
         position: relative;
         width: 100%;
         max-width: 600px;
-        min-height: 20vh;
+        min-height: 10vh;
         /* left: 30px; */
         left: 30px;
         right: 48%;

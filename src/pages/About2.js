@@ -31,37 +31,40 @@ const About2Page = () => {
             //     staggerChildren: 0.08,
             //     staggerDirection: -1,
             // }
-            transition:{
-                delay: 0.3,
-                duration: 0.3,
-                staggerChildren: 0.08,
-                staggerDirection: -1,
-            }
+            // transition:{
+            //     delay: 0.3,
+            //     duration: 0.3,
+            //     staggerChildren: 0.08,
+            //     staggerDirection: -1,
+            // }
         },
         closed:{
-            x: -10,
-            transition:{
-                delay: 0.3,
-                duration: 0.2,
-            }
+            // x: -10,
+            // transition:{
+            //     delay: 0.3,
+            //     duration: 0.2,
+            // }
         }
     }
     const skillsItemVariants = {
         open:{                
             y: 0,
             opacity: 1,
+            // transition:{
+            //     type: "Tween"
+            // }
             transition:{
-                type: "spring",
-                stiffness: 120,
+                // delay: 0.5,
+                duration: 0.3,
             }
         },
         closed:{
             y: 20,
             opacity: 0,
-            transition:{
-                delay: 0.5,
-                duration: 0.1,
-            }
+            // transition:{
+            //     delay: 0.5,
+            //     duration: 0.5,
+            // }
         }
     }
     // const items = Array(80).fill({image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png', title: 'react'});
@@ -151,7 +154,7 @@ const About2Page = () => {
             <motion.div variants={skillsDivVariants} id="itemDiv" style={{width: '90vw', maxWidth: '1000px', height: '70%', maxHeight: '500px', marginRight: 0, marginLeft: 0, margin: 'auto', background: '', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
                 {itemRows.map((row, r_index) => {
                     return(
-                        <motion.div key={r_index} variants={skillsRowsVariants} style={{height: (itemWidth - 5), display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
+                        <motion.div key={r_index} style={{height: (itemWidth - 5), display: 'flex', flexDirection: 'row', justifyContent: 'center', background: ''}}>
                             {row.map((item, c_index) => {
                                 return(
                                     <motion.div key={c_index} variants={skillsItemVariants} style={{width: itemWidth, height: itemWidth}}>

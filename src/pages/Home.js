@@ -143,7 +143,7 @@ const Home = ({page, project}) => {
     const [rockAnimatiionValue, setRockAnimatiionValue] = useState(0);
     const[rocksBackOpacity, setRocksBackOpacity] = useState(0);
       function handleHeaderHeight(){
-            handleMovingScroll(Math.round((scrollPosition / (height - 100)) * 1000) / 1000)
+            setM_Scroll(Math.round((scrollPosition / (height - 100)) * 1000) / 1000)
           var scroll = Math.min(scrollPosition, height);
           var headerSize = Math.max(height - scroll, 0);
           scroll = Math.max(scroll, 0)
@@ -178,6 +178,8 @@ const Home = ({page, project}) => {
     //   const [midCloudsOpacity, setMidCloudsOpacity] = useState(1);
     //   var previousCloudsOpacity = null;
     //   var previousOpacityTime = null;
+    const [m_scroll, setM_Scroll] = useState(0);
+      useEffect(() => {
       function handleMovingScroll(scroll){
         handleRocksBack(scroll)
         handleContactBack(scroll)
@@ -193,6 +195,8 @@ const Home = ({page, project}) => {
         // console.log(previousCloudsOpacity)
         // setMidCloudsOpacity(previousCloudsOpacity)
       }
+      handleMovingScroll(m_scroll)
+    },[m_scroll]);
       function handleContactBack(scroll){
         let val = Math.max(Math.min(1 - (scroll - 2), 1), 0);
         // prevContactTop = lerpBackAnimate(val, prevContactTop, previousContactTime, 0.25);
@@ -407,13 +411,13 @@ const Home = ({page, project}) => {
       }
     return (
         <div>
+                <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -500)}vw`), opacity: 1}}/>
+                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -500)}vw`), opacity: 1}}/>
+                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -1000)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -900)}vw`), opacity: 1}}/>
          <ContactBack opacity={contactBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={contactBackTop}contactTop={contactBackDownTop}/>
          <RocksBack opacity={rocksBackOpacity} onePercHeight={onePercBackHeight} ease={usetreansitionAnimate}  fullBodyTop={rocksBackFullTop} rockAnimateValue={rockAnimatiionValue}/>
          <Header opacity={1} ease={usetreansitionAnimate} currentPage={currPageName} scrollButtonCallback={changeInAutoScrolling} waveTransforms={headerWaveArray} headerHeight={'100%'} topOfPage={topOfPage} ulTop={0} terminalTop={terminalTop} progresBarWidth={progBarWidth}/>           
         <div ref={ScrollPageRef} id="sectionContainer" className={"sectionContainer " + (((!isAutoScrolling) && (!disableScroll)) ? "scrollSnapContainer" : "")}>
-        <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -400)}vw`), opacity: 1}}/>
-                <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -150)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -400)}vw`), opacity: 1}}/>
-                <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -300)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -800)}vw`), opacity: 1}}/>
             <div className="firstSection" id="top" style={{background: '#ff000000'}}>
                 <div className="introTerminal transitionHelper" style={{position: 'absolute', top: 0, transform: `translate(0px, ${terminalTop}px)`}}>
                     <IntroTerminal/>

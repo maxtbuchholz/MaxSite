@@ -51,6 +51,10 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.4.0"
+    "@testing-library/dom": "^10.4.0",
+    "ajv": "^8.17.1"
+  },
+  "overrides": {
+    "react-refresh": "0.16.0"
   }
 }

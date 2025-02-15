@@ -8,6 +8,7 @@
   /* width: 100vw;
   height: 100vh; */
   position: absolute;
+  pointer-events: none;
   display: flex;
   /* display: inline-block; */
   align-items: center;
@@ -30,6 +31,7 @@
   border-radius: 20px;
   border: none;
   background-color: transparent;
+  pointer-events: all;
 }
   .carouselButton:hover {
     /* scale: 1.2;

@@ -55,9 +55,11 @@ export function scrollTo(target, callback, duration) {
       (window.location.pathname !== '/projects') &&
       (window.location.pathname !== '/contact')){
     // window.navigation.navigate(`/${target}`)
-    window.open(`/${target}`,"_self");
+    scrollToInstant(target)
     return;
   }
+  window.open(`/${target}`,"_self");
+  return;
     let scrollWindow = document.getElementById("sectionContainer");
     if (callback && typeof(callback) === 'function') {
         callback(true);
@@ -92,7 +94,7 @@ export function scrollTo(target, callback, duration) {
       } else {
         if (callback && typeof(callback) === 'function') {
           // the animation is done so lets callback
-        //   callback(false);
+          callback(false);
         //   console.log('callback');
         }
       }

@@ -49,6 +49,8 @@ var requestAnimFrame = (function(){
     return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
   })();
 export function scrollTo(target, callback, duration) {
+  window.open(`/${target}`,"_self");
+  return;
   if( (window.location.pathname !== '/') &&
       (window.location.pathname !== '/home') &&
       (window.location.pathname !== '/skills')&&

@@ -133,6 +133,30 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+.cloud_4{
+    aspect-ratio: 265.82437/43.524269;
+    position: absolute;
+    background-image: url('../img/svg/Header/MidClounds/Cloud_1.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cloud_5{
+    aspect-ratio: 325.82712/42.94767;
+    position: absolute;
+    background-image: url('../img/svg/Header/MidClounds/Cloud_2.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cloud_6{
+    aspect-ratio: 407.7565/54.316097;
+    position: absolute;
+    background-image: url('../img/svg/Header/MidClounds/Cloud_3.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 /* desktop */
 @media (min-width: 800px){
     .cloud_1{
@@ -198,21 +222,43 @@
 /* mobile */
 @media (max-width: 800px){
     .cloud_1{
-        bottom: max(20vh, 180px);
+        bottom: max(16vh, 130px);
         /* left: -6vw; */
         width: 800px;
         margin: 0;
         padding: 0;
     }
     .cloud_2{
-        bottom: max(20vh, 200px);
+        bottom: max(15vh, 150px);
         /* right: -5vw; */
         width: 800px;
         margin: 0;
         padding: 0;
     }
     .cloud_3{
-        bottom: max(25vh, 230px);
+        bottom: max(22vh, 200px);
+        /* left: 12vw; */
+        margin: auto;
+        width: 850px;
+        margin: 0;
+        padding: 0;
+    }
+    .cloud_4{
+        bottom: max(22vh, 180px);
+        /* left: -6vw; */
+        width: 800px;
+        margin: 0;
+        padding: 0;
+    }
+    .cloud_5{
+        bottom: max(24vh, 240px);
+        /* right: -5vw; */
+        width: 800px;
+        margin: 0;
+        padding: 0;
+    }
+    .cloud_6{
+        bottom: max(29vh, 250px);
         /* left: 12vw; */
         margin: auto;
         width: 850px;

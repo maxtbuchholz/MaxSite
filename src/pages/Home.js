@@ -411,6 +411,14 @@ const Home = ({page, project}) => {
       }
     return (
         <div>
+                {!largeScreen && 
+                <div className="cloud_4 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -50) + (midCloundsL * -750)}vw`), opacity: 1}}/>}
+                {!largeScreen && 
+                <div className="cloud_5 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -80) + (midCloundsL * -750)}vw`), opacity: 1}}/>}
+                {!largeScreen && 
+                <div className="cloud_6 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -1000)}vw` : `${((1 - midCloundsL) * -50) + (midCloundsL * -1500)}vw`), opacity: 1}}/>}
+                
+
                 <div className="cloud_1 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -12) + (midCloundsL * -500)}vw`), opacity: 1}}/>
                 <div className="cloud_2 moveable" style={{right: (largeScreen ? `${((1 - midCloundsL) * -2) + (midCloundsL * -500)}vw` : `${((1 - midCloundsL) * -10) + (midCloundsL * -500)}vw`), opacity: 1}}/>
                 <div className="cloud_3 moveable" style={{left: (largeScreen ? `${((1 - midCloundsL) * 6) + (midCloundsL * -1000)}vw` : `${((1 - midCloundsL) * -2) + (midCloundsL * -900)}vw`), opacity: 1}}/>
